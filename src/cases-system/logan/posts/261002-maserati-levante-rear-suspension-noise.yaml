@@ -2,7 +2,7 @@ slug: 261002-maserati-levante-rear-suspension-noise
 date: 2026-10-02
 draft: false
 source: https://blog.naver.com/logan_service/224429601649
-photos_pending: true
+photos_pending: false
 category: maserati
 title: "르반떼 리어 하체 소음 — 스태빌라이저·토우로드·위시본 부싱 교환"
 seo_title: "마세라티 르반떼 리어 하체 소음 원인 — 스태빌라이저·토우로드 교환 | 파주 로건서비스"
@@ -12,10 +12,14 @@ car: {brand: 마세라티, model: 르반떼}
 symptoms: [뒤쪽 하체 소음]
 work: [리어 하체 점검, 리어 스태빌라이저 교환, 토우로드 교환, 위시본 부싱 손상 부품 교환]
 tags: [마세라티 정비, 르반떼 하체 소음, 르반떼 리어 스태빌라이저, 르반떼 토우로드, 르반떼 위시본 부싱]
+cover: {src: assets/cases/261002-maserati-levante-rear-suspension-noise-01.webp, alt: "르반떼 리어 하체 소음 — 스태빌라이저·토우로드·위시본 부싱 교환"}
 sections:
   - h2: 입고 증상
     text: |
       **차 뒤쪽 하체에서 소음이 난다는 르반떼(M161)였습니다.** 하체 소음은 소리가 들리는 위치와 실제 원인 부품이 다르게 느껴질 때가 많아, 소리가 나는 쪽 주변 부품까지 넓게 점검했습니다.
+    photos:
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-02.webp, alt: "마세라티 르반떼 입고 증상 사진 1"}
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-03.webp, alt: "마세라티 르반떼 입고 증상 사진 2"}
   - h2: 진단 — 소음 원인을 하나씩 나누기
     text: |
       **주된 소음은 리어 스태빌라이저에서 났고, 토우로드에서도 따로 소음이 확인됐습니다.** 스태빌라이저는 코너를 돌거나 좌우 바퀴가 다르게 움직일 때 차체가 한쪽으로 지나치게 기울지 않게 잡아 주는 부품이라, 문제가 생기면 하체가 움직일 때마다 소리가 날 수 있습니다.
@@ -23,14 +27,21 @@ sections:
       토우로드는 뒷바퀴가 정해진 방향을 유지하도록 붙잡아 주는 연결 부품입니다. 하체는 여러 부품이 이어져 있어 큰 소리 하나가 다른 곳의 작은 소리를 가리기도 합니다. 그래서 스태빌라이저와 토우로드를 각각 따로 확인해 수리 범위를 나눴습니다.
 
       점검 중에는 위시본 부싱이 찢어진 것도 발견했습니다. 위시본은 바퀴와 차체를 이어 바퀴 움직임을 잡아 주는 부품이고, 부싱은 그 연결부에서 충격과 진동을 흡수하는 고무입니다. 부싱이 찢어지면 지지력이 떨어져 불필요한 움직임이나 진동이 생길 수 있습니다.
+    photos:
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-04.webp, alt: "마세라티 르반떼 진단 — 소음 원인을 하나씩 나누기 사진 1"}
   - h2: 작업 내용
     text: |
       **리어 스태빌라이저와 토우로드를 교환하고, 찢어진 위시본 부싱 쪽 하체 부품도 함께 교환했습니다.** 소음의 직접 원인과 점검 중 새로 발견한 손상을 구분해 수리 범위를 정리했습니다.
+    photos:
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-05.webp, alt: "마세라티 르반떼 작업 내용 사진 1"}
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-06.webp, alt: "마세라티 르반떼 작업 내용 사진 2"}
   - h2: 하체 소음이 있다면
     text: |
       **뒤쪽에서 나는 소음은 한 부품만의 문제가 아닐 수 있어, 주변 연결 부품까지 함께 보는 것이 좋습니다.** 고무 부싱처럼 눈에 잘 띄지 않는 부위의 손상이 같이 발견되는 경우도 있습니다.
 
       로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 비슷한 소음이 있다면 언제, 어떤 노면에서 나는지 적어 카톡으로 먼저 보내 주세요.
+    photos:
+      - {src: assets/cases/261002-maserati-levante-rear-suspension-noise-07.webp, alt: "마세라티 르반떼 하체 소음이 있다면 사진 1"}
 faq:
   - q: "르반떼 뒤쪽 하체 소음은 어떤 부품에서 나나요?"
     a: "이번 르반떼는 리어 스태빌라이저가 주원인이었고 토우로드에서도 소음이 확인됐습니다. 소리가 들리는 위치와 원인 부품이 다를 수 있어 주변 부품까지 함께 점검합니다."

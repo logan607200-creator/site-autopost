@@ -2,7 +2,7 @@ slug: 260929-tesla-model-y-doors-rear-fender
 date: 2026-09-29
 draft: false
 source: https://blog.naver.com/grit_service/224426435811
-photos_pending: true
+photos_pending: false
 category: accident
 title: "테슬라 모델Y 운전석 앞·뒤도어, 뒤휀더 사고수리"
 seo_title: "테슬라 모델Y 운전석 앞도어·뒤도어·뒤휀더 측면 사고 판금도색 | 파주 그릿서비스"
@@ -12,22 +12,34 @@ car: {brand: 테슬라, model: 모델Y}
 symptoms: [운전석 앞도어 손상, 운전석 뒤도어 손상, 운전석 뒤휀더 손상]
 work: [손상 범위 점검, 판금, 퍼티·샌딩, 캐릭터 라인 복원, 조색, 도장, 조립, 간격·개폐 점검]
 tags: [파주공업사, 운정공업사, 파주판금도색, 테슬라 모델Y 사고수리, 전기차 판금도장]
+cover: {src: assets/cases/260929-tesla-model-y-doors-rear-fender-01.webp, alt: "테슬라 모델Y 운전석 앞·뒤도어, 뒤휀더 사고수리"}
 sections:
   - h2: 입고 상태와 손상 범위
     text: |
       테슬라 모델Y가 운전석 쪽 측면 손상으로 입고됐습니다. 앞도어, 뒤도어, 뒤휀더까지 패널 세 곳에 수리가 필요한 상태였습니다.
 
       세 패널의 손상 상태를 하나씩 확인하고, 어디까지 수리할지와 어떤 순서로 작업할지를 먼저 정리했습니다. 측면 사고는 패널이 서로 이어져 있어서, 한 곳만 따로 맞추면 옆 패널과의 간격이나 라인이 어긋나 보일 수 있습니다.
+    photos:
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-02.webp, alt: "테슬라 모델Y 입고 상태와 손상 범위 사진 1"}
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-03.webp, alt: "테슬라 모델Y 입고 상태와 손상 범위 사진 2"}
   - h2: 판금과 면 잡기
     text: |
       판금으로 패널의 형태를 먼저 잡았습니다. 그 위에 퍼티를 얇게 올리고 샌딩을 여러 번 되풀이하면서 작은 굴곡까지 평평하게 다듬었습니다.
 
       이 과정에서 신경 쓴 것은 **캐릭터 라인**입니다. 앞도어에서 뒤도어, 뒤휀더로 이어지는 옆선이 원래 흐름대로 이어져야 수리 후에도 측면이 자연스럽게 보입니다.
+    photos:
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-04.webp, alt: "테슬라 모델Y 판금과 면 잡기 사진 1"}
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-05.webp, alt: "테슬라 모델Y 판금과 면 잡기 사진 2"}
   - h2: 조색과 도장
     text: |
       차량 색에 맞춰 조색한 뒤, 이웃 패널과 색감 차이가 나지 않도록 도장했습니다. 세 패널이 나란히 붙어 있는 측면은 한 패널만 색이 달라도 바로 눈에 띄는 곳입니다.
+    photos:
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-06.webp, alt: "테슬라 모델Y 조색과 도장 사진 1"}
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-07.webp, alt: "테슬라 모델Y 조색과 도장 사진 2"}
   - h2: 조립과 출고 점검
     text: |
       도장 후 부품을 다시 조립하고 패널 사이 간격, 도장면 상태, 도어가 걸림 없이 열리고 닫히는지를 마지막으로 확인했습니다. 옆에서 봤을 때 라인이 끊기지 않고, 색과 광택이 주변 패널과 고르게 이어지는 것을 확인한 뒤 출고했습니다.
 
       판금과 도장은 각 공정을 맡은 정비 인력이 차량 상태에 맞춰 직접 진행했고, 공정마다 확인을 거친 뒤 출고 전에 한 번 더 점검했습니다.
+    photos:
+      - {src: assets/cases/260929-tesla-model-y-doors-rear-fender-08.webp, alt: "테슬라 모델Y 조립과 출고 점검 사진 1"}

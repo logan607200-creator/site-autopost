@@ -2,7 +2,7 @@ slug: 260209-maserati-granturismo-thermostat-coolant
 date: 2026-02-09
 draft: false
 source: https://blog.naver.com/logan_service/224177618970
-photos_pending: true
+photos_pending: false
 category: maserati
 title: "그란투리스모(M145) 냉각수 순환 불량 — 서모스탯 교체와 냉각수 교환"
 seo_title: "마세라티 그란투리스모 M145 서모스탯 불량 — 서모스탯·냉각수 교환 | 파주 로건서비스"
@@ -12,27 +12,38 @@ car: {brand: 마세라티, model: 그란투리스모}
 symptoms: [냉각수 순환 불량, 서모스탯 개폐 기능 저하]
 work: [흡기 라인 탈거, 서모스탯 교체, 냉각수 전체 교환, 냉각 라인 점검]
 tags: [마세라티 정비, 그란투리스모 서모스탯, 그란투리스모 냉각수, 마세라티 V8, 마세라티 냉각계통]
+cover: {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-01.webp, alt: "그란투리스모(M145) 냉각수 순환 불량 — 서모스탯 교체와 냉각수 교환"}
 sections:
   - h2: 입고와 점검 결과
     text: |
       **예약 후 입고된 그란투리스모(M145)는 점검 결과 서모스탯 불량으로 냉각수가 제대로 돌지 않는 상태였습니다.** 그래서 서모스탯 교체, 냉각수 전체 교환, 냉각 라인 점검을 한 번에 진행했습니다.
 
       서모스탯은 냉각수가 엔진과 라디에이터 사이를 오가는 길을 열고 닫아 엔진 온도를 일정하게 유지하는 부품입니다. 제대로 열리지 않으면 과열과 출력 저하로, 심하면 엔진 손상으로 이어질 수 있습니다.
+    photos:
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-02.webp, alt: "마세라티 그란투리스모 입고와 점검 결과 사진 1"}
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-03.webp, alt: "마세라티 그란투리스모 입고와 점검 결과 사진 2"}
   - h2: 서모스탯 탈거
     text: |
       **그란투리스모 V8 엔진은 서모스탯에 닿기 위해 흡기 라인과 주변 부품을 순서대로 떼어 내야 합니다.** 흡기 구조가 복잡하고 부품끼리 간섭이 민감해, 탈거 순서를 지키지 않으면 주변 부품이 손상될 수 있습니다.
 
       떼어 낸 서모스탯에는 오염과 기능 저하 흔적이 있었고, 노후로 밸브 개폐가 둔해져 있었습니다.
+    photos:
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-04.webp, alt: "마세라티 그란투리스모 서모스탯 탈거 사진 1"}
   - h2: 교체와 조립
     text: |
       **서모스탯은 정품 신품으로 교체하고 규정 토크로 고정했습니다.** 장착하면서 실링 상태와 주변 부품 정렬도 함께 확인했습니다.
 
       조립은 분해의 역순으로 진행하고, 부품별 규정 토크를 지켰습니다. 조립 오차가 생기면 진동, 출력 저하, 냉각 효율 저하가 생길 수 있어 순서를 그대로 따릅니다.
+    photos:
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-05.webp, alt: "마세라티 그란투리스모 교체와 조립 사진 1"}
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-06.webp, alt: "마세라티 그란투리스모 교체와 조립 사진 2"}
   - h2: 냉각수 교환
     text: |
       **서모스탯 교체와 함께 냉각수를 전체 교환했습니다.** 냉각수는 오래 쓰면 냉각 성능이 떨어지고 슬러지 같은 이물질이 생길 수 있습니다. 새 서모스탯을 단 김에 냉각수도 새로 채워 냉각 계통 전체를 정리했습니다.
 
       수온 게이지가 평소보다 높게 올라가거나 냉각수가 자주 줄어든다면 서모스탯과 냉각 계통 점검을 권합니다. 계기판 사진을 카톡으로 먼저 보내 주세요.
+    photos:
+      - {src: assets/cases/260209-maserati-granturismo-thermostat-coolant-07.webp, alt: "마세라티 그란투리스모 냉각수 교환 사진 1"}
 faq:
   - q: "서모스탯이 고장 나면 어떤 문제가 생기나요?"
     a: "냉각수 순환이 제대로 되지 않아 엔진 과열, 출력 저하가 생길 수 있고, 심하면 오버히트로 엔진이 손상될 수 있습니다."

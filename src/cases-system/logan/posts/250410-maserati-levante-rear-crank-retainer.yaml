@@ -2,7 +2,7 @@ slug: 250410-maserati-levante-rear-crank-retainer
 date: 2025-04-10
 draft: false
 source: https://blog.naver.com/logan_service/223828450086
-photos_pending: true
+photos_pending: false
 category: maserati
 title: "르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환"
 seo_title: "마세라티 르반떼 M161 엔진오일 누유 — 리어 크랭크 리테이너 교환 | 파주 로건서비스"
@@ -12,23 +12,35 @@ car: {brand: 마세라티, model: 르반떼}
 symptoms: [엔진오일 누유, 리어 크랭크 리테이너 누유]
 work: [입고 점검, 중간 머플러 탈거, 미션 탈거, 리어 크랭크 리테이너·하우징 교환, 실링, 시운전]
 tags: [마세라티 정비, 르반떼 누유, 르반떼 엔진오일 누유, 마세라티 리어 크랭크 리테이너, 마세라티 오일 누유]
+cover: {src: assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp, alt: "르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환"}
 sections:
   - h2: 입고 경위
     text: |
       **다른 정비소에서 엔진오일을 갈다가 누유가 발견된 르반떼(M161)가 문의 후 예약 입고됐습니다.** 입고 점검에서 리어 크랭크 리테이너 누유가 확인됐고, 수리 내용을 안내한 뒤 작업했습니다.
 
       리어 크랭크 리테이너는 엔진과 변속기 사이에서 크랭크축 뒤쪽을 막는 부품입니다. 기블리, 콰트로포르테, 르반떼처럼 출력이 높은 마세라티에서 누유가 자주 발견되는 위치입니다.
+    photos:
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-02.webp, alt: "마세라티 르반떼 입고 경위 사진 1"}
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-03.webp, alt: "마세라티 르반떼 입고 경위 사진 2"}
   - h2: 작업 — 미션 탈거
     text: |
       **리테이너에 닿으려면 변속기를 내려야 해, 차를 리프트에 올리고 중간 머플러를 먼저 떼어 낸 뒤 미션을 탈거했습니다.** 드러난 리테이너 주변 곳곳에 오일이 묻어 있었습니다.
+    photos:
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-04.webp, alt: "마세라티 르반떼 작업 — 미션 탈거 사진 1"}
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-05.webp, alt: "마세라티 르반떼 작업 — 미션 탈거 사진 2"}
   - h2: 리테이너·하우징 교환
     text: |
       **리테이너 어셈블리를 떼어 내고 리테이너와 하우징을 모두 신품으로 교환했습니다.** 부품을 교체한 뒤 실링 작업을 하고 분해의 역순으로 조립했습니다.
+    photos:
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-06.webp, alt: "마세라티 르반떼 리테이너·하우징 교환 사진 1"}
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-07.webp, alt: "마세라티 르반떼 리테이너·하우징 교환 사진 2"}
   - h2: 출고 점검
     text: |
       **조립 후 시운전을 충분히 하며 누유가 다시 생기지 않는지 확인하고 출고했습니다.**
 
       엔진오일 교환 때 누유가 있다는 말을 들었거나 주차 자리에 오일 자국이 생긴다면, 해당 부위 사진을 카톡으로 먼저 보내 주세요. 경기도 파주에 있지만 전국 탁송으로도 맡기실 수 있습니다.
+    photos:
+      - {src: assets/cases/250410-maserati-levante-rear-crank-retainer-08.webp, alt: "마세라티 르반떼 출고 점검 사진 1"}
 faq:
   - q: "르반떼 리어 크랭크 리테이너 누유는 왜 미션을 내려야 하나요?"
     a: "리어 크랭크 리테이너는 엔진과 변속기 사이에 있어서, 변속기를 떼어 내야 부품에 손이 닿습니다. 이번 르반떼도 중간 머플러와 미션을 탈거한 뒤 교환했습니다."

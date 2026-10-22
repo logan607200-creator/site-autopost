@@ -2,7 +2,7 @@ slug: 260903-benz-e300-rear-fender-bumper
 date: 2026-09-03
 draft: false
 source: https://blog.naver.com/grit_service/224400117195
-photos_pending: true
+photos_pending: false
 category: accident
 title: "벤츠 E300 운전석 뒤휀더 찌그러짐·뒤범퍼 판금도색"
 seo_title: "벤츠 E클래스 E300 운전석 뒤휀더 찌그러짐·뒤범퍼 찍힘 판금도색 | 파주 그릿서비스"
@@ -12,6 +12,7 @@ car: {brand: 벤츠, model: E300}
 symptoms: [운전석 뒤휀더 찌그러짐, 도장 벗겨짐·스크래치, 뒤범퍼 찍힘]
 work: [뒤휀더 판금, 하지작업(연마), 마스킹, 뒤범퍼 탈거, 퍼티·프라이머, 조색, 베이스·클리어 도장, 조립·최종 점검]
 tags: [파주공업사, 파주판금도색, 파주수입차정비, 벤츠 E클래스 휀더 판금, 일산공업사]
+cover: {src: assets/cases/260903-benz-e300-rear-fender-bumper-01.webp, alt: "벤츠 E300 운전석 뒤휀더 찌그러짐·뒤범퍼 판금도색"}
 sections:
   - h2: 입고 상태
     text: |

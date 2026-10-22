@@ -2,7 +2,7 @@ slug: 261020-maserati-quattroporte-engine-oil-air-filter
 date: 2026-10-20
 draft: false
 source: https://blog.naver.com/logan_service/224447555635
-photos_pending: true
+photos_pending: false
 category: maserati
 title: "콰트로포르테 겨울 전 점검 — 엔진오일·오일필터·에어필터 교환"
 seo_title: "마세라티 콰트로포르테 겨울 전 엔진오일·에어필터 교환 | 파주 로건서비스"
@@ -12,15 +12,22 @@ car: {brand: 마세라티, model: 콰트로포르테}
 symptoms: [엔진오일 교환 시기, 겨울 전 점검]
 work: [엔진오일 교환, 오일필터 교환, 에어필터 교환, 에어필터 하우징 청소, 정비 주기 리셋]
 tags: [마세라티 정비, 콰트로포르테 엔진오일, 마세라티 엔진오일 교환, 콰트로포르테 에어필터, 마세라티 소모품 교환]
+cover: {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-01.webp, alt: "콰트로포르테 겨울 전 점검 — 엔진오일·오일필터·에어필터 교환"}
 sections:
   - h2: 입고 내용
     text: |
       **본격적으로 추워지기 전에 엔진오일을 갈기 위해 들어온 콰트로포르테였고, 에어필터까지 함께 교환했습니다.** 입고 때 이전 교환 이력과 엔진룸 누유 여부부터 확인했습니다.
+    photos:
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-02.webp, alt: "마세라티 콰트로포르테 입고 내용 사진 1"}
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-03.webp, alt: "마세라티 콰트로포르테 입고 내용 사진 2"}
   - h2: 겨울 전에 오일을 보는 이유
     text: |
       **기온이 내려가면 엔진오일이 끈적해져, 차가운 엔진에 시동을 걸 때 오일이 구석구석 퍼지는 데 시간이 더 걸립니다.** 그 사이 금속 부품끼리 마찰이 생기기 때문에, 교환 시기가 지나 윤활 성능이 떨어진 오일이라면 부담이 더 커집니다.
 
       겨울에는 짧은 거리만 타는 일이 많아 엔진이 다 데워지기 전에 운행이 끝나곤 합니다. 이때 엔진 안에 맺힌 수분이 오일의 열화를 앞당깁니다. 엔진오일은 윤활 외에도 냉각, 찌꺼기 세정, 피스톤과 실린더 사이 밀봉, 부식 방지를 맡고 있어 오래되면 이 기능이 한꺼번에 떨어집니다.
+    photos:
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-04.webp, alt: "마세라티 콰트로포르테 겨울 전에 오일을 보는 이유 사진 1"}
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-05.webp, alt: "마세라티 콰트로포르테 겨울 전에 오일을 보는 이유 사진 2"}
   - h2: 작업 과정
     text: |
       **제조사 정비 매뉴얼(Techinfo) 기준으로 오일 배출, 에어필터·오일필터 교환, 새 오일 주입 순서로 진행했습니다.** 리프트에 올려 차 바닥 언더커버를 떼어 내고 드레인 플러그를 열어 기존 오일을 충분히 빼냈습니다. 배출되는 오일의 색과 이물질도 함께 봤습니다.
@@ -28,11 +35,16 @@ sections:
       에어필터는 먼지가 쌓여 검게 변해 있었습니다. 필터가 막히면 엔진으로 들어가는 공기가 줄어 출력과 연비가 떨어질 수 있습니다. 필터가 들어가는 하우징 안쪽 먼지를 정리한 뒤 새 에어필터를 넣었습니다.
 
       오일필터를 새것으로 바꾸고, 제조사 규격에 맞는 엔진오일을 규정량 주입했습니다.
+    photos:
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-06.webp, alt: "마세라티 콰트로포르테 작업 과정 사진 1"}
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-07.webp, alt: "마세라티 콰트로포르테 작업 과정 사진 2"}
   - h2: 출고 점검
     text: |
       **시동을 걸어 누유가 없는지와 오일 레벨을 다시 확인하고, 정비 주기를 리셋한 뒤 출고했습니다.**
 
       마지막 엔진오일 교환이 언제였는지 기억나지 않는다면 추워지기 전에 한 번 점검받아 보시길 권합니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 궁금한 점은 계기판 사진과 함께 카톡으로 먼저 보내 주세요.
+    photos:
+      - {src: assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-08.webp, alt: "마세라티 콰트로포르테 출고 점검 사진 1"}
 faq:
   - q: "엔진오일 교환 때 에어필터도 같이 바꿔야 하나요?"
     a: "에어필터가 막히면 흡입 공기가 줄어 출력과 연비가 떨어질 수 있어 오일 교환 때 함께 상태를 확인합니다. 이번 콰트로포르테는 필터가 먼지로 검게 변해 있어 교환했습니다."
