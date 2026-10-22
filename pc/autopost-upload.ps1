@@ -3,7 +3,9 @@
 $ErrorActionPreference = "Stop"
 $Repo   = "C:\site-autopost"
 $Site   = "ivy-ftp"          # WinSCP 에 저장한 사이트 이름
-$WinScp = "C:\Program Files (x86)\WinSCP\WinSCP.com"
+# WinSCP 는 설치 방식에 따라 위치가 다르다(winget 은 사용자 폴더에 설치)
+$WinScp = @("C:\Program Files (x86)\WinSCP\WinSCP.com", "C:\Program Files\WinSCP\WinSCP.com",
+            (Join-Path $env:LOCALAPPDATA "Programs\WinSCP\WinSCP.com")) | Where-Object { Test-Path $_ } | Select-Object -First 1
 $Log    = Join-Path $Repo "upload-log.txt"
 $State  = Join-Path $Repo ".last-uploaded"
 $Remote = @{ "deploy/grit/" = "/public_html/gritservice/"; "deploy/logan/" = "/public_html/" }
