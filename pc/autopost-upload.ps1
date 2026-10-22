@@ -26,7 +26,8 @@ if ($old) {
 }
 if (-not $files) { Set-Content $State $new; exit 0 }
 
-$lines = @("option batch continue", "option confirm off", "open `"$Site`"")
+# 접속에 실패하면 바로 멈추고, 접속되면 OPEN-OK 를 찍은 뒤 나머지는 오류가 나도 계속
+$lines = @("option batch abort", "option confirm off", "open `"$Site`"", "echo OPEN-OK", "option batch continue")
 $dirs = @{}
 foreach ($f in $files) {
   foreach ($k in $Remote.Keys) {
@@ -45,9 +46,10 @@ foreach ($f in $files) {
 $lines += "exit"
 $script = Join-Path $env:TEMP "autopost-winscp.txt"
 Set-Content -Path $script -Value $lines -Encoding UTF8
-& $WinScp /script="$script" /log="$Repo\winscp-last.log" | Out-Null
+$out = & $WinScp /script="$script" /log="$Repo\winscp-last.log" | Out-String
+$opened = $out -match "OPEN-OK"
 $putErrors = Select-String -Path "$Repo\winscp-last.log" -Pattern "Error transferring|Access denied|Connection failed|Authentication failed" -Quiet
-if ($LASTEXITCODE -eq 0 -or -not $putErrors) {
+if ($opened -and ($LASTEXITCODE -eq 0 -or -not $putErrors)) {
   Set-Content $State $new
   Log ("올림 {0}개 ({1})" -f $files.Count, $new.Substring(0,7))
 } else {
