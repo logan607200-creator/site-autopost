@@ -896,6 +896,14 @@
     </div>
   </a>
 </article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261022-maserati-ghibli-misfire-diagnosis/">
+    <div class="cases-card-img">      <span class="cases-card-cat">진단·경고등</span>    </div>
+    <div class="cases-card-body">
+      <p class="cases-card-car">마세라티 기블리</p>
+      <h3 class="cases-card-title">기블리 엔진경고등 — 1번·6번 실린더 실화 고장코드 점검 순서</h3>      <p class="cases-card-work">진단기 고장코드 확인 · 점화플러그·점화코일 점검 · 점화코일 스왑테스트</p>      <p class="cases-card-foot"><time datetime="2026-10-22">2026년 10월 22일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
+    </div>
+  </a>
+</article><article class="cases-card">
   <a class="cases-card-link" href="cases/261020-maserati-quattroporte-engine-oil-air-filter/">
     <div class="cases-card-img">      <img src="assets/cases/261020-maserati-quattroporte-engine-oil-air-filter-01.webp" alt="콰트로포르테 겨울 전 점검 — 엔진오일·오일필터·에어필터 교환" width="743" height="743" loading="lazy" decoding="async">      <span class="cases-card-cat">마세라티 정비</span>    </div>
     <div class="cases-card-body">
@@ -925,14 +933,6 @@
     <div class="cases-card-body">
       <p class="cases-card-car">마세라티 르반떼</p>
       <h3 class="cases-card-title">르반떼 리어 하체 소음 — 스태빌라이저·토우로드·위시본 부싱 교환</h3>      <p class="cases-card-work">리어 하체 점검 · 리어 스태빌라이저 교환 · 토우로드 교환</p>      <p class="cases-card-foot"><time datetime="2026-10-02">2026년 10월 2일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
-    </div>
-  </a>
-</article><article class="cases-card">
-  <a class="cases-card-link" href="cases/260901-maserati-levante-engine-oil-leak/">
-    <div class="cases-card-img">      <img src="assets/cases/260901-maserati-levante-engine-oil-leak-01.webp" alt="르반떼 엔진오일 누유 — 실린더 헤드 가스켓·크랭크 프론트 오일씰·헤드커버 실링" width="743" height="992" loading="lazy" decoding="async">      <span class="cases-card-cat">마세라티 정비</span>    </div>
-    <div class="cases-card-body">
-      <p class="cases-card-car">마세라티 르반떼</p>
-      <h3 class="cases-card-title">르반떼 엔진오일 누유 — 실린더 헤드 가스켓·크랭크 프론트 오일씰·헤드커버 실링</h3>      <p class="cases-card-work">에어컨 냉매 회수 · 엔진 탈거 · 실린더 헤드 가스켓 교환</p>      <p class="cases-card-foot"><time datetime="2026-09-01">2026년 9월 1일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
     </div>
   </a>
 </article>    </div>
