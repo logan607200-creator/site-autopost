@@ -16,9 +16,12 @@ $new = (git rev-parse HEAD).Trim()
 $old = if (Test-Path $State) { (Get-Content $State -Raw).Trim() } else { "" }
 if ($old -eq $new) { exit 0 }
 
-# 처음 실행이면 마지막 커밋에서 바뀐 것만, 아니면 지난번 올린 뒤 바뀐 것 전부
-$range = if ($old) { @($old, $new) } else { @("$new~1", $new) }
-$files = git -c core.quotepath=off diff --name-only --diff-filter=AM $range[0] $range[1] -- deploy/
+# 처음 실행이면 deploy/ 전체, 아니면 지난번 올린 뒤 바뀐 것만
+if ($old) {
+  $files = git -c core.quotepath=off diff --name-only --diff-filter=AM $old $new -- deploy/
+} else {
+  $files = git -c core.quotepath=off ls-files -- deploy/
+}
 if (-not $files) { Set-Content $State $new; exit 0 }
 
 $lines = @("option batch continue", "option confirm off", "open `"$Site`"")
