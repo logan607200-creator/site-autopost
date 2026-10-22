@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{#- 정비사례 상세. 변수: site, post, related, jsonld, root -#}
+{%- set ns = namespace(cat=none) -%}
+{%- for c in site.categories if c.key == post.category %}{% set ns.cat = c %}{% endfor -%}
+{%- set car_name = (post.car.brand ~ ' ' ~ post.car.model) if post.car else '' -%}
+
+{% block title %}{{ post.seo_title|default(post.title ~ ' | ' ~ site.name) }}{% endblock %}
+
+{% block head_extra %}
+  {%- if post.cover %}
+  <meta property="og:image:alt" content="{{ post.cover.alt }}" />
+  <link rel="preload" as="image" href="{{ root }}{{ post.cover.src }}" fetchpriority="high" />
+  {%- endif %}
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="article:published_time" content="{{ post.date_iso }}" />
+{% endblock %}
+
+{% block content %}
+<article class="cases-article">
+  <div class="cases-hero">
+    <div class="wrap">
+      <nav class="cases-crumb" aria-label="현재 위치">
+        <ol>
+          <li><a href="{{ root }}">홈</a></li>
+          <li><a href="{{ root }}cases/">{{ site.cases_label }}</a></li>
+          {%- if ns.cat %}
+          <li><a href="{{ root }}{{ post.category_url|default('cases/' ~ ns.cat.slug ~ '/') }}">{{ ns.cat.name }}</a></li>
+          {%- endif %}
+          <li aria-current="page"><span>{{ car_name or post.title }}</span></li>
+        </ol>
+      </nav>
+
+      <div class="cases-badges">
+        {%- if ns.cat %}
+        <a class="cases-badge" href="{{ root }}{{ post.category_url|default('cases/' ~ ns.cat.slug ~ '/') }}">{{ post.category_name|default(ns.cat.name) }}</a>
+        {%- else %}
+        <span class="cases-badge">{{ post.category_name }}</span>
+        {%- endif %}
+        {%- if post.car and post.car.brand %}<span class="cases-badge is-ghost">{{ post.car.brand }}</span>{% endif %}
+        {%- if post.draft %}<span class="cases-badge is-draft">예시 글 · 사장님 확인 전</span>{% endif %}
+      </div>
+
+      <h1 class="cases-h1">{{ post.title }}</h1>
+
+      <ul class="cases-meta">
+        <li><span>작성</span><time datetime="{{ post.date_iso|default(post.date) }}">{{ post.date_kr|default(post.date) }}</time></li>
+        {%- if post.car %}
+        <li><span>차종</span>{{ car_name }}</li>
+        {%- if post.car.year %}<li><span>연식</span>{{ post.car.year }}년식</li>{% endif %}
+        {%- if post.car.km %}<li><span>주행</span>{% if post.car.km is number %}{{ '{:,}'.format(post.car.km) }}{% else %}{{ post.car.km }}{% endif %}km</li>{% endif %}
+        {%- endif %}
+        {%- if post.region %}<li><span>지역</span>{{ post.region }}</li>{% endif %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="wrap cases-layout">
+    <div class="cases-aside">
+      <section class="cases-glance">
+        <h2 id="cases-glance-title" class="cases-glance-title"><span>At a glance</span>한눈에 보기</h2>
+        {%- if post.diagnosis and post.summary %}
+        <p class="cases-glance-summary">{{ post.summary }}</p>
+        {%- endif %}
+        <dl>
+          {%- if post.car %}
+          <div><dt>차량</dt><dd>{{ car_name }}{% if post.car.year %} ({{ post.car.year }}년식{% if post.car.km %}, {% if post.car.km is number %}{{ '{:,}'.format(post.car.km) }}{% else %}{{ post.car.km }}{% endif %}km{% endif %}){% elif post.car.km %} ({% if post.car.km is number %}{{ '{:,}'.format(post.car.km) }}{% else %}{{ post.car.km }}{% endif %}km){% endif %}</dd></div>
+          {%- endif %}
+          {%- if post.symptoms %}
+          <div><dt>증상</dt><dd>{{ post.symptoms|join(', ') }}</dd></div>
+          {%- endif %}
+          {%- if post.diagnosis or post.summary %}
+          <div><dt>진단</dt><dd>{{ post.diagnosis if post.diagnosis else post.summary }}</dd></div>
+          {%- endif %}
+          {%- if post.work %}
+          <div><dt>작업</dt><dd><ul>{% for w in post.work %}<li>{{ w }}</li>{% endfor %}</ul></dd></div>
+          {%- endif %}
+        </dl>
+        <div class="cases-glance-cta">
+          <a class="btn primary" href="tel:{{ site.tel }}">전화 상담 {{ site.phone }}</a>
+          <a class="btn light" href="{{ site.kakao }}" target="_blank" rel="noopener">{{ site.kakao_label|default('증상 사진 보내기(카톡)') }}</a>
+        </div>
+      </section>
+    </div>
+
+    <div class="cases-main">
+      {%- if post.cover %}
+      <figure class="cases-cover">
+        <img src="{{ root }}{{ post.cover.src }}" alt="{{ post.cover.alt }}" width="{{ post.cover.w|default(post.cover.width)|default(1200) }}" height="{{ post.cover.h|default(post.cover.height)|default(800) }}" fetchpriority="high" decoding="async">
+      </figure>
+      {%- endif %}
+
+      {%- for s in post.sections %}
+      {%- set sec_first = loop.first %}
+      <section class="cases-sec" id="sec-{{ loop.index }}">
+        <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>{{ s.h2 }}</h2>
+        {%- if s.text %}
+        <div class="cases-text">{{ s.text|para }}</div>
+        {%- endif %}
+        {%- if s.photos %}
+        <div class="cases-photos n{{ s.photos|length if s.photos|length < 4 else 'm' }}">
+          {%- for ph in s.photos %}
+          <figure>
+            <img src="{{ root }}{{ ph.src }}" alt="{{ ph.alt }}" width="{{ ph.w|default(ph.width)|default(1200) }}" height="{{ ph.h|default(ph.height)|default(800) }}"{% if post.cover or not sec_first or not loop.first %} loading="lazy"{% endif %} decoding="async">
+            {%- if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
+          </figure>
+          {%- endfor %}
+        </div>
+        {%- endif %}
+      </section>
+      {%- endfor %}
+
+      {%- if post.faq %}
+      <section class="cases-sec cases-faq" id="faq">
+        <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">Q&amp;A</span>자주 묻는 질문</h2>
+        <div class="cases-faq-list">
+          {%- for f in post.faq %}
+          <details class="cases-faq-item"{% if loop.first %} open{% endif %}>
+            <summary>{{ f.q }}</summary>
+            <p>{{ f.a }}</p>
+          </details>
+          {%- endfor %}
+        </div>
+      </section>
+      {%- endif %}
+
+      {%- if post.source %}
+      <p class="cases-source">이 작업의 원문 기록: <a href="{{ post.source }}" target="_blank" rel="noopener">네이버 블로그에서 보기</a></p>
+      {%- endif %}
+      {%- if post.tags %}
+      <ul class="cases-tags" aria-label="태그">
+        {%- for t in post.tags %}<li>#{{ t|replace(' ', '') }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+  </div>
+
+  <section class="cases-cta" aria-labelledby="cases-cta-title">
+    <div class="wrap cases-cta-grid">
+      <div>
+        <p class="eyebrow">Consultation</p>
+        <h2 id="cases-cta-title" class="cases-cta-title">{% if car_name %}{{ car_name }}, 비슷한 증상이 있나요?{% else %}비슷한 증상이 있나요?{% endif %}</h2>
+        <p class="cases-cta-lead">증상 사진이나 경고등 화면을 카톡으로 먼저 보내 주시면 확인 후 안내해 드립니다. 전국 탁송 상담 가능.</p>
+      </div>
+      <div class="cases-cta-side">
+        <a class="cases-cta-phone" href="tel:{{ site.tel }}">{{ site.phone }}</a>
+        <div class="btns">
+          <a class="btn primary" href="tel:{{ site.tel }}">전화 상담</a>
+          <a class="btn cases-btn-kakao" href="{{ site.kakao }}" target="_blank" rel="noopener">{{ site.kakao_label|default('증상 사진 보내기(카톡)') }}</a>
+        </div>
+        {%- if site.hours %}<p class="cases-cta-hours">{{ site.hours }}</p>{% endif %}
+      </div>
+    </div>
+  </section>
+</article>
+
+{%- if related %}
+<section class="cases-related" aria-labelledby="cases-related-title">
+  <div class="wrap">
+    <div class="cases-related-head">
+      <div>
+        <p class="eyebrow">Related cases</p>
+        <h2 id="cases-related-title" class="cases-section-title">관련 {{ site.cases_label }}</h2>
+      </div>
+      {%- if ns.cat %}<a class="cases-textlink" href="{{ root }}{{ post.category_url|default('cases/' ~ ns.cat.slug ~ '/') }}">{{ ns.cat.name }} 사례 더 보기</a>{% endif %}
+    </div>
+    <div class="cases-grid">
+      {%- for p in related[:3] %}
+      {% include "card.html" %}
+      {%- endfor %}
+    </div>
+  </div>
+</section>
+{%- endif %}
+
+<div class="wrap cases-back">
+  <a class="btn" href="{{ root }}cases/">← {{ site.cases_label }} 목록으로</a>
+</div>
+{% endblock %}

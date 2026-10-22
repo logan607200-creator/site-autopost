@@ -1,0 +1,24 @@
+{#- 카드 1장. 변수: p(post), root. 선택: card_h(제목 태그, 기본 h3), card_eager(true면 lazy 안 씀) -#}
+{%- set _h = card_h|default('h3') -%}
+{%- set _img = p.cover if p.cover else ((p.sections[0].photos[0]) if p.sections and p.sections[0].photos else none) -%}
+<article class="cases-card">
+  <a class="cases-card-link" href="{{ root }}{{ p.url|default('cases/' ~ p.slug ~ '/') }}">
+    <div class="cases-card-img">
+      {%- if _img %}
+      <img src="{{ root }}{{ _img.src }}" alt="{{ _img.alt }}" width="{{ _img.w|default(_img.width)|default(1200) }}" height="{{ _img.h|default(_img.height)|default(800) }}"{% if not card_eager %} loading="lazy"{% endif %} decoding="async">
+      {%- endif %}
+      <span class="cases-card-cat">{{ p.category_name }}</span>
+      {%- if p.draft %}<span class="cases-draft-chip">예시</span>{% endif %}
+    </div>
+    <div class="cases-card-body">
+      <p class="cases-card-car">
+        {%- if p.car %}{{ p.car.brand }} {{ p.car.model }}{% if p.car.year %} · {{ p.car.year }}년식{% endif %}{% endif -%}
+      </p>
+      <{{ _h }} class="cases-card-title">{{ p.title }}</{{ _h }}>
+      {%- if p.work %}
+      <p class="cases-card-work">{{ p.work[:3]|join(' · ') }}</p>
+      {%- endif %}
+      <p class="cases-card-foot"><time datetime="{{ p.date_iso|default(p.date) }}">{{ p.date_kr|default(p.date) }}</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
+    </div>
+  </a>
+</article>

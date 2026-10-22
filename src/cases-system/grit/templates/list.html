@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{#- 수리사례 목록. 변수: site, posts, categories, current_category(None=전체), root -#}
+{%- set cc = current_category -%}
+{%- set region = site.regions[0] if site.regions else '' -%}
+{%- set h1_text = (region ~ ' ' ~ cc.name ~ ' ' ~ site.cases_label) if cc else (region ~ ' 자동차 ' ~ site.cases_label) -%}
+
+{% block title %}{{ page_title|default(h1_text ~ ' | ' ~ site.name) }}{% endblock %}
+
+{% block content %}
+<div class="list-top">
+  <div class="g-wrap">
+    <nav class="crumbs" aria-label="현재 위치">
+      <ol>
+        <li><a href="{{ root }}">홈</a></li>
+        <li><a href="{{ root }}cases/">{{ site.cases_label }}</a></li>
+        {%- if cc %}<li><a href="{{ root }}cases/{{ cc.slug }}/" aria-current="page">{{ cc.name }}</a></li>{% endif %}
+      </ol>
+    </nav>
+    <p class="list-eyebrow">REPAIR CASES</p>
+    <h1 class="list-h1">{{ h1_text }}</h1>
+    {%- if cc and cc.intro %}
+    <p class="list-intro">{{ cc.intro }}</p>
+    {%- else %}
+    <p class="list-intro">{{ site.regions|join('·') }}에서 {{ site.name }}에 맡겨 주신 차량의 실제 수리 기록입니다. 어떤 증상으로 들어왔고, 무엇을 확인해, 어떻게 고쳤는지 한 건씩 정리했습니다. 번호판과 개인정보는 가렸습니다.</p>
+    {%- endif %}
+    {%- if cc and cc.service_page %}
+    <p class="list-svc"><a href="{{ root }}{{ cc.service_page }}">{{ cc.name }} 서비스 안내 보기 →</a></p>
+    {%- endif %}
+
+    <nav class="chips" aria-label="카테고리">
+      <a href="{{ root }}cases/"{% if not cc %} aria-current="page"{% endif %}>전체</a>
+      {%- for c in categories %}
+      <a href="{{ root }}cases/{{ c.slug }}/"{% if cc and cc.slug == c.slug %} aria-current="page"{% endif %}>{{ c.name }}{% if c.count is defined %} <span class="cnt">{{ c.count }}</span>{% endif %}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</div>
+
+<section class="list-body" aria-labelledby="list-h">
+  <div class="g-wrap">
+    <h2 id="list-h" class="list-h2">{% if cc %}{{ cc.name }}{% else %}전체{% endif %} 사례 <span>{{ posts|length }}건</span></h2>
+    {%- if posts %}
+    <div class="cases-grid">
+      {%- for p in posts %}
+      {% include "card.html" %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <p class="list-empty">이 분류의 사례를 정리하고 있습니다. 비슷한 수리가 필요하시면 먼저 상담해 주세요.</p>
+    {%- endif %}
+
+    <div class="list-cta">
+      <p><strong>찾는 사례가 없나요?</strong> 차 상태를 사진으로 보내 주시면 비슷한 작업 경험을 바탕으로 안내해 드립니다.</p>
+      <div class="list-cta-btns">
+        <a class="lbtn tel" href="tel:{{ site.tel }}" data-track="call">전화 {{ site.phone }}</a>
+        <a class="lbtn kakao" href="{{ site.kakao }}" target="_blank" rel="noopener" data-track="kakao">카톡 사진 상담</a>
+      </div>
+    </div>
+  </div>
+</section>
+{% endblock %}

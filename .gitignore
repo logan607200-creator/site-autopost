@@ -1,0 +1,5 @@
+__pycache__/
+upload-log.txt
+winscp-last.log
+.last-uploaded
+src/cases-system/build/

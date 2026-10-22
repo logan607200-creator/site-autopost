@@ -1,0 +1,106 @@
+<section class="cases-home" id="cases" aria-labelledby="cases-home-h">
+  <style>
+    .cases-home{background:#fff;border-top:1px solid #e6eaf0}
+    .cases-home-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
+    .cases-home-eyebrow{font-size:12px;letter-spacing:.18em;font-weight:700;color:#5b6270;margin:0}
+    .cases-home-h{font-size:clamp(30px,5vw,56px);line-height:1.08;letter-spacing:-.04em;margin:10px 0 0;word-break:keep-all}
+    .cases-home-head p{max-width:460px;color:#4f5662;margin:0;word-break:keep-all;font-size:16px}
+    .cases-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
+    .cases-card{background:#fff;border:1px solid #dde2ea;transition:border-color .2s,box-shadow .2s}
+    .cases-card:hover{border-color:#004a9f;box-shadow:0 10px 28px rgba(0,40,100,.10)}
+    .cases-card-link{display:flex;flex-direction:column;height:100%;color:#171717;text-decoration:none}
+    .cases-card-img{position:relative;aspect-ratio:4/3;background:#e9edf3;overflow:hidden}
+    .cases-card-img img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .45s ease}
+    .cases-card:hover .cases-card-img img{transform:scale(1.03)}
+    .cases-card-cat{position:absolute;left:12px;top:12px;background:#004a9f;color:#fff;font-size:13px;font-weight:700;padding:4px 10px;letter-spacing:-.01em}
+    .cases-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+    .cases-card-title{font-size:19px;line-height:1.4;margin:0;letter-spacing:-.025em;word-break:keep-all}
+    .cases-card-meta{margin:auto 0 0;font-size:14px;color:#5b6270;display:flex;flex-wrap:wrap;gap:4px 12px}
+    .cases-card-meta>*{white-space:nowrap}
+    .cases-home-more{display:flex;justify-content:center;margin-top:34px}
+    .cases-home-more a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;background:#004a9f;color:#fff;font-weight:700;font-size:15px;text-decoration:none}
+    .cases-home-more a:hover{background:#003a7d}
+    @media(max-width:900px){.cases-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:620px){
+      .cases-grid{grid-template-columns:1fr;gap:12px}
+      .cases-card-link{flex-direction:row}
+      .cases-card-img{flex:0 0 38%;aspect-ratio:1/1}
+      .cases-card-cat{left:6px;top:6px;font-size:12px;padding:2px 7px}
+      .cases-card-body{padding:12px 14px}
+      .cases-card-title{font-size:16px}
+      .cases-card-meta{font-size:13px}
+      .cases-home-more a{width:100%}
+    }
+  </style>
+  <div class="wrap">
+    <div class="cases-home-head">
+      <div>
+        <p class="cases-home-eyebrow">REPAIR CASES</p>
+        <h2 class="cases-home-h" id="cases-home-h">최근 수리사례</h2>
+      </div>
+      <p>실제로 입고된 차의 증상, 진단, 작업 과정을 한 건씩 기록합니다. 내 차와 비슷한 사례를 찾아보세요.</p>
+    </div>
+    <div class="cases-grid"><article class="cases-card">
+  <a class="cases-card-link" href="cases/261022-bmw-640i-evaporator/">
+    <div class="cases-card-img">      <span class="cases-card-cat">중고차 성능보증수리</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">BMW 640i 에어컨 바람 약함, 에바포레이터 누설 교환</h3>
+      <p class="cases-card-meta"><span>BMW 640i</span><time datetime="2026-10-22">2026년 10월 22일</time>
+      </p>
+    </div>
+  </a>
+</article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261020-hyundai-santafe-rear-fender-bumper-paint/">
+    <div class="cases-card-img">      <span class="cases-card-cat">판금·도색</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">싼타페 운전석 뒤휀더·범퍼 도장</h3>
+      <p class="cases-card-meta"><span>현대 싼타페</span><time datetime="2026-10-20">2026년 10월 20일</time>
+      </p>
+    </div>
+  </a>
+</article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261006-kia-ray-rear-caliper/">
+    <div class="cases-card-img">      <span class="cases-card-cat">자동차정비</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">레이 뒤 우측 브레이크 캘리퍼·패드 교환</h3>
+      <p class="cases-card-meta"><span>기아 레이</span><time datetime="2026-10-06">2026년 10월 6일</time>
+      </p>
+    </div>
+  </a>
+</article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261006-kia-k5-rear-bumper-paint/">
+    <div class="cases-card-img">      <span class="cases-card-cat">판금·도색</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">K5 뒤범퍼 좌측 도장 손상 복원 도색</h3>
+      <p class="cases-card-meta"><span>기아 K5</span><time datetime="2026-10-06">2026년 10월 6일</time>
+      </p>
+    </div>
+  </a>
+</article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261006-benz-cls400-aux-water-pump/">
+    <div class="cases-card-img">      <span class="cases-card-cat">중고차 성능보증수리</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">벤츠 CLS400 엔진·냉각수 경고등, 보조워터펌프 교환</h3>
+      <p class="cases-card-meta"><span>벤츠 CLS400</span><time datetime="2026-10-06">2026년 10월 6일</time>
+      </p>
+    </div>
+  </a>
+</article><article class="cases-card">
+  <a class="cases-card-link" href="cases/261002-renault-sm6-rear-bumper/">
+    <div class="cases-card-img">      <span class="cases-card-cat">사고수리</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">SM6 뒤범퍼 접촉 손상 사고수리·도장</h3>
+      <p class="cases-card-meta"><span>르노 SM6</span><time datetime="2026-10-02">2026년 10월 2일</time>
+      </p>
+    </div>
+  </a>
+</article>    </div>
+    <div class="cases-home-more"><a href="cases/">수리사례 전체 보기 →</a></div>
+  </div>
+</section>

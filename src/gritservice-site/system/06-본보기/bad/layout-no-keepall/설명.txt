@@ -1,0 +1,1 @@
+제목 줄바꿈 방지 CSS 누락(사례 layout-break)

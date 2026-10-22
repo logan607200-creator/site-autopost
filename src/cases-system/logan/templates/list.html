@@ -1,0 +1,76 @@
+{% extends "base.html" %}
+{#- 정비사례 목록. 변수: site, posts, categories, current_category(없으면 None), root -#}
+{%- set cc = current_category -%}
+{%- set page_h1 = (cc.name ~ ' 사례') if cc else '마세라티·페라리 ' ~ site.cases_label -%}
+{%- set page_desc = cc.intro if cc and cc.intro else '파주 ' ~ site.name ~ '에서 직접 정비한 마세라티·페라리 실제 기록입니다. 차종·연식·증상·진단·작업 과정을 한 건씩 정리했습니다.' -%}
+
+{% block title %}{% if page_title %}{{ page_title }}{% elif cc %}{{ cc.name }} 사례 | 마세라티·페라리 전문 {{ site.name }}{% else %}마세라티·페라리 {{ site.cases_label }} | 파주 {{ site.name }}{% endif %}{% endblock %}
+
+{% block head_extra %}
+{% endblock %}
+
+{% block content %}
+<section class="cases-hero cases-list-hero">
+  <div class="wrap">
+    <nav class="cases-crumb" aria-label="현재 위치">
+      <ol>
+        <li><a href="{{ root }}">홈</a></li>
+        {%- if cc %}
+        <li><a href="{{ root }}cases/">{{ site.cases_label }}</a></li>
+        <li aria-current="page"><span>{{ cc.name }}</span></li>
+        {%- else %}
+        <li aria-current="page"><span>{{ site.cases_label }}</span></li>
+        {%- endif %}
+      </ol>
+    </nav>
+    <p class="eyebrow">Case Study · Maserati &amp; Ferrari</p>
+    <h1 class="cases-h1 is-list">{{ page_h1 }}</h1>
+    <p class="cases-intro">{{ page_desc }}</p>
+
+    <nav class="cases-chips" aria-label="{{ site.cases_label }} 분류">
+      <a href="{{ root }}cases/"{% if not cc %} aria-current="page"{% endif %}>전체</a>
+      {%- for c in categories %}
+      <a href="{{ root }}cases/{{ c.slug }}/"{% if cc and cc.key == c.key %} aria-current="page"{% endif %}>{{ c.name }}</a>
+      {%- endfor %}
+    </nav>
+  </div>
+</section>
+
+<section class="cases-listing" aria-label="{{ page_h1 }} 목록">
+  <div class="wrap">
+    <p class="cases-count">{{ posts|length }}건의 기록</p>
+    {%- if posts %}
+    <div class="cases-grid">
+      {%- set card_h = 'h2' %}
+      {%- for p in posts %}
+      {%- set card_eager = loop.index <= 2 %}
+      {% include "card.html" %}
+      {%- endfor %}
+    </div>
+    {%- else %}
+    <div class="cases-empty">
+      <p>이 분류의 사례를 정리하고 있습니다. 비슷한 증상이 있다면 사진을 먼저 보내 주세요.</p>
+      <a class="btn primary" href="{{ site.kakao }}" target="_blank" rel="noopener">{{ site.kakao_label|default('증상 사진 보내기(카톡)') }}</a>
+    </div>
+    {%- endif %}
+  </div>
+</section>
+
+<section class="cases-cta" aria-labelledby="cases-cta-title">
+  <div class="wrap cases-cta-grid">
+    <div>
+      <p class="eyebrow">Consultation</p>
+      <h2 id="cases-cta-title" class="cases-cta-title">찾는 증상이 없나요?</h2>
+      <p class="cases-cta-lead">차종·연식과 증상 사진을 보내 주시면 비슷한 사례와 함께 안내해 드립니다. 전국 탁송 상담 가능.</p>
+    </div>
+    <div class="cases-cta-side">
+      <a class="cases-cta-phone" href="tel:{{ site.tel }}">{{ site.phone }}</a>
+      <div class="btns">
+        <a class="btn primary" href="tel:{{ site.tel }}">전화 상담</a>
+        <a class="btn cases-btn-kakao" href="{{ site.kakao }}" target="_blank" rel="noopener">{{ site.kakao_label|default('증상 사진 보내기(카톡)') }}</a>
+      </div>
+      {%- if site.hours %}<p class="cases-cta-hours">{{ site.hours }}</p>{% endif %}
+    </div>
+  </div>
+</section>
+{% endblock %}

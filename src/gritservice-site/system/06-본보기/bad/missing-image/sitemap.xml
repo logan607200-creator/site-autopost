@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://gritservice.co.kr/</loc>
+    <lastmod>2026-10-08</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-hero-main.webp</image:loc>
+      <image:title>파주 교하 그릿서비스 자동차 공업사 외관</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-repair.webp</image:loc>
+      <image:title>그릿서비스 사고수리·판금도색 작업</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-care.webp</image:loc>
+      <image:title>그릿서비스 작업장 앞 제네시스 GV70 외형관리</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-shop-night.webp</image:loc>
+      <image:title>불이 켜진 그릿서비스 작업장 외관</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-nonexistent.webp</image:loc>
+      <image:title>그릿서비스 작업장 안 입고 차량</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-work-01.webp</image:loc>
+      <image:title>리프트가 늘어선 파주 그릿서비스 정비 작업장</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-work-02.webp</image:loc>
+      <image:title>범퍼 판금 도색 작업 중인 그릿서비스 도장 부스</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/grit-work-03.webp</image:loc>
+      <image:title>작업 부스에 입고된 수입차</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://gritservice.co.kr/assets/og-image.jpg</image:loc>
+      <image:title>파주 사고수리·판금도색 공업사 그릿서비스</image:title>
+    </image:image>
+  </url>
+</urlset>

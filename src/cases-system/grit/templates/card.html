@@ -1,0 +1,18 @@
+{#- 카드 1장. 변수: p(post), root. 홈·목록·관련사례 공통. 클래스는 cases- 접두어 -#}
+<article class="cases-card">
+  <a class="cases-card-link" href="{{ root }}{{ p.url }}">
+    <div class="cases-card-img">
+      {%- if p.cover and p.cover.src %}
+      <img src="{{ root }}{{ p.cover.src }}" alt="{{ p.cover.alt|default(p.title) }}" width="{{ p.cover.w|default(800) }}" height="{{ p.cover.h|default(600) }}" loading="lazy" decoding="async">
+      {%- endif %}
+      <span class="cases-card-cat">{{ p.category_name }}</span>
+    </div>
+    <div class="cases-card-body">
+      <h3 class="cases-card-title">{{ p.title }}</h3>
+      <p class="cases-card-meta">
+        {%- if p.car %}<span>{{ p.car.brand }} {{ p.car.model }}{% if p.car.year %} · {{ p.car.year }}년식{% endif %}</span>{% endif -%}
+        <time datetime="{{ p.date_iso }}">{{ p.date_kr }}</time>
+      </p>
+    </div>
+  </a>
+</article>

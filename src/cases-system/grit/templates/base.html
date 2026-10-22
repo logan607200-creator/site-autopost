@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="ko">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}{{ site.name }} {{ site.cases_label }}{% endblock %}</title>
+  {%- if meta %}
+  {{ meta }}
+  {%- endif %}
+  {%- if jsonld %}
+  <script type="application/ld+json">{{ jsonld }}</script>
+  {%- endif %}
+  <meta name="theme-color" content="#000000">
+  <link rel="icon" type="image/png" href="{{ root }}assets/favicon.png">
+  <link rel="apple-touch-icon" href="{{ root }}assets/favicon.png">
+  <link rel="stylesheet" href="{{ root }}cases/case.css">
+  {% block head_extra %}{% endblock %}
+  {%- if not preview %}
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-J953M2539G"></script>
+  <script>window.dataLayer=window.dataLayer||[];function gtag(){dataLayer.push(arguments)}gtag('js',new Date());gtag('config','G-J953M2539G');</script>
+  {%- endif %}
+</head>
+<body>
+<a class="skip" href="#main">본문 바로가기</a>
+<header class="g-header">
+  <div class="g-wrap g-nav">
+    <a href="{{ root }}" class="g-brand"><img src="{{ root }}assets/grit-logo-192.webp" alt="{{ site.name }} 로고" width="192" height="191" decoding="async"><span class="g-brand-copy">GRIT SERVICE<small>PREMIUM AUTOMOTIVE CARE</small></span></a>
+    <nav class="g-links" aria-label="주요 메뉴">
+      <a href="{{ root }}#about">ABOUT</a>
+      <a href="{{ root }}#service">SERVICE</a>
+      <a href="{{ root }}cases/" class="is-on">{{ site.cases_label }}</a>
+      <a href="{{ root }}faq/">FAQ</a>
+      <a href="{{ root }}#contact">CONTACT</a>
+      <a class="g-tel" href="tel:{{ site.tel }}" data-track="call">{{ site.phone }}</a>
+    </nav>
+    <a class="g-call-m" href="tel:{{ site.tel }}" data-track="call">전화</a>
+    <details class="g-menu">
+      <summary aria-label="메뉴 열기"><span aria-hidden="true"></span></summary>
+      <nav class="g-mobile" aria-label="모바일 메뉴">
+        <a href="{{ root }}">홈</a>
+        <a href="{{ root }}#service">SERVICE</a>
+        <a href="{{ root }}cases/">{{ site.cases_label }}</a>
+        <a href="{{ root }}faq/">자주 묻는 질문</a>
+        <a href="{{ root }}#contact">오시는 길 · 상담</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<main id="main">
+{% block content %}{% endblock %}
+</main>
+
+<footer class="g-footer">
+  <div class="g-wrap g-footer-row">
+    <span>© 2026 GRIT SERVICE. ALL RIGHTS RESERVED.</span>
+    <span>{{ site.company|default('(주)그릿서비스') }} · 대표 지철구 · 사업자등록번호 513-86-04243 · {{ site.address }} · <a href="tel:{{ site.tel }}">{{ site.phone }}</a></span>
+    <span class="g-footer-links"><a href="{{ root }}cases/">{{ site.cases_label }}</a> · <a href="{{ root }}faq/">자주 묻는 질문</a> · <a href="{{ site.blog }}" target="_blank" rel="noopener">네이버 블로그</a> · <a href="{{ root }}privacy/">개인정보처리방침</a></span>
+  </div>
+</footer>
+<div class="callbar" aria-label="빠른 상담"><a href="tel:{{ site.tel }}" data-track="call">전화 상담 {{ site.phone }}</a><a href="{{ site.kakao }}" target="_blank" rel="noopener" data-track="kakao">카톡 사진 상담</a></div>
+<script>
+// 전화·카톡 클릭 전환 기록 (없어도 페이지는 동작)
+document.addEventListener('click',function(e){var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="pf.kakao.com"]');if(!a)return;var t=a.href.indexOf('tel:')===0?'call':'kakao';if(window.gtag)gtag('event','contact_'+t,{method:t,page_type:'case'});});
+</script>
+</body>
+</html>

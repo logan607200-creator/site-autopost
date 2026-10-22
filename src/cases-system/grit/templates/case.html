@@ -1,0 +1,178 @@
+{% extends "base.html" %}
+{#- 수리사례 상세. 변수: site, post, related, jsonld, root -#}
+{%- set cat = namespace(page='') -%}
+{%- for c in site.categories if c.key == post.category -%}{%- set cat.page = c.service_page|default('') -%}{%- endfor -%}
+{%- set carname = (post.car.brand ~ ' ' ~ post.car.model) if post.car else '' -%}
+
+{% block title %}{{ post.seo_title|default(post.title ~ ' | ' ~ site.name) }}{% endblock %}
+
+{% block head_extra %}
+  {%- if post.cover %}
+  <link rel="preload" as="image" href="{{ root }}{{ post.cover.src }}" fetchpriority="high">
+  {%- endif %}
+  <meta property="article:published_time" content="{{ post.date_iso }}">
+{% endblock %}
+
+{% block content %}
+<article class="case">
+  <div class="case-top">
+    <div class="g-wrap case-top-in">
+      <nav class="crumbs" aria-label="현재 위치">
+        <ol>
+          <li><a href="{{ root }}">홈</a></li>
+          <li><a href="{{ root }}cases/">{{ site.cases_label }}</a></li>
+          {%- if post.category_url %}
+          <li><a href="{{ root }}{{ post.category_url }}">{{ post.category_name }}</a></li>
+          {%- endif %}
+        </ol>
+      </nav>
+
+      {%- if post.draft and preview|default(true) %}
+      <p class="case-draft" role="note">미리보기 · 예시 글입니다. 사장님 확인 전이라 업로드본에는 나오지 않습니다.</p>
+      {%- endif %}
+
+      {% if post.category_url %}<a class="case-badge" href="{{ root }}{{ post.category_url }}">{{ post.category_name }}</a>{% else %}<span class="case-badge">{{ post.category_name }}</span>{% endif %}
+      <h1 class="case-h1">{{ post.title }}</h1>
+
+      <ul class="case-meta" aria-label="사례 정보">
+        <li><span class="k">작업일</span> <time datetime="{{ post.date_iso }}">{{ post.date_kr }}</time></li>
+        {%- if post.car %}
+        <li><span class="k">차종</span> {{ carname }}
+          {%- if post.car.year %} · {{ post.car.year }}년식{% endif -%}
+          {%- if post.car.km %} · {{ "{:,}".format(post.car.km|int) }}km{% endif -%}
+        </li>
+        {%- endif %}
+        {%- if post.region %}
+        <li><span class="k">지역</span> {{ post.region }}</li>
+        {%- endif %}
+      </ul>
+    </div>
+  </div>
+
+  <div class="g-wrap case-grid">
+    <div class="case-main">
+
+      <section class="case-summary" aria-labelledby="sum-h">
+        <h2 id="sum-h" class="case-summary-h">한눈에 보기</h2>
+        {%- if post.summary %}
+        <p class="case-summary-lead">{{ post.summary }}</p>
+        {%- endif %}
+        <dl class="case-facts">
+          {%- if post.car %}
+          <div><dt>차량</dt><dd>{{ carname }}{% if post.car.year %} ({{ post.car.year }}년식{% if post.car.km %}, {{ "{:,}".format(post.car.km|int) }}km{% endif %}){% elif post.car.km %} ({{ "{:,}".format(post.car.km|int) }}km){% endif %}</dd></div>
+          {%- endif %}
+          {%- if post.symptoms %}
+          <div><dt>증상</dt><dd><ul class="case-list">{% for s in post.symptoms %}<li>{{ s }}</li>{% endfor %}</ul></dd></div>
+          {%- endif %}
+          {%- if post.work %}
+          <div><dt>작업</dt><dd><ul class="case-list is-work">{% for w in post.work %}<li>{{ w }}</li>{% endfor %}</ul></dd></div>
+          {%- endif %}
+          <div><dt>작업장</dt><dd>{{ site.name }} · {{ site.address }}</dd></div>
+        </dl>
+      </section>
+
+      {%- if post.cover and post.cover.src %}
+      <figure class="case-cover">
+        <img src="{{ root }}{{ post.cover.src }}" alt="{{ post.cover.alt|default(post.title) }}" width="{{ post.cover.w|default(1200) }}" height="{{ post.cover.h|default(800) }}" fetchpriority="high" decoding="async">
+        {%- if post.cover.caption %}<figcaption>{{ post.cover.caption }}</figcaption>{% endif %}
+      </figure>
+      {%- endif %}
+
+      {%- if post.sections and post.sections|length >= 3 %}
+      <nav class="case-toc" aria-labelledby="toc-h">
+        <h2 id="toc-h" class="case-toc-h">작업 순서</h2>
+        <ol>
+          {%- for s in post.sections %}
+          <li><a href="#s{{ loop.index }}">{{ s.h2 }}</a></li>
+          {%- endfor %}
+          {%- if post.faq %}<li><a href="#faq">자주 묻는 질문</a></li>{% endif %}
+        </ol>
+      </nav>
+      {%- endif %}
+
+      <div class="case-body">
+        {%- for s in post.sections %}
+        <section class="case-sec" id="s{{ loop.index }}">
+          <h2 class="case-h2"><span class="num" aria-hidden="true">{{ '%02d'|format(loop.index) }}</span>{{ s.h2 }}</h2>
+          {%- if s.text %}
+          <div class="case-text">{{ s.text|para }}</div>
+          {%- endif %}
+          {%- if s.photos %}
+          <div class="case-photos n{{ s.photos|length if s.photos|length < 3 else 'm' }}">
+            {%- for ph in s.photos %}
+            <figure>
+              <img src="{{ root }}{{ ph.src }}" alt="{{ ph.alt|default(ph.caption|default(s.h2)) }}" width="{{ ph.w|default(1200) }}" height="{{ ph.h|default(900) }}" loading="lazy" decoding="async">
+              {%- if ph.caption %}<figcaption>{{ ph.caption }}</figcaption>{% endif %}
+            </figure>
+            {%- endfor %}
+          </div>
+          {%- endif %}
+        </section>
+        {%- endfor %}
+      </div>
+
+      {%- if post.faq %}
+      <section class="case-faq" id="faq" aria-labelledby="faq-h">
+        <h2 id="faq-h" class="case-h2">자주 묻는 질문</h2>
+        {%- for f in post.faq %}
+        <details class="case-q" open>
+          <summary><span class="q" aria-hidden="true">Q</span>{{ f.q }}</summary>
+          <p>{{ f.a }}</p>
+        </details>
+        {%- endfor %}
+      </section>
+      {%- endif %}
+
+      <section class="case-cta" aria-labelledby="cta-h">
+        <h2 id="cta-h">{% if post.car %}{{ post.car.model }}, {% endif %}비슷한 증상이라면 사진부터 보내 주세요</h2>
+        <p>{{ site.regions[:4]|join('·') }} 어디서든 전화나 카톡으로 상태를 먼저 알려 주시면 확인 후 안내해 드립니다. 카톡에는 손상 부위가 보이게 찍은 사진을 함께 보내 주세요.</p>
+        <div class="case-cta-btns">
+          <a class="cbtn tel" href="tel:{{ site.tel }}" data-track="call"><span class="lbl">전화 상담</span><strong>{{ site.phone }}</strong></a>
+          <a class="cbtn kakao" href="{{ site.kakao }}" target="_blank" rel="noopener" data-track="kakao"><span class="lbl">카카오톡</span><strong>사진 보내고 상담</strong></a>
+        </div>
+        <p class="case-cta-addr">{{ site.name }} · {{ site.address }}{% if site.map %} · <a href="{{ site.map }}" target="_blank" rel="noopener">네이버 지도</a>{% endif %}</p>
+      </section>
+
+      {%- if post.source %}
+      <p class="case-source">이 작업의 원문 기록: <a href="{{ post.source }}" target="_blank" rel="noopener">네이버 블로그에서 보기</a></p>
+      {%- endif %}
+      {%- if post.tags %}
+      <ul class="case-tags" aria-label="태그">
+        {%- for t in post.tags %}<li>#{{ t }}</li>{% endfor %}
+      </ul>
+      {%- endif %}
+    </div>
+
+    <aside class="case-side" aria-label="상담">
+      <div class="side-box">
+        <p class="side-eyebrow">{{ post.category_name }} 상담</p>
+        <p class="side-title">내 차도 같은 증상인가요?</p>
+        <a class="side-phone" href="tel:{{ site.tel }}" data-track="call">{{ site.phone }}</a>
+        <a class="side-kakao" href="{{ site.kakao }}" target="_blank" rel="noopener" data-track="kakao">카톡으로 사진 보내기</a>
+        <p class="side-addr">{{ site.address }}</p>
+        {%- if cat.page %}
+        <a class="side-more" href="{{ root }}{{ cat.page }}">{{ post.category_name }} 안내 보기 →</a>
+        {%- endif %}
+      </div>
+    </aside>
+  </div>
+
+  {%- if related %}
+  <section class="case-related" aria-labelledby="rel-h">
+    <div class="g-wrap">
+      <h2 id="rel-h" class="case-rel-h">비슷한 {{ site.cases_label }}</h2>
+      <div class="cases-grid">
+        {%- for p in related[:3] %}
+        {% include "card.html" %}
+        {%- endfor %}
+      </div>
+    </div>
+  </section>
+  {%- endif %}
+
+  <nav class="g-wrap case-back" aria-label="목록">
+    {%- if post.category_url %}<a href="{{ root }}{{ post.category_url }}">← {{ post.category_name }} 사례 더 보기</a>{% endif %}
+    <a href="{{ root }}cases/">전체 {{ site.cases_label }} 목록</a>
+  </nav>
+</article>
+{% endblock %}

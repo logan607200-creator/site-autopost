@@ -1,0 +1,56 @@
+# 그릿서비스 수리사례 사이트 정보 (SPEC.md 형식)
+# 값은 gritservice-site/make_grit.py 상수 그대로 (2026-10-22 기준). 바꿀 때는 make_grit.py 와 같이 바꾼다.
+# 영업시간·24시간 상담·대차·가격은 사장님 확인 전이라 여기에 넣지 않는다.
+key: grit
+name: 그릿서비스
+name_en: GRIT SERVICE
+cases_label: 수리사례   # 화면·제목·빵부스러기 용어 (엔진·템플릿 공통)
+company: (주)그릿서비스
+site: https://gritservice.co.kr/
+phone: 1577-0412
+tel: "15770412"
+kakao: https://pf.kakao.com/_UExgxaX
+blog: https://blog.naver.com/grit_service
+instagram: https://www.instagram.com/grit_service/
+map: https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EA%B5%90%ED%95%98%EB%A1%9C%201312-53
+address: 경기도 파주시 교하로 1312-53, 1동 1층
+brand_color: "#004a9f"
+logo: assets/grit-service-logo.png
+default_image: assets/og-image.jpg
+regions: [파주, 운정, 교하, 금촌, 문산, 일산, 김포]
+
+# 카테고리 = 서비스 기준 6개.
+# 목록 주소는 /cases/{slug}/ 이다. 기존 서비스 상세 페이지(/accident-repair/ 등)와 이름이 같아도
+# /cases/ 아래라 주소가 겹치지 않는다. service_page 는 같은 서비스의 기존 상세 페이지(사이트 루트 기준, 없으면 빈칸).
+# 글 slug 는 날짜(YYMMDD)로 시작하므로 카테고리 slug 와 겹치지 않는다.
+categories:
+  - key: accident
+    slug: accident-repair
+    name: 사고수리
+    service_page: accident-repair/
+    intro: "파주 교하 그릿서비스에 입고된 사고 차량의 실제 수리 기록입니다. 접촉사고부터 큰 사고까지 손상 진단, 부품 교환, 판금·도색, 출고 점검을 어떤 순서로 했는지 정리했습니다. 운정·금촌·일산에서 오신 국산차·수입차 사례도 함께 볼 수 있습니다."
+  - key: painting
+    slug: painting
+    name: 판금·도색
+    service_page: painting/
+    intro: "찌그러짐·긁힘·문콕을 판금으로 펴고 원래 색에 맞춰 조색·도색한 파주 그릿서비스의 작업 기록입니다. 교환과 판금 중 무엇을 골랐는지, 부분도색 범위를 어떻게 정했는지 차종별로 볼 수 있습니다."
+  - key: insurance
+    slug: insurance-repair
+    name: 보험수리
+    service_page: insurance-repair/
+    intro: "자차·대물 보험으로 진행한 파주 그릿서비스의 수리 사례입니다. 사고 접수부터 보험사 협의, 수리, 출고까지 고객이 무엇을 준비했고 어떤 순서로 진행됐는지 정리했습니다."
+  - key: warranty
+    slug: certified-repair
+    name: 중고차 성능보증수리
+    service_page: certified-repair/
+    intro: "중고차를 산 뒤 성능·상태점검기록부와 다른 고장이 발견돼 성능·상태점검 책임보험(성능보증보험)으로 수리한 사례입니다. 파주·운정·일산 고객의 진단 결과, 보험 접수, 수리 과정을 차종별로 모았습니다."
+  - key: maintenance
+    slug: maintenance
+    name: 자동차정비
+    service_page: ""
+    intro: "엔진오일, 브레이크, 배터리, 타이어, 경고등 점검 등 파주 그릿서비스의 정비 기록입니다. 어떤 증상으로 입고됐고 무엇을 점검해 어떤 부품을 교환했는지 국산차·수입차별로 정리했습니다."
+  - key: exterior
+    slug: exterior-care
+    name: 외형관리·PPF
+    service_page: ""
+    intro: "광택, 코팅, PPF 보호필름, 프리미엄 세차 등 파주 교하 그릿서비스의 외형관리 작업 기록입니다. 시공 전후 도장면 상태와 작업 순서를 사진으로 확인할 수 있습니다."

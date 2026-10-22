@@ -1,0 +1,60 @@
+{#- 로건 홈(index.php)에 붙일 "최근 정비사례" 조각. 변수: posts(최근 6개), root("")
+    붙일 위치 제안: #works(Selected Works) 섹션 바로 뒤. 홈의 .wrap/.eyebrow/.section-title/.btn 을 그대로 쓰고,
+    새 규칙은 모두 cases- 접두어라 홈 CSS 와 부딪히지 않음. JS 없음. -#}
+{% if posts %}
+<style>
+  .cases-home{background:#f7f4ef;border-top:1px solid #e6e0d8}
+  .cases-home-head{display:flex;justify-content:space-between;align-items:end;gap:40px}
+  .cases-home-head p.cases-home-lead{max-width:540px;color:#5f5a54;margin:0;word-break:keep-all}
+  .cases-home .cases-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:38px}
+  .cases-card{background:#fff;border:1px solid #e1ddd6;transition:border-color .2s,box-shadow .2s}
+  .cases-card:hover{border-color:#cdb7b9;box-shadow:0 16px 36px rgba(75,44,40,.08)}
+  .cases-card-link{display:flex;flex-direction:column;height:100%}
+  .cases-card-img{position:relative;aspect-ratio:3/2;overflow:hidden;background:#e4dfd8}
+  .cases-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+  .cases-card:hover .cases-card-img img{transform:scale(1.03)}
+  .cases-card-cat{position:absolute;left:0;top:0;background:rgba(17,17,17,.82);color:#fff;font-size:11px;font-weight:700;letter-spacing:.08em;padding:7px 10px}
+  .cases-draft-chip{position:absolute;right:8px;top:8px;background:#fff4d6;color:#6b4a00;font-size:11px;font-weight:800;padding:4px 8px;border:1px dashed #c99a2e}
+  .cases-card-body{display:flex;flex-direction:column;flex:1;padding:18px 20px}
+  .cases-card-car{margin:0 0 6px;font-size:12px;letter-spacing:.06em;font-weight:700;color:#c42739}
+  .cases-card-title{margin:0;font-size:19px;line-height:1.42;letter-spacing:-.03em;font-weight:800;color:#171717;word-break:keep-all}
+  .cases-card-work{margin:8px 0 0;font-size:14px;line-height:1.6;color:#5d5852}
+  .cases-card-foot{margin:auto 0 0;padding-top:16px;display:flex;justify-content:space-between;align-items:center;font-size:12px;color:#6b655e}
+  .cases-card-more{font-weight:700;color:#2a2a2a}
+  .cases-card-more:after{content:" →";color:#c42739}
+  .cases-home-more{display:flex;justify-content:center;margin-top:34px}
+  .cases-home-more .btn{min-width:240px}
+  @media(max-width:900px){.cases-home-head{display:block}.cases-home-head p.cases-home-lead{margin-top:6px}.cases-home .cases-grid{grid-template-columns:1fr 1fr}}
+  @media(max-width:620px){
+    .cases-home .cases-grid{grid-template-columns:1fr;gap:10px;margin-top:26px}
+    .cases-home .cases-card-link{flex-direction:row}
+    .cases-home .cases-card-img{flex:0 0 112px;aspect-ratio:auto;min-height:112px}
+    .cases-home .cases-card-cat,.cases-home .cases-card-work,.cases-home .cases-card-more{display:none}
+    .cases-home .cases-draft-chip{right:auto;left:6px;top:6px;font-size:10px;padding:2px 6px}
+    .cases-home .cases-card-body{padding:12px 14px}
+    .cases-home .cases-card-car{font-size:11px;margin-bottom:4px}
+    .cases-home .cases-card-title{font-size:16px;line-height:1.45}
+    .cases-home .cases-card-foot{padding-top:8px}
+    .cases-home-more .btn{width:100%}
+  }
+</style>
+<section class="cases-home" id="cases" aria-labelledby="cases-home-title">
+  <div class="wrap">
+    <div class="cases-home-head">
+      <div>
+        <div class="eyebrow">Case Study</div>
+        <h2 class="section-title" id="cases-home-title">최근 {{ site.cases_label }}</h2>
+      </div>
+      <p class="cases-home-lead">마세라티·페라리 실제 입고 차량의 증상, 진단, 작업 과정을 한 건씩 기록합니다. 비슷한 증상이 있다면 먼저 확인해 보세요.</p>
+    </div>
+    <div class="cases-grid">
+      {% for p in posts[:6] %}
+      {% include "card.html" %}
+      {% endfor %}
+    </div>
+    <div class="cases-home-more">
+      <a class="btn" href="{{ root }}cases/">{{ site.cases_label }} 전체 보기 →</a>
+    </div>
+  </div>
+</section>
+{% endif %}

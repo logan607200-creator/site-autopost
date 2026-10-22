@@ -1,0 +1,45 @@
+# 그릿서비스 robots.txt — 모든 검색엔진·AI 검색 수집 허용
+User-agent: *
+Allow: /
+
+# 네이버
+User-agent: Yeti
+Allow: /
+
+# 구글
+User-agent: Googlebot
+Allow: /
+User-agent: Googlebot-Image
+Allow: /
+
+# 다음·빙
+User-agent: Daum
+Allow: /
+User-agent: Daumoa
+Allow: /
+User-agent: Bingbot
+Allow: /
+
+# AI 검색(ChatGPT, Gemini, Claude, Perplexity)
+User-agent: GPTBot
+Allow: /
+User-agent: OAI-SearchBot
+Allow: /
+User-agent: ChatGPT-User
+Allow: /
+User-agent: Google-Extended
+Allow: /
+User-agent: ClaudeBot
+Allow: /
+User-agent: Claude-SearchBot
+Allow: /
+User-agent: PerplexityBot
+Allow: /
+User-agent: Perplexity-User
+Allow: /
+User-agent: Applebot
+Allow: /
+User-agent: Applebot-Extended
+Allow: /
+
+Sitemap: https://gritservice.co.kr/sitemap.xml
