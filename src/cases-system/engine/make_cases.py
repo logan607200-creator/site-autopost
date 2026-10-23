@@ -105,6 +105,37 @@ def load_site(site_dir):
     return site
 
 
+TITLE_MAX, DESC_MAX = 40, 80
+
+
+def fit_title(t, title, name):
+    """제목이 40자를 넘으면 '본제목 | 사이트이름' → 'title | 사이트이름' → 본제목 → title 순으로 맞는 것을 쓴다."""
+    t = str(t).strip()
+    if len(t) <= TITLE_MAX:
+        return t
+    base = re.sub(r"\s*\|\s*[^|]*$", "", t).strip()
+    for c in (f"{base} | {name}", f"{title} | {name}", base, str(title)):
+        if len(c) <= TITLE_MAX:
+            return c
+    return str(title)[:TITLE_MAX - 1].rstrip() + "…"
+
+
+def fit_desc(d):
+    """설명이 80자를 넘으면 앞 문장부터 80자 안에 들어가는 만큼만 쓰고, 그래도 길면 단어 단위로 자른다."""
+    d = " ".join(str(d).split())
+    if len(d) <= DESC_MAX:
+        return d
+    out = ""
+    for sent in re.split(r"(?<=[.])\s+", d):
+        if len((out + " " + sent).strip()) > DESC_MAX:
+            break
+        out = (out + " " + sent).strip()
+    if len(out) >= 40:
+        return out
+    cut = d[:DESC_MAX - 1]
+    return (cut[:cut.rfind(" ")] if " " in cut else cut).rstrip(" ,·") + "…"
+
+
 def check_post(p, fname, cats):
     where = f"posts/{fname}"
     for k in REQUIRED:
@@ -125,11 +156,14 @@ def check_post(p, fname, cats):
         p["date"] = dt.date.min
     if p.get("category") and p["category"] not in cats:
         err(f"{where}: category '{p['category']}' 가 site.yaml 에 없음 (가능: {', '.join(cats)})")
-    if len(str(p.get("seo_title", ""))) > 70:
-        warn(f"{where}: seo_title {len(p['seo_title'])}자 (70자 초과)")
+    # 네이버 서치어드바이저 기준: 제목 40자, 설명 80자 이내. 넘으면 경고만 하고 fit_* 로 줄여 쓴다.
+    if len(str(p.get("seo_title", ""))) > TITLE_MAX:
+        warn(f"{where}: seo_title {len(p['seo_title'])}자 ({TITLE_MAX}자 초과 → 자동으로 줄임)")
     dl = len(str(p.get("description", "")))
-    if p.get("description") and not 50 <= dl <= 160:
-        err(f"{where}: description {dl}자 (50~160자여야 함)")
+    if p.get("description") and dl < 50:
+        err(f"{where}: description {dl}자 (50~{DESC_MAX}자여야 함)")
+    elif dl > DESC_MAX:
+        warn(f"{where}: description {dl}자 ({DESC_MAX}자 초과 → 자동으로 줄임)")
     car = p.get("car") or {}
     if not isinstance(car, dict) or not car.get("brand") or not car.get("model"):
         err(f"{where}: car.brand, car.model 필요")
@@ -404,6 +438,8 @@ def main():
     common = {"site": site, "categories": used, "preview": a.preview}
 
     for p in posts:
+        p["seo_title"] = fit_title(p["seo_title"], p["title"], site["name"])
+        p["description"] = fit_desc(p["description"])
         meta = head_meta(site, p["seo_title"], p["description"], p["abs_url"],
                          og_image(site, p), "article", a.preview and p["draft"])
         ld = post_jsonld(p, site)
@@ -419,8 +455,7 @@ def main():
         url = site["site"] + "cases/" + (f"{c['slug']}/" if c else "")
         lab = site["cases_label"]
         title = f"{c['name']} {lab} | {site['name']}" if c else f"{lab} | {site['name']}"
-        desc = ((c.get("intro") if c else None) or site["cases_intro"]).strip()
-        desc = desc if len(desc) <= 160 else desc[:157].rstrip() + "…"
+        desc = fit_desc((c.get("meta_desc") or c.get("intro") if c else None) or site.get("cases_meta_desc") or site["cases_intro"])
         meta = head_meta(site, title, desc, url, og_image(site, ps[0]) if ps else og_image(site, None), "website",
                          bool(c) and all(p["draft"] for p in ps))  # draft 뿐인 카테고리는 noindex
         ld = list_jsonld(site, ps, url, title, desc, c)

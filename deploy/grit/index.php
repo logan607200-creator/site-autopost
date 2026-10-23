@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>파주 사고수리·판금도색 공업사 그릿서비스 | 자동차정비·외형관리·중고차 성능보증수리</title>
-  <meta name="description" content="파주 교하 자동차 공업사 그릿서비스. 국산차·수입차 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 광택·PPF 외형관리, 탁송까지. 전화 상담 24시간 1577-0412(작업 평일 09~18시)." />
+  <title>파주 사고수리·판금도색 공업사 | 그릿서비스</title>
+  <meta name="description" content="파주 교하 자동차 공업사 그릿서비스. 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 외형관리. 24시간 전화 상담 1577-0412." />
   <meta name="keywords" content="그릿서비스, 파주 사고수리, 파주 공업사, 파주 판금도색, 파주 판금도장, 파주 자동차정비, 파주 정비소, 파주 카센터, 파주 보험수리, 중고차 성능보증수리, 성능보증보험 수리, 파주 외형관리, 파주 광택, 파주 PPF, 파주 세차, 교하 공업사, 교하 사고수리, 운정 사고수리, 운정 판금도색, 운정 정비소" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -16,8 +16,8 @@
   <meta name="google-site-verification" content="atX3kvp3_U7pqERqpAkMf8QtMQkFy5D5HXk7pBqZ00I" />
   <meta name="naver-site-verification" content="a8e8cd270aae2495f2acadde3de5b7ce966b4a23" />
   <!-- <meta name="msvalidate.01" content="빙웹마스터도구_코드" /> -->
-  <meta property="og:title" content="파주 사고수리·판금도색 공업사 그릿서비스 | 자동차정비·외형관리·중고차 성능보증수리" />
-  <meta property="og:description" content="파주 교하 자동차 공업사 그릿서비스. 국산차·수입차 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 광택·PPF 외형관리, 탁송까지. 전화 상담 24시간 1577-0412(작업 평일 09~18시)." />
+  <meta property="og:title" content="파주 사고수리·판금도색 공업사 | 그릿서비스" />
+  <meta property="og:description" content="파주 교하 자동차 공업사 그릿서비스. 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 외형관리. 24시간 전화 상담 1577-0412." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="그릿서비스" />
   <link rel="canonical" href="https://gritservice.co.kr/" />
@@ -33,8 +33,8 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="파주 교하 그릿서비스 자동차 공업사 외관" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="파주 사고수리·판금도색 공업사 그릿서비스 | 자동차정비·외형관리·중고차 성능보증수리" />
-  <meta name="twitter:description" content="파주 교하 자동차 공업사 그릿서비스. 국산차·수입차 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 광택·PPF 외형관리, 탁송까지. 전화 상담 24시간 1577-0412(작업 평일 09~18시)." />
+  <meta name="twitter:title" content="파주 사고수리·판금도색 공업사 | 그릿서비스" />
+  <meta name="twitter:description" content="파주 교하 자동차 공업사 그릿서비스. 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 외형관리. 24시간 전화 상담 1577-0412." />
   <meta name="twitter:image" content="https://gritservice.co.kr/assets/og-image.jpg" />
   <meta name="theme-color" content="#004a9f" />
   <link rel="icon" type="image/png" sizes="64x64" href="assets/favicon-64.png" />
@@ -520,8 +520,8 @@
       "@type": "WebPage",
       "@id": "https://gritservice.co.kr/#webpage",
       "url": "https://gritservice.co.kr/",
-      "name": "파주 사고수리·판금도색 공업사 그릿서비스 | 자동차정비·외형관리·중고차 성능보증수리",
-      "description": "파주 교하 자동차 공업사 그릿서비스. 국산차·수입차 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 광택·PPF 외형관리, 탁송까지. 전화 상담 24시간 1577-0412(작업 평일 09~18시).",
+      "name": "파주 사고수리·판금도색 공업사 | 그릿서비스",
+      "description": "파주 교하 자동차 공업사 그릿서비스. 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 외형관리. 24시간 전화 상담 1577-0412.",
       "inLanguage": "ko-KR",
       "isPartOf": {
         "@id": "https://gritservice.co.kr/#website"

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>마세라티·페라리 전문 정비 로건서비스 | 파주 마세라티 정비·보험수리·성능보증수리·전국 탁송</title>
-  <meta name="description" content="2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주 로건서비스. 진단·일반정비, 보험수리, 중고차 성능보증수리, 사고수리는 그룹사 그릿서비스와 연계. 전국 탁송(일부 금액 지원). 상담 1544-6072." />
+  <title>마세라티·페라리 전문 정비 | 파주 로건서비스</title>
+  <meta name="description" content="2016년부터 마세라티·페라리만 정비하는 경기도 파주 로건서비스. 진단·정비, 보험수리, 성능보증수리, 전국 탁송. 1544-6072." />
   <meta name="keywords" content="로건서비스, 마세라티 정비, 마세라티 수리, 마세라티 정비소, 마세라티 전문 정비소, 페라리 정비, 페라리 수리, 페라리 정비소, 마세라티 사고수리, 마세라티 보험수리, 마세라티 판금도장, 마세라티 성능보험, 마세라티 성능보증, 페라리 사고수리, 페라리 성능보증, 기블리 정비, 르반떼 정비, 콰트로포르테 정비, 그란투리스모 정비, 파주 마세라티, 파주 수입차 정비, 일산 마세라티, 서울 마세라티 정비" />
   <meta name="robots" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
   <meta name="googlebot" content="index,follow,max-image-preview:large,max-snippet:-1,max-video-preview:-1" />
@@ -16,8 +16,8 @@
   <meta name="google-site-verification" content="p-8lkNpSeicEC8E1vH6T3h3EUMEdwqIWTZJMJ4WYzyc" />
   <meta name="naver-site-verification" content="11b865f2f01b57dc6af4558715d13159606eace7" />
   <meta name="msvalidate.01" content="8EF72B406A859EBCAD0D9DBF31D7DE00" />
-  <meta property="og:title" content="마세라티·페라리 전문 정비 로건서비스 | 파주 마세라티 정비·보험수리·성능보증수리·전국 탁송" />
-  <meta property="og:description" content="2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주 로건서비스. 진단·일반정비, 보험수리, 중고차 성능보증수리, 사고수리는 그룹사 그릿서비스와 연계. 전국 탁송(일부 금액 지원). 상담 1544-6072." />
+  <meta property="og:title" content="마세라티·페라리 전문 정비 | 파주 로건서비스" />
+  <meta property="og:description" content="2016년부터 마세라티·페라리만 정비하는 경기도 파주 로건서비스. 진단·정비, 보험수리, 성능보증수리, 전국 탁송. 1544-6072." />
   <meta property="og:type" content="website" />
   <meta property="og:site_name" content="로건서비스" />
   <link rel="canonical" href="https://loganservice.co.kr/" />
@@ -34,8 +34,8 @@
   <meta property="og:image:height" content="630" />
   <meta property="og:image:alt" content="로건서비스 마세라티·페라리 전문 정비" />
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="마세라티·페라리 전문 정비 로건서비스 | 파주 마세라티 정비·보험수리·성능보증수리·전국 탁송" />
-  <meta name="twitter:description" content="2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주 로건서비스. 진단·일반정비, 보험수리, 중고차 성능보증수리, 사고수리는 그룹사 그릿서비스와 연계. 전국 탁송(일부 금액 지원). 상담 1544-6072." />
+  <meta name="twitter:title" content="마세라티·페라리 전문 정비 | 파주 로건서비스" />
+  <meta name="twitter:description" content="2016년부터 마세라티·페라리만 정비하는 경기도 파주 로건서비스. 진단·정비, 보험수리, 성능보증수리, 전국 탁송. 1544-6072." />
   <meta name="twitter:image" content="https://loganservice.co.kr/assets/og-image.jpg" />
   <meta name="theme-color" content="#c42739" />
   <link rel="icon" type="image/png" href="/assets/favicon.png" />
@@ -442,8 +442,8 @@
       "@type": "WebPage",
       "@id": "https://loganservice.co.kr/#webpage",
       "url": "https://loganservice.co.kr/",
-      "name": "마세라티·페라리 전문 정비 로건서비스 | 파주 마세라티 정비·보험수리·성능보증수리·전국 탁송",
-      "description": "2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주 로건서비스. 진단·일반정비, 보험수리, 중고차 성능보증수리, 사고수리는 그룹사 그릿서비스와 연계. 전국 탁송(일부 금액 지원). 상담 1544-6072.",
+      "name": "마세라티·페라리 전문 정비 | 파주 로건서비스",
+      "description": "2016년부터 마세라티·페라리만 정비하는 경기도 파주 로건서비스. 진단·정비, 보험수리, 성능보증수리, 전국 탁송. 1544-6072.",
       "inLanguage": "ko-KR",
       "isPartOf": {
         "@id": "https://loganservice.co.kr/#website"

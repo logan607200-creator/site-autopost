@@ -35,8 +35,8 @@ date: 2026-10-22
 draft: true            # true = 예시/확인 전. 업로드본에서 빠지고 미리보기에만 나옴
 category: accident     # site.yaml categories 의 key
 title: "K5 후방추돌 범퍼·트렁크 판금도색"          # 화면 H1 (증상/사고 + 작업)
-seo_title: "기아 K5 후방추돌 리어범퍼 교환·트렁크 판금도색 보험수리 | 파주 그릿서비스"   # <title>, 60자 안팎
-description: "..."     # meta description 80~120자, 지역어 1회
+seo_title: "기아 K5 후방추돌 리어범퍼 교환·트렁크 판금도색 보험수리 | 파주 그릿서비스"   # <title>, 40자 이내(네이버 기준)
+description: "..."     # meta description 50~80자(네이버 기준), 지역어 1회
 summary: "..."         # 한두 문장 결론. 숫자·사실 위주. AI 발췌용, 글 맨 위 요약 박스
 car: {brand: 기아, model: K5, year: 2021, km: 45000}   # year/km 모르면 생략
 region: 운정            # 고객 지역(선택)

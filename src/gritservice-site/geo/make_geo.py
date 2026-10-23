@@ -11,8 +11,8 @@ def build(OUT, SITE, PHONE, TEL, ADDR_FULL, KAKAO, BLOG, INSTA, COMPANY, CEO, BI
     items = qa(PHONE, ADDR_FULL, KAKAO, BLOG, INSTA)
     url = SITE + FAQ_PATH
     cats = list(dict.fromkeys(c for c, _, _, _ in items))
-    title = "파주 자동차 공업사 질문 200 | 사고수리·판금도색·보험수리·성능보증수리 - 그릿서비스"
-    desc = f"파주 교하 자동차 공업사 그릿서비스가 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 정비, 외형관리, 탁송에 대해 자주 받는 질문 200개에 답합니다. 상담 {PHONE}."
+    title = "파주 공업사 자주 묻는 질문 | 그릿서비스"  # 40자 이내
+    desc = f"파주 교하 공업사 그릿서비스가 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 탁송 질문에 답합니다. 상담 {PHONE}."  # 80자 이내
 
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "FAQPage", "@id": url + "#faq", "url": url, "name": title, "inLanguage": "ko-KR", "dateModified": TODAY,
