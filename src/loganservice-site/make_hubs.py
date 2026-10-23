@@ -196,6 +196,15 @@ made.append(page("delivery/", "마세라티 전국 탁송 정비 | 로건서비�
                  "마세라티 전국 탁송 정비", f"로건서비스는 경기도 파주({ADDR})에 있는 마세라티·페라리 전문 정비소입니다. 직접 오기 어려우면 탁송으로 입고·출고할 수 있습니다.",
                  [("탁송", "delivery/")], body))
 
+# 404 페이지(.htaccess 의 ErrorDocument 404 /404.html). 모든 링크를 절대 주소로
+_tmp = page("x404/", "페이지를 찾을 수 없습니다 | 로건서비스", "주소가 바뀌었거나 없는 페이지입니다. 로건서비스 홈과 정비사례에서 찾아 주세요.",
+            "페이지를 찾을 수 없습니다", "주소가 바뀌었거나 없는 페이지입니다. 아래에서 찾아 주세요.", [("안내", "x404/")],
+            '  <ul class="card-list"><li><a href="../">로건서비스 홈</a></li><li><a href="../cases/">정비사례</a></li><li><a href="../maserati/">모델별 정비</a></li><li><a href="../faq/">자주 묻는 질문</a></li></ul>\n')
+_h = (root / "x404" / "index.html").read_text(encoding="utf-8")
+_h = re.sub(r'(href|src)="\.\./', lambda m: f'{m.group(1)}="{SITE}', _h).replace(SITE + "x404/", SITE + "404.html")
+(root / "404.html").write_text(_h)
+import shutil; shutil.rmtree(root / "x404")
+
 # 홈에 링크 블록(표식으로 한 번만)
 idx = root / "index.php"
 s = idx.read_text(encoding="utf-8")

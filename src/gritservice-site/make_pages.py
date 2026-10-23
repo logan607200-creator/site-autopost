@@ -360,3 +360,18 @@ def build_privacy(OUT):
     d = OUT / "privacy"
     d.mkdir(parents=True, exist_ok=True)
     (d / "index.php").write_text(head(title, desc, url, 1, {"@context": "https://schema.org", "@graph": [crumb_ld([("개인정보처리방침", "privacy/")])]}) + body + foot(1))
+
+
+def build_404(OUT):
+    """없는 주소로 왔을 때 보여 줄 페이지(.htaccess 의 ErrorDocument 404 /404.html). 절대 주소로 링크(어느 폴더에서 열려도 깨지지 않게)."""
+    s = C["SITE"]
+    html = head("페이지를 찾을 수 없습니다 | 그릿서비스", "주소가 바뀌었거나 없는 페이지입니다. 그릿서비스 홈, 수리사례, 자주 묻는 질문에서 찾아 주세요.", s + "404.html", 0)
+    html = html.replace('href="assets/', f'href="{s}assets/').replace('src="assets/', f'src="{s}assets/')
+    html = re.sub(r'(<nav aria-label="주요 메뉴">.*?</nav>)', lambda m: re.sub(r'href="(?!tel:|https?:)([^"]*)"', lambda n: f'href="{s}{n.group(1)}"', m.group(1)), html, flags=re.S)
+    body = f'''  <h1>페이지를 찾을 수 없습니다</h1>
+  <p class="lead">주소가 바뀌었거나 없는 페이지입니다. 아래에서 찾아 주세요.</p>
+  <ul class="card-list"><li><a href="{s}">그릿서비스 홈</a></li><li><a href="{s}cases/">수리사례</a></li><li><a href="{s}faq/">자주 묻는 질문</a></li><li><a href="{s}area/">오시는 길</a></li></ul>
+'''
+    f = foot(0).replace('href="./', f'href="{s}')
+    f = re.sub(r'href="(?!tel:|https?:)([^"]*)"', lambda n: f'href="{s}{n.group(1)}"', f)
+    (OUT / "404.html").write_text(html + body + f)

@@ -1,0 +1,57 @@
+# 그릿서비스 .htaccess (2026-10-24) — 이름을 .htaccess 로 바꿔 /public_html/gritservice/ 에 올립니다.
+# 서버 그 폴더에 .htaccess 가 이미 있으면 먼저 내려받아 보관한 뒤 이 파일로 바꿉니다. 문제가 생기면 보관한 파일로 되돌리면 원래대로.
+# 올린 직후 확인: https://gritservice.co.kr/ , http://gritservice.co.kr/ , https://www.gritservice.co.kr/ , https://loganservice.co.kr/gritservice/
+#   → 네 주소 모두 https://gritservice.co.kr/ 로 열려야 합니다. 계속 새로고침되며 안 열리면 이 파일을 지우고 알려 주세요.
+RewriteEngine On
+# gritservice.co.kr 이 아닌 주소(www, loganservice.co.kr/gritservice/ 등)로 들어오면 대표 주소로 → 로건 사이트 중복 노출 해결
+RewriteCond %{HTTP_HOST} !^gritservice\.co\.kr$ [NC]
+RewriteRule ^(.*)$ https://gritservice.co.kr/$1 [R=301,L]
+# http → https
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://gritservice.co.kr/$1 [R=301,L]
+# index.php·index.html 로 들어와도 폴더 주소로(서비스 상세의 /painting/index.html 등)
+RewriteCond %{THE_REQUEST} \s/+((?:[^?\s]*/)?)index\.(php|html)[\s?] [NC]
+RewriteRule ^ https://gritservice.co.kr/%1 [R=301,L]
+
+# ---- 없는 주소·숨김 파일 ----
+ErrorDocument 404 /404.html
+# .git·.env 같은 숨김 파일과 백업 파일은 열지 않음(.well-known 은 인증서 발급용이라 허용)
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule \.(bak|old|orig|swp|log|sql|zip)$ - [F,L,NC]
+
+# ---- 보안 헤더 ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # HSTS(브라우저가 항상 https 로만 접속): https 가 1~2주 문제없이 돌면 아래 줄 앞의 # 를 지우세요.
+  # Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# ---- 속도: 압축 + 브라우저 캐시 ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/rss+xml application/javascript application/json application/ld+json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xml "access plus 1 hour"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|jpe?g|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+FileETag MTime Size

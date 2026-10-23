@@ -89,6 +89,8 @@ for f in pages:
     s = f.read_text(encoding="utf-8", errors="replace")
     if "<html" not in s:
         continue  # 조각(home-section 등)
+    if rel == "404.html":
+        continue  # 오류 페이지는 검색 대상 아님(canonical 없음이 정상)
     if rel.startswith("work/"):
         continue  # 직원용 바로가기(손님용 페이지 아님)
     p = P()
