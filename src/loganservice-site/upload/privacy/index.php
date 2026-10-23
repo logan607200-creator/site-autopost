@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="color-scheme" content="only light" />
   <title>개인정보처리방침 | 로건서비스</title>
-  <meta name="description" content="로건서비스(주식회사 로건) 개인정보처리방침: 처리 항목·목적, 보유기간, 파기, 제3자 제공, 처리위탁, 쿠키·구글 애널리틱스, 정보주체 권리, 보호책임자 안내." />
+  <meta name="description" content="로건서비스 개인정보처리방침: 처리 항목·목적, 보유기간, 파기, 제3자 제공·위탁, 쿠키·분석도구, 권리 행사 방법." />
   <meta name="robots" content="index,follow" />
   <link rel="canonical" href="https://loganservice.co.kr/privacy/" />
   <link rel="icon" type="image/png" href="/assets/favicon-64.png" />
