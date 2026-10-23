@@ -9,6 +9,10 @@ if (Test-Path $SiteFile) { $n = (Get-Content $SiteFile -Raw -Encoding UTF8).Trim
 # WinSCP 는 설치 방식에 따라 위치가 다르다(winget 은 사용자 폴더에 설치)
 $WinScp = @("C:\Program Files (x86)\WinSCP\WinSCP.com", "C:\Program Files\WinSCP\WinSCP.com",
             (Join-Path $env:LOCALAPPDATA "Programs\WinSCP\WinSCP.com")) | Where-Object { Test-Path $_ } | Select-Object -First 1
+# 막 설치한 직후 등 PATH 에 git 이 없으면 기본 설치 위치를 붙인다
+if (-not (Get-Command git -ErrorAction SilentlyContinue)) {
+  $env:Path += ";C:\Program Files\Git\cmd;" + (Join-Path $env:LOCALAPPDATA "Programs\Git\cmd")
+}
 $Log    = Join-Path $Repo "upload-log.txt"
 $State  = Join-Path $Repo ".last-uploaded"
 $Remote = @{ "deploy/grit/" = "/public_html/gritservice/"; "deploy/logan/" = "/public_html/" }
