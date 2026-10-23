@@ -4,6 +4,7 @@ date: 2026-09-18
 draft: false
 source: https://blog.naver.com/grit_service/224415468768
 photos_pending: false
+mentions: ["https://loganservice.co.kr/#logan-service"]   # 본문에서 안내하는 그룹사 로건서비스(@id 로만 참조)
 category: maintenance
 title: 마세라티 콰트로포르테 좌우 로어암 교환
 seo_title: "마세라티 콰트로포르테 로어암 교환 | 그릿서비스"
@@ -27,7 +28,7 @@ tags:
 - 파주자동차정비소
 - 마세라티 로어암 교환
 - 운정자동차정비
-cover: {src: assets/cases/260918-maserati-quattroporte-lower-arm-01.webp, alt: " 마세라티 콰트로포르테 좌우 로어암 교환"}
+cover: {src: assets/cases/260918-maserati-quattroporte-lower-arm-01.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환"}
 sections:
 - h2: 입고와 하체 점검
   text: '마세라티 콰트로포르테를 리프트로 들어 올려 하체 전반을 점검하는 과정에서 로어암 상태를 확인했습니다.
@@ -37,15 +38,15 @@ sections:
 
     '
   photos:
-    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-02.webp, alt: " 입고와 하체 점검 사진 1"}
-    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-03.webp, alt: " 입고와 하체 점검 사진 2"}
+    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-02.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환 — 입고와 하체 점검"}
+    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-03.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환 — 입고와 하체 점검 (2)"}
 - h2: 교환 작업
   text: '좌우 로어암을 한쪽씩 차례로 떼어 내고 새 부품을 달았습니다. 떼어 낸 기존 부품과 새 부품을 나란히 놓으면 상태 차이가 눈으로도 구분됩니다. 장착 후에는 볼트를 규정 토크로 조여 마무리했습니다.
 
     '
   photos:
-    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-04.webp, alt: " 교환 작업 사진 1"}
-    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-05.webp, alt: " 교환 작업 사진 2"}
+    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-04.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환 — 교환 작업"}
+    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-05.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환 — 교환 작업 (2)"}
 - h2: 휠 얼라인먼트와 출고 점검
   text: '로어암처럼 바퀴 위치를 잡아 주는 부품을 바꾸면 바퀴가 노면에 닿는 각도가 조금 달라질 수 있습니다. 그래서 교환 후에는 장비로 휠 얼라인먼트를 다시 맞췄습니다. 이 과정까지 마친 뒤 시운전으로 최종 상태를 확인하고 출고했습니다.
 
@@ -57,7 +58,7 @@ sections:
 
     '
   photos:
-    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-06.webp, alt: " 휠 얼라인먼트와 출고 점검 사진 1"}
+    - {src: assets/cases/260918-maserati-quattroporte-lower-arm-06.webp, alt: "마세라티 콰트로포르테 좌우 로어암 교환 — 휠 얼라인먼트와 출고 점검"}
 faq:
 - q: 로어암 부싱이 닳으면 어떤 증상이 있나요?
   a: 핸들 떨림과 주행 중 하체 소음이 대표적입니다. 정확한 상태는 리프트에서 하체를 점검해 확인합니다.

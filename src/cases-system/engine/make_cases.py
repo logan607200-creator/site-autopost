@@ -8,9 +8,11 @@
         --copy-assets   쓰인 사진을 out_dir 에 복사(미리보기용)
 출력: out_dir/cases/ 아래 index.html, {카테고리}/index.html, {slug}/index.html, case.css,
       home-section.html, sitemap-cases.xml, llms-cases.txt, feed.xml
+      case.css 는 모든 페이지 <style> 에 인라인으로 넣는다(첫 표시 속도). 파일도 그대로 출력(다른 곳에서 쓸 수 있게).
+      카드용 썸네일: 사진 옆 thumbs/ 폴더에 폭 THUMB_W webp 를 만든다(없거나 원본보다 오래됐을 때만).
 검증 실패 시 종료 코드 1. 경고(seo_title 70자 초과 등)는 출력만 한다.
 """
-import argparse, datetime as dt, json, re, shutil, sys
+import argparse, datetime as dt, json, posixpath, re, shutil, sys
 from email.utils import format_datetime
 from pathlib import Path
 from xml.sax.saxutils import escape as xesc
@@ -24,6 +26,7 @@ KNOWN_LABELS = {"grit": "수리사례", "logan": "정비사례"}                
 SLUG_RE = re.compile(r"^\d{6}-[a-z0-9]+(?:-[a-z0-9]+){2,}$")
 REQUIRED = ["slug", "date", "category", "title", "seo_title", "description", "summary", "car", "sections"]  # cover 는 선택(없으면 site.default_image 를 og 이미지로)
 DEFAULT_WH = (1200, 800)
+THUMB_W = 420                     # 목록·홈 카드용 썸네일 폭(원본은 글 본문용으로 그대로)
 errors, warnings = [], []
 
 
@@ -32,13 +35,29 @@ def warn(msg): warnings.append(msg)
 
 
 # ---------- 필터 ----------
+LINK_RE = re.compile(r"(https?://[^\s<>()\"]+[^\s<>()\".,]|(?<![\w/.])(?:www\.)?(?:loganservice|gritservice)\.co\.kr(?:/[^\s<>()\"]*[^\s<>()\".,])?)")
+
+
+def _links(h):
+    """이스케이프된 글 안의 주소(https://…, loganservice.co.kr 등)를 <a> 로. 다른 사이트는 새 창."""
+    def a(m):
+        u = m.group(1)
+        href = u if u.startswith("http") else "https://" + u
+        return f'<a href="{href}" target="_blank" rel="noopener">{u}</a>'
+    return LINK_RE.sub(a, h)
+
+
+def autolink(text):
+    return Markup(_links(str(escape(str(text or "")))))
+
+
 def para(text):
-    """빈 줄 = 문단, **굵게** → <strong>, 줄바꿈 → <br>. 나머지는 모두 이스케이프."""
+    """빈 줄 = 문단, **굵게** → <strong>, 줄바꿈 → <br>, 주소 → 링크. 나머지는 모두 이스케이프."""
     if not text:
         return Markup("")
     out = []
     for block in re.split(r"\n\s*\n", str(text).strip()):
-        h = str(escape(block.strip()))
+        h = _links(str(escape(block.strip())))
         h = re.sub(r"\*\*(.+?)\*\*", r"<strong>\1</strong>", h)
         out.append("<p>" + h.replace("\n", "<br>\n") + "</p>")
     return Markup("\n".join(out))
@@ -85,6 +104,30 @@ class Images:
         if isinstance(photo, dict) and photo.get("src"):
             photo.setdefault("w", self.size(photo["src"])[0])
             photo.setdefault("h", self.size(photo["src"])[1])
+
+    def thumb(self, photo):
+        """카드용 썸네일(폭 THUMB_W)을 사진 옆 thumbs/ 에 만들고 photo['thumb'] 등에 넣는다. 원본이 작거나 없으면 안 만든다."""
+        if not (isinstance(photo, dict) and photo.get("src")) or "thumb" in photo:
+            return
+        self.size(photo["src"])
+        f, (w, h) = self.cache[photo["src"]]
+        if not f or w <= THUMB_W:
+            return
+        src = photo["src"]
+        tsrc = posixpath.join(posixpath.dirname(src), "thumbs", posixpath.basename(src).rsplit(".", 1)[0] + ".webp")
+        dst = f.parent / "thumbs" / (f.stem + ".webp")
+        th = round(h * THUMB_W / w)
+        if not dst.is_file() or dst.stat().st_mtime < f.stat().st_mtime:
+            try:
+                from PIL import Image
+                dst.parent.mkdir(parents=True, exist_ok=True)
+                with Image.open(f) as im:
+                    im.convert("RGB").resize((THUMB_W, th), Image.LANCZOS).save(dst, "WEBP", quality=78, method=6)
+            except Exception as e:
+                warn(f"썸네일 만들기 실패 {src}: {e}")
+                return
+        self.used[tsrc] = dst
+        photo.update(thumb=tsrc, thumb_w=THUMB_W, thumb_h=th)
 
 
 # ---------- 읽기·검증 ----------
@@ -231,25 +274,95 @@ def enrich(p, site, cats, imgs):
         for ph in s["photos"]:
             imgs.fill(ph)
             p["photos_all"].append(ph)
+    p["card_img"] = p["photos_all"][0] if p["photos_all"] else None   # 카드 사진 = 첫 사진(썸네일 포함)
+    if p["card_img"]:
+        imgs.thumb(p["card_img"])
 
 
 def og_image(site, p):
+    """글: 첫 사진. 사진 없는 글(photos_pending)은 공통 대표 사진이 아니라 사이트 로고(그 글 사진인 척하지 않게).
+    목록: 첫 글 사진, 없으면 site.default_image."""
     if p and p.get("photos_all"):
         return absu(site, p["photos_all"][0]["src"])
+    if p is not None:
+        return absu(site, site.get("logo") or site.get("default_image") or "")
     return absu(site, site.get("default_image") or site.get("logo") or "")
 
 
-def pick_related(p, posts):
+# ---------- 관련 사례 ----------
+REL_N = 3
+_STOP = {"교환", "교체", "수리", "점검", "작업", "정비", "입고", "출고", "사례", "확인", "원인", "순서", "함께", "그리고",
+         "앞", "뒤", "전", "후", "중", "및", "—", "-", "·"}
+
+
+def _model(p):
+    m = str((p.get("car") or {}).get("model", "")).strip()
+    return m.split(" ")[0].lower() if m else ""
+
+
+def _words(p):
+    """증상·부위 비교용 낱말: 제목·증상·작업·태그에서 차종 이름과 흔한 낱말을 뺀 것."""
+    car = " ".join(str(v) for v in (p.get("car") or {}).values()).lower()
+    raw = " ".join([str(p.get("title", ""))] + [str(x) for x in (p.get("symptoms") or []) + (p.get("work") or []) + (p.get("tags") or [])])
+    out = set()
+    for w in re.split(r"[\s,·/()\[\]—\-]+", raw.lower()):
+        w = re.sub(r"(을|를|이|가|은|는|의|과|와|로|으로)$", "", w)
+        if len(w) >= 2 and w not in _STOP and w not in car and not w.isdigit():
+            out.add(w)
+    return out
+
+
+def _rank(p, posts):
+    """p 와 가까운 순: 같은 모델 → 증상·부위 낱말 겹침 → 같은 분류 → 날짜 가까운 글."""
+    pw, pm = _words(p), _model(p)
+    def key(q):
+        return (-(pm != "" and _model(q) == pm), -len(pw & _words(q)), -(q["category"] == p["category"]),
+                abs((q["date"] - p["date"]).days), q["slug"])
+    return sorted((q for q in posts if q is not p), key=key)
+
+
+def assign_related(posts):
+    """글마다 관련 사례 REL_N 개. yaml related 를 먼저 쓰고 _rank 순으로 채운 뒤,
+    다른 글에서 들어오는 링크가 0개인 글이 없도록 바꿔 넣는다(들어오는 링크가 2개 이상인 자리만 내준다)."""
     by = {q["slug"]: q for q in posts}
-    if p.get("related"):
-        rel = [by[s] for s in p["related"] if s in by]
-    else:
-        rel = [q for q in posts if q["category"] == p["category"] and q is not p][:3]
-    for q in posts:
-        if len(rel) >= 3:
-            break
-        if q is not p and q not in rel:
-            rel.append(q)
+    rank = {q["slug"]: _rank(q, posts) for q in posts}
+    rel = {}
+    for p in posts:
+        fixed = [by[s] for s in (p.get("related") or []) if s in by and by[s] is not p][:REL_N]
+        p["_fixed"] = {q["slug"] for q in fixed}
+        r = list(fixed)
+        for q in rank[p["slug"]]:
+            if len(r) >= REL_N:
+                break
+            if q not in r:
+                r.append(q)
+        rel[p["slug"]] = r
+    if len(posts) > REL_N:
+        for _ in range(len(posts) * 2):
+            inc = {q["slug"]: 0 for q in posts}
+            for r in rel.values():
+                for q in r:
+                    inc[q["slug"]] += 1
+            orphans = [s for s, n in inc.items() if n == 0]
+            if not orphans:
+                break
+            o = by[orphans[0]]
+            done = False
+            for p in rank[o["slug"]]:        # o 와 가장 가까운 글부터: 그 글의 관련 사례 중 자리 하나를 o 에게
+                r = rel[p["slug"]]
+                for i in range(len(r) - 1, -1, -1):
+                    q = r[i]
+                    if q["slug"] not in p["_fixed"] and inc[q["slug"]] >= 2:
+                        r[i] = o
+                        done = True
+                        break
+                if done:
+                    break
+            if not done:
+                warn(f"관련 사례: {o['slug']} 로 들어오는 링크를 만들 자리가 없음")
+                break
+    for p in posts:
+        p["related_posts"] = rel[p["slug"]]
     return rel
 
 
@@ -275,6 +388,10 @@ def ld_dump(graph):
 
 
 def post_jsonld(p, site):
+    if not p["photos_all"]:
+        warn(f"posts/{p['slug']}.yaml: 사진 없음(photos_pending) → 대표 이미지는 사이트 로고로 대신함. 블로그 사진을 넣어 주세요.")
+    image = [absu(site, ph["src"]) for ph in p["photos_all"]] or \
+        {"@type": "ImageObject", "url": absu(site, site.get("logo") or site.get("default_image") or "")}
     u, car = p["abs_url"], p["car"]
     carnode = {"@type": "Car", "brand": {"@type": "Brand", "name": str(car["brand"])}, "model": str(car["model"])}
     if car.get("year"):
@@ -284,12 +401,14 @@ def post_jsonld(p, site):
     art = {"@type": "BlogPosting", "@id": u + "#article", "headline": p["title"], "name": p["seo_title"],
            "description": p["description"], "abstract": p["summary"], "datePublished": p["date_iso"],
            "dateModified": str(p.get("updated") or p["date_iso"]), "inLanguage": "ko-KR",
-           "image": [absu(site, ph["src"]) for ph in p["photos_all"]] or [og_image(site, None)], "author": org(site),
+           "image": image, "author": {"@id": site["org_id"]},
            "publisher": {"@id": site["org_id"]}, "mainEntityOfPage": {"@type": "WebPage", "@id": u},
            "isPartOf": {"@id": site["site"] + "#website"}, "about": carnode,
            "articleSection": p["category_name"], "keywords": ", ".join(p["tags"])}
     if p.get("source"):  # 블로그 원문(네이버) — 사이트 글은 새로 쓴 것
         art["isBasedOn"] = str(p["source"])
+    if p.get("mentions"):  # 글에서 소개하는 다른 업체: 그 업체 홈의 @id 로만 참조
+        art["mentions"] = [{"@id": str(m)} for m in p["mentions"]]
     cat_u = site["site"] + p["category_url"]
     g = [art, crumbs(site, [("홈", site["site"]), (site["cases_label"], site["site"] + "cases/"),
                             (p["category_name"], cat_u), (p["title"], u)])]
@@ -350,6 +469,52 @@ def finalize(html, title, meta, jsonld):
 def write(path, text):
     path.parent.mkdir(parents=True, exist_ok=True)
     path.write_text(text, encoding="utf-8")
+
+
+# ---------- 목록 제목·브랜드 ----------
+def join_brands(bs):
+    return "·".join(bs)
+
+
+def fill_brands(site, cats, posts):
+    """site.yaml 문구의 {brands} 를 실제 글이 있는 브랜드로 바꾼다(글 많은 순). 예: 페라리 글이 0편이면 '마세라티'만.
+    카테고리 문구의 {brands} 는 그 카테고리 글의 브랜드(없으면 사이트 전체)."""
+    def brands(ps):
+        cnt = {}
+        for p in ps:
+            b = str((p.get("car") or {}).get("brand", "")).strip()
+            if b:
+                cnt[b] = cnt.get(b, 0) + 1
+        return [b for b, _ in sorted(cnt.items(), key=lambda x: -x[1])]
+    pub = [p for p in posts if not p.get("draft")] or posts
+    allb = join_brands(brands(pub)) or site.get("brands_default", "")
+    site["brands"] = brands(pub)
+    site["brands_text"] = allb
+    for k in ("cases_intro", "cases_meta_desc", "cases_title", "cases_h1", "cases_lead"):
+        if site.get(k):
+            site[k] = str(site[k]).replace("{brands}", allb)
+    for c in cats.values():
+        cb = join_brands(brands([p for p in pub if p["category"] == c["key"]])) or allb
+        for k in ("intro", "meta_desc", "title"):
+            if c.get(k):
+                c[k] = str(c[k]).replace("{brands}", cb)
+
+
+def list_title(site, c):
+    """목록·카테고리 <title>. site.yaml cases_title / 카테고리 title 이 있으면 그것, 없으면
+    '{지역} {카테고리} 사례 | 이름'. '정비 정비사례'처럼 겹치는 말은 한 번만."""
+    lab, name = site["cases_label"], site["name"]
+    region = (site.get("regions") or [""])[0]
+    if c is None:
+        t = site.get("cases_title") or f"{region} {lab} | {name}"
+    else:
+        cn = c["name"]
+        t = c.get("title") or f"{region} {cn} 사례 | {name}"
+    t = re.sub(r"(정비|수리) \1사례", r"\1사례", t)          # '마세라티 정비 정비사례' → '마세라티 정비사례'
+    t = " ".join(t.split())
+    if len(t) > TITLE_MAX:
+        warn(f"목록 제목 {len(t)}자 ({TITLE_MAX}자 초과): {t}")
+    return t
 
 
 # ---------- 부가 파일 ----------
@@ -418,10 +583,13 @@ def main():
     imgs = Images(site_dir, Path(a.assets).resolve() if a.assets else None)
     for p in posts:
         enrich(p, site, cats, imgs)
+    fill_brands(site, cats, posts)
+    assign_related(posts)
 
     env = Environment(loader=FileSystemLoader(str(tdir)), autoescape=select_autoescape(["html", "xml"]),
                       trim_blocks=True, lstrip_blocks=True)
     env.filters["para"] = para
+    env.filters["autolink"] = autolink
     for t in ("base.html", "case.html", "list.html", "card.html"):
         if not (tdir / t).is_file():
             err(f"templates/{t} 없음")
@@ -435,7 +603,10 @@ def main():
         n = sum(p["category"] == c["key"] for p in posts)
         if n:
             used.append(dict(c, count=n))
-    common = {"site": site, "categories": used, "preview": a.preview}
+    css = (tdir / "case.css").read_text(encoding="utf-8") if (tdir / "case.css").is_file() else ""
+    css = re.sub(r"/\*.*?\*/", "", css, flags=re.S)                       # 주석 빼고
+    css = Markup("\n".join(l.strip() for l in css.splitlines() if l.strip()))  # 페이지마다 <style> 로 인라인
+    common = {"site": site, "categories": used, "preview": a.preview, "case_css": css}
 
     for p in posts:
         p["seo_title"] = fit_title(p["seo_title"], p["title"], site["name"])
@@ -443,7 +614,7 @@ def main():
         meta = head_meta(site, p["seo_title"], p["description"], p["abs_url"],
                          og_image(site, p), "article", a.preview and p["draft"])
         ld = post_jsonld(p, site)
-        html = env.get_template("case.html").render(**common, post=p, related=pick_related(p, posts),
+        html = env.get_template("case.html").render(**common, post=p, related=p["related_posts"],
                                                     jsonld=ld, meta=meta, root="../../")
         write(cases / p["slug"] / "index.html", finalize(html, p["seo_title"], meta, ld))
 
@@ -453,10 +624,10 @@ def main():
         if c is not None and not ps:
             continue
         url = site["site"] + "cases/" + (f"{c['slug']}/" if c else "")
-        lab = site["cases_label"]
-        title = f"{c['name']} {lab} | {site['name']}" if c else f"{lab} | {site['name']}"
+        title = list_title(site, c)
         desc = fit_desc((c.get("meta_desc") or c.get("intro") if c else None) or site.get("cases_meta_desc") or site["cases_intro"])
-        meta = head_meta(site, title, desc, url, og_image(site, ps[0]) if ps else og_image(site, None), "website",
+        first = next((q for q in ps if q["photos_all"]), None)
+        meta = head_meta(site, title, desc, url, og_image(site, first) if first else og_image(site, None), "website",
                          bool(c) and all(p["draft"] for p in ps))  # draft 뿐인 카테고리는 noindex
         ld = list_jsonld(site, ps, url, title, desc, c)
         html = env.get_template("list.html").render(**common, posts=ps, current_category=c, jsonld=ld,

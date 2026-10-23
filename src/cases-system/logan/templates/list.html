@@ -1,10 +1,12 @@
 {% extends "base.html" %}
 {#- 정비사례 목록. 변수: site, posts, categories, current_category(없으면 None), root -#}
 {%- set cc = current_category -%}
-{%- set page_h1 = (cc.name ~ ' 사례') if cc else '마세라티·페라리 ' ~ site.cases_label -%}
-{%- set page_desc = cc.intro if cc and cc.intro else '파주 ' ~ site.name ~ '에서 직접 정비한 마세라티·페라리 실제 기록입니다. 차종·연식·증상·진단·작업 과정을 한 건씩 정리했습니다.' -%}
+{#- 브랜드 문구는 실제 글이 있는 브랜드만(site.brands_text, make_cases.py fill_brands). 페라리 글이 0편이면 '페라리'를 쓰지 않는다 -#}
+{%- set brands = site.brands_text|default('마세라티') -%}
+{%- set page_h1 = (cc.name ~ ' 사례') if cc else (site.cases_h1 if site.cases_h1 else brands ~ ' ' ~ site.cases_label) -%}
+{%- set page_desc = cc.intro if cc and cc.intro else '파주 ' ~ site.name ~ '에서 직접 정비한 ' ~ brands ~ ' 실제 기록입니다. 차종·연식·증상·진단·작업 과정을 한 건씩 정리했습니다.' -%}
 
-{% block title %}{% if page_title %}{{ page_title }}{% elif cc %}{{ cc.name }} 사례 | 마세라티·페라리 전문 {{ site.name }}{% else %}마세라티·페라리 {{ site.cases_label }} | 파주 {{ site.name }}{% endif %}{% endblock %}
+{% block title %}{% if page_title %}{{ page_title }}{% elif cc %}{{ cc.name }} 사례 | 파주 {{ site.name }}{% else %}파주 {{ brands }} {{ site.cases_label }} | {{ site.name }}{% endif %}{% endblock %}
 
 {% block head_extra %}
 {% endblock %}
@@ -23,7 +25,7 @@
         {%- endif %}
       </ol>
     </nav>
-    <p class="eyebrow">Case Study · Maserati &amp; Ferrari</p>
+    <p class="eyebrow">Case Study</p>
     <h1 class="cases-h1 is-list">{{ page_h1 }}</h1>
     <p class="cases-intro">{{ page_desc }}</p>
 
@@ -42,6 +44,7 @@
     {%- if posts %}
     <div class="cases-grid">
       {%- set card_h = 'h2' %}
+      {%- set card_sizes = '(max-width:639px) calc(100vw - 32px), (max-width:1023px) calc(50vw - 30px), 400px' %}
       {%- for p in posts %}
       {%- set card_eager = loop.index <= 2 %}
       {% include "card.html" %}

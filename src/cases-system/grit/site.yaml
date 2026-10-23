@@ -12,7 +12,7 @@ tel: "15770412"
 kakao: https://pf.kakao.com/_UExgxaX
 blog: https://blog.naver.com/grit_service
 instagram: https://www.instagram.com/grit_service/
-map: https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EA%B5%90%ED%95%98%EB%A1%9C%201312-53
+map: https://map.naver.com/p/entry/place/2053438921   # 네이버 플레이스 고유 주소
 address: 경기도 파주시 교하로 1312-53, 1동 1층
 brand_color: "#004a9f"
 logo: assets/grit-service-logo.png
@@ -23,6 +23,8 @@ regions: [파주, 운정, 교하, 금촌, 문산, 일산, 김포]
 # 목록 주소는 /cases/{slug}/ 이다. 기존 서비스 상세 페이지(/accident-repair/ 등)와 이름이 같아도
 # /cases/ 아래라 주소가 겹치지 않는다. service_page 는 같은 서비스의 기존 상세 페이지(사이트 루트 기준, 없으면 빈칸).
 # 글 slug 는 날짜(YYMMDD)로 시작하므로 카테고리 slug 와 겹치지 않는다.
+# 목록·카테고리 <title> (40자 이내). 카테고리는 '파주 {이름} 사례 | 그릿서비스' 가 기본(title 로 바꿀 수 있음)
+cases_title: "파주 자동차 수리사례 | 그릿서비스"
 categories:
   - key: accident
     slug: accident-repair
@@ -51,13 +53,13 @@ categories:
   - key: maintenance
     slug: maintenance
     name: 자동차정비
-    service_page: ""
+    service_page: maintenance/
     intro: "엔진오일, 브레이크, 배터리, 타이어, 경고등 점검 등 파주 그릿서비스의 정비 기록입니다. 어떤 증상으로 입고됐고 무엇을 점검해 어떤 부품을 교환했는지 국산차·수입차별로 정리했습니다."
     meta_desc: "엔진오일, 브레이크, 배터리, 타이어, 경고등 점검 등 국산차·수입차를 정비한 파주 그릿서비스의 실제 기록입니다."   # 검색결과 설명(80자 이내), 화면에는 intro
   - key: exterior
     slug: exterior-care
     name: 외형관리·PPF
-    service_page: ""
+    service_page: exterior-care/
     intro: "광택, 코팅, PPF 보호필름, 프리미엄 세차 등 파주 교하 그릿서비스의 외형관리 작업 기록입니다. 시공 전후 도장면 상태와 작업 순서를 사진으로 확인할 수 있습니다."
     meta_desc: "광택, 코팅, PPF 보호필름, 프리미엄 세차 등 파주 교하 그릿서비스의 외형관리 작업 기록입니다."   # 검색결과 설명(80자 이내), 화면에는 intro
 cases_meta_desc: "파주 교하 그릿서비스에 맡겨 주신 차량의 실제 수리 기록. 증상, 점검 내용, 수리 과정을 사진과 함께 한 건씩 정리했습니다."   # 사례 목록 검색결과 설명(80자 이내)

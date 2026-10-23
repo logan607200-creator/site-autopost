@@ -1,12 +1,14 @@
 """수리사례(/cases/) 생성 결과 검사 K1~K8. 결과는 PASS / WARN / FAIL / SKIP / ERROR. 미검사(SKIP)는 통과가 아니다.
 사용: python3 check_cases.py <out_dir> <site_yaml> [--mode auto|upload|preview] [--assets 사진폴더]
-                            [--site-dir 사이트본체폴더] [--no-browser] [--only K1,K2] [--all]
+                            [--site-dir 사이트본체폴더] [--no-browser] [--only K1,K2] [--all] [--strict-links]
   out_dir   make_cases.py 출력 폴더(그 안에 cases/ 가 있음). 예: build/grit-upload/
   site_yaml grit/site.yaml 또는 logan/site.yaml. 같은 폴더의 posts/*.yaml 로 draft 여부도 맞춰 본다.
   --mode    auto 면 out_dir 이름에 'upload' 가 있으면 업로드 모드(K7 엄격), 아니면 미리보기 모드.
   --assets  assets/ 경로를 찾을 폴더(사이트의 assets/ 폴더). out_dir/assets 도 함께 본다.
   --site-dir /cases/ 밖 링크(홈, 서비스 페이지)를 확인할 사이트 본체 폴더. 없으면 그런 링크는 WARN.
   --all     항목마다 문제를 전부 출력(기본은 항목당 12줄).
+  --strict-links  K3(내부 링크)의 WARN 을 FAIL 로: 확인 못 한 /cases/ 밖 링크, 없는 사진, 다른 글에서
+            들어오는 링크가 0개인 글. 빌드에서 링크 경고가 묻히지 않게 할 때 쓴다.
 종료코드: FAIL 또는 ERROR 가 하나라도 있으면 1."""
 import argparse
 import html as htmllib
@@ -180,6 +182,7 @@ class Ctx:
         self.assets_dirs = [d for d in [self.out / "assets", Path(a.assets) if a.assets else None] if d and d.is_dir()]
         self.site_dir = Path(a.site_dir) if a.site_dir else None
         self.no_browser = a.no_browser
+        self.strict_links = getattr(a, "strict_links", False)
         self.pages = {}  # rel path -> Page
         self.kind = {}  # rel path -> article | list | snippet
         for f in sorted(self.cases.rglob("*.html")):
@@ -373,7 +376,27 @@ def k3(c):
                 if exists_under(c.out, path) or (c.site_dir and exists_under(c.site_dir, path)):
                     continue
                 out.append(("WARN", f"{rel}: /cases/ 밖 링크 {url} -> /{path} 확인 못 함(--site-dir 로 사이트 본체 지정)"))
-    return res(out, f"내부 링크 {n}개 모두 존재")
+    # 고아 글: 다른 글(관련 사례)·목록에서 들어오는 링크 수. 다른 '글'에서 0개면 WARN
+    arts = {posixpath.dirname(r) + "/": r for r, k in c.kind.items() if k == "article"}
+    inbound = {d: 0 for d in arts}
+    for rel, p in c.pages.items():
+        if c.kind.get(rel) != "article":
+            continue
+        seen = set()
+        for tag, attr, url in p.links:
+            if tag != "a":
+                continue
+            r = resolve(c, rel, url)
+            if r and r[0] == "ok" and r[1] in inbound and r[1] != posixpath.dirname(rel) + "/" and r[1] not in seen:
+                seen.add(r[1])
+                inbound[r[1]] += 1
+    orphans = sorted(d for d, k in inbound.items() if k == 0)
+    for d in orphans:
+        out.append(("WARN", f"{d}: 다른 글에서 들어오는 링크 0개(관련 사례에 안 걸림)"))
+    if c.strict_links:
+        out = [("FAIL" if l == "WARN" else l, m + (" [--strict-links]" if l == "WARN" else "")) for l, m in out]
+    lo = min(inbound.values()) if inbound else 0
+    return res(out, f"내부 링크 {n}개 모두 존재, 글 {len(inbound)}편 모두 다른 글에서 링크 {lo}개 이상")
 
 
 # ---------------------------------------------------------------- K4 이미지
@@ -591,6 +614,7 @@ def main():
     ap.add_argument("--no-browser", action="store_true")
     ap.add_argument("--only", default=",".join(k for k, _, _ in CHECKS))
     ap.add_argument("--all", action="store_true", help="문제를 전부 출력")
+    ap.add_argument("--strict-links", action="store_true", help="K3 링크 WARN(확인 못 한 링크·없는 사진·고아 글)을 FAIL 로")
     a = ap.parse_args()
     c = Ctx(a)
     kinds = {k: sum(1 for v in c.kind.values() if v == k) for k in ("article", "list", "snippet")}
