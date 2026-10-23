@@ -28,12 +28,18 @@ cp "$SRC/gritservice-site/upload/assets/logan-logo-240.webp" "$TMP/logan/assets/
 cp "$SRC/loganservice-site/upload/assets/favicon.png" "$SRC/loganservice-site/upload/assets/favicon-64.png" "$TMP/logan/assets/"
 [ -d "$SRC/cases-system/logan/assets/cases" ] && cp -r "$SRC/cases-system/logan/assets/cases" "$TMP/logan/assets/cases" || true
 python3 "$SRC/loganservice-site/add_cases.py" "$TMP/logan" > /dev/null
+# 모델별·증상별·탁송 안내 페이지(사례·FAQ 에서 만듦) + 홈 링크·sitemap·llms
+python3 "$SRC/loganservice-site/make_hubs.py" "$TMP/logan" > /dev/null
+# IndexNow 키 파일(그릿과 같은 키)
+cp "$SRC/loganservice-site/upload/0d5b85b24fd3f3b1750da89666d9a379.txt" "$TMP/logan/"
 cp "$TMP/logan/index.php" "$TMP/logan/llms.txt" "$TMP/logan/robots.txt" "$SRC/loganservice-site/upload/"
 
 # 3) 검사
-python3 check_cases.py "$TMP/grit" ../grit/site.yaml --mode upload --no-browser > "$TMP/chk-grit.txt" || { cat "$TMP/chk-grit.txt"; echo "그릿 검사 실패"; exit 1; }
-python3 check_cases.py "$TMP/logan" ../logan/site.yaml --mode upload --no-browser > "$TMP/chk-logan.txt" || { cat "$TMP/chk-logan.txt"; echo "로건 검사 실패"; exit 1; }
-grep -q "'FAIL'" "$TMP/chk-grit.txt" "$TMP/chk-logan.txt" && { echo "검사 FAIL 있음"; exit 1; }
+python3 check_cases.py "$TMP/grit" ../grit/site.yaml --mode upload --no-browser --site-dir "$TMP/grit" > "$TMP/chk-grit.txt" || { cat "$TMP/chk-grit.txt"; echo "그릿 검사 실패"; exit 1; }
+python3 check_cases.py "$TMP/logan" ../logan/site.yaml --mode upload --no-browser --site-dir "$TMP/logan" > "$TMP/chk-logan.txt" || { cat "$TMP/chk-logan.txt"; echo "로건 검사 실패"; exit 1; }
+# 사이트 전체(홈·FAQ·서비스·개인정보·sitemap·robots) 검사: 제목·설명 길이, canonical, 깨진 링크, 미래 lastmod 등
+python3 "$SRC/check_site.py" "$TMP/grit" https://gritservice.co.kr/ || { echo "그릿 사이트 검사 실패"; exit 1; }
+python3 "$SRC/check_site.py" "$TMP/logan" https://loganservice.co.kr/ || { echo "로건 사이트 검사 실패"; exit 1; }
 # 절대 규칙: 올라가는 파일에 noindex 금지
 if grep -rli noindex "$TMP/grit" "$TMP/logan"; then echo "noindex 발견 → 중단"; exit 1; fi
 

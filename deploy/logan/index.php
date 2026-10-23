@@ -949,6 +949,12 @@
   </div>
 </section>
 <!-- /cases-home -->
+<!-- hubs-home -->
+  <section class="hubs-home" id="guide" aria-label="모델별·증상별 안내" style="padding:28px 0;background:#fff">
+    <div class="wrap"><p style="margin:0;font-size:16px;line-height:2;word-break:keep-all"><strong>모델별 정비</strong>: <a href="maserati/ghibli/">기블리</a> · <a href="maserati/levante/">르반떼</a> · <a href="maserati/quattroporte/">콰트로포르테</a> · <a href="maserati/granturismo/">그란투리스모</a>
+    <br><strong>증상별 안내</strong>: <a href="symptoms/warning-light/">엔진경고등·고장코드</a> · <a href="symptoms/oil-leak/">엔진오일·미션 누유</a> · <a href="symptoms/suspension-noise/">하체 소음·충격</a> · <a href="symptoms/cooling/">냉각·서모스탯</a> · <a href="delivery/">전국 탁송</a></p></div>
+  </section>
+<!-- /hubs-home -->
   <section class="instagram" id="instagram">
     <div class="wrap">
       <div class="instagram-head">

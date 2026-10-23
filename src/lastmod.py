@@ -4,7 +4,7 @@ import datetime, subprocess, pathlib
 
 
 def today():
-    return (datetime.datetime.utcnow() + datetime.timedelta(hours=9)).date().isoformat()
+    return (datetime.datetime.now(datetime.timezone.utc) + datetime.timedelta(hours=9)).date().isoformat()
 
 
 def lastmod(*paths):
