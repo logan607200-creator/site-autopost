@@ -2,7 +2,7 @@
 make_grit.py 끝에서 build() 를 부른다. 질문·답변 내용은 geo_qa.py 에서만 고친다."""
 import html as H
 import json
-from geo_qa import qa
+from geo_qa import qa, TOP, TOP_CAT
 
 FAQ_PATH = "faq/"
 
@@ -17,13 +17,14 @@ def build(OUT, SITE, PHONE, TEL, ADDR_FULL, KAKAO, BLOG, INSTA, COMPANY, CEO, BI
     ld = {"@context": "https://schema.org", "@graph": [
         {"@type": "FAQPage", "@id": url + "#faq", "url": url, "name": title, "inLanguage": "ko-KR", "dateModified": TODAY,
          "about": {"@id": SITE + "#grit-service"}, "isPartOf": {"@id": SITE + "#website"},
-         "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for _, _, q, a in items]},
+         "mainEntity": [{"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in TOP + [(q, a) for _, _, q, a in items]]},
         {"@type": "BreadcrumbList", "itemListElement": [
             {"@type": "ListItem", "position": 1, "name": "그릿서비스", "item": SITE},
             {"@type": "ListItem", "position": 2, "name": "자주 묻는 질문 200", "item": url}]},
     ]}
-    toc = "\n".join(f'      <a href="#c{i}">{H.escape(c)}</a>' for i, c in enumerate(cats))
-    secs = []
+    toc = f'      <a href="#cq">{H.escape(TOP_CAT)}</a>\n' + "\n".join(f'      <a href="#c{i}">{H.escape(c)}</a>' for i, c in enumerate(cats))
+    top_rows = "\n".join(f'      <details><summary>{H.escape(q)}</summary><p>{H.escape(a)}</p></details>' for q, a in TOP)
+    secs = [f'    <section id="cq">\n      <h2>{H.escape(TOP_CAT)}</h2>\n{top_rows}\n    </section>']
     for i, c in enumerate(cats):
         rows = "\n".join(f'      <details><summary>{H.escape(q)}</summary><p>{H.escape(a)}</p></details>'
                          for cc, _, q, a in items if cc == c)
@@ -83,6 +84,8 @@ document.addEventListener('click',function(e){{var a=e.target.closest('a[href^="
 
     md = [f"# 그릿서비스 (GRIT SERVICE) 자주 묻는 질문 200\n",
           f"> 경기도 파주시 교하의 자동차 공업사 그릿서비스가 고객과 AI 검색이 자주 묻는 질문에 답합니다. 주소 {ADDR_FULL}, 대표번호 {PHONE}(24시간 상담). 요약은 {SITE}llms.txt, 사람이 보는 페이지는 {url} 입니다.\n"]
+    md.append(f"\n## 자주 찾는 질문: {TOP_CAT}\n")
+    md += [f"\n### {q}\n{a}\n" for q, a in TOP]
     for c in cats:
         md.append(f"\n## {c}\n")
         md += [f"\n### {q}\n{a}\n" for cc, _, q, a in items if cc == c]
@@ -99,7 +102,8 @@ def index_more(SITE, PHONE, ADDR_FULL, KAKAO, BLOG, INSTA):
         body.append(f'          <h3 class="faq-cat">{H.escape(c)}</h3>')
         body += [f'          <details class="faq-item"><summary>{H.escape(q)}</summary><p>{H.escape(a)}</p></details>'
                  for cc, _, q, a in items if cc == c]
-    return (f'''        <details class="faq-more" id="faq-more">
+    top = "".join(f'        <details class="faq-item"><summary>{H.escape(q)}</summary><p>{H.escape(a)}</p></details>\n' for q, a in TOP)
+    return top + (f'''        <details class="faq-more" id="faq-more">
           <summary><span class="more-open">더보기 · 자주 묻는 질문 {len(items)}개</span><span class="more-close">접기</span></summary>
 {chr(10).join(body)}
           <p class="faq-more-link"><a href="{SITE}faq/">질문 {len(items)}개 한 페이지로 보기 →</a></p>

@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+  <url>
+    <loc>https://loganservice.co.kr/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://loganservice.co.kr/assets/hero-main.webp</image:loc>
+      <image:title>로건서비스 마세라티·페라리 전문 정비</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://loganservice.co.kr/assets/maserati-service-01.webp</image:loc>
+      <image:title>로건서비스 마세라티 엔진 점검 작업</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://loganservice.co.kr/assets/maserati-service-02.webp</image:loc>
+      <image:title>리프트에 올라간 마세라티 정비 작업</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://loganservice.co.kr/assets/logan-workshop-01.webp</image:loc>
+      <image:title>로건서비스 작업장에서 정비 중인 테크니션</image:title>
+    </image:image>
+    <image:image>
+      <image:loc>https://loganservice.co.kr/assets/og-image.jpg</image:loc>
+      <image:title>로건서비스 마세라티·페라리 전문 정비</image:title>
+    </image:image>
+  </url>
+  <url>
+    <loc>https://loganservice.co.kr/faq/</loc>
+    <lastmod>2026-10-24</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+</urlset>

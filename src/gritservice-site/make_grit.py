@@ -2,6 +2,8 @@
 import pathlib, re, sys, json
 
 HERE = pathlib.Path(__file__).parent
+sys.path.insert(0, str(HERE / "geo"))
+from geo_qa import TOP as GEO_TOP  # 2026-10-24 자주 찾는 질문 20 (홈 FAQ·JSON-LD 맨 앞)
 OUT = pathlib.Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
 
 # ---------- 그릿서비스 정보 ([대괄호] = 아직 모름) ----------
@@ -83,7 +85,7 @@ ld = {
             "name": "그릿서비스", "alternateName": "GRIT SERVICE", "telephone": PHONE,
             "description": "그릿서비스는 파주 교하의 자동차 공업사로 전 차종 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 자동차 외형관리(광택·코팅·PPF·세차), 탁송을 제공합니다.",
             "address": {"@type": "PostalAddress", "streetAddress": "교하로 1312-53, 1동 1층", "addressLocality": "파주시", "addressRegion": "경기도", "addressCountry": "KR"},
-            "areaServed": ["파주", "교하", "운정", "일산", "고양", "김포", "양주", "은평"],
+            "areaServed": [{"@type": "Country", "name": "대한민국"}, "파주", "교하", "운정", "일산", "고양", "김포", "양주", "은평"],
             "knowsAbout": ["사고수리", "판금", "도색", "도장", "보험수리", "중고차 성능보증수리", "성능·상태점검 책임보험", "자동차정비", "자동차 외형관리", "광택", "코팅", "PPF", "세차", "탁송"],
             "hasOfferCatalog": {"@type": "OfferCatalog", "name": "그릿서비스 주요 서비스", "itemListElement": [
                 {"@type": "Offer", "itemOffered": {"@type": "Service", "name": s[1].replace("&amp;", "&"), "serviceType": s[1].replace("&amp;", "&"), "description": s[2], "areaServed": "경기도 파주시", "provider": {"@id": SITE + "#grit-service"}}} for s in SERVICES]},
@@ -103,7 +105,7 @@ ld = {
          "logo": LOGAN + "assets/logan-service-logo.png", "description": "2016년부터 마세라티와 페라리에 집중한 전문 자동차 서비스. 진단·정비·사고수리·보험수리·성능보증수리."},
         {"@type": "BreadcrumbList", "@id": SITE + "#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "그릿서비스", "item": SITE}]},
         {"@type": "FAQPage", "@id": SITE + "#faq", "url": SITE + "#faq", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in FAQ]},
+            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in GEO_TOP + FAQ]},
     ],
 }
 
@@ -114,7 +116,8 @@ _ALL = ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sun
 HOURS = [{"days": _ALL[:5], "opens": "09:00", "closes": "18:00"}]  # 2026-10-22 사장님: 작업 평일 9~18시, 전화 상담만 24시간
 GEO = (37.748557, 126.739341)            # 예: (37.7xxxxx, 126.7xxxxx)  구글 지도에서 가게 위치를 우클릭해 복사한 값
 EXTRA_SAME_AS = ["https://map.naver.com/p/entry/place/2053438921",
-                  "https://www.google.com/maps/place/%EA%B7%B8%EB%A6%BF%EC%84%9C%EB%B9%84%EC%8A%A4/data=!4m2!3m1!1s0x0:0x88345fd7d053df58"]    # 네이버 플레이스 공유 주소, 구글 지도/비즈니스 프로필 주소
+                  "https://www.google.com/maps/place/%EA%B7%B8%EB%A6%BF%EC%84%9C%EB%B9%84%EC%8A%A4/data=!4m2!3m1!1s0x0:0x88345fd7d053df58",
+                  "https://g.page/r/CVjfU9DXXzSIEBM"]    # 네이버 플레이스 공유 주소, 구글 지도/비즈니스 프로필 주소
 _n = ld["@graph"][0]
 if HOURS:
     _n["openingHoursSpecification"] = [{"@type": "OpeningHoursSpecification", "dayOfWeek": h["days"], "opens": h["opens"], "closes": h["closes"]} for h in HOURS]
@@ -168,13 +171,13 @@ html = f'''<!doctype html>
   <meta name="geo.region" content="KR-41" />
   <meta name="geo.placename" content="경기도 파주시" />
   <!-- 검색엔진 소유확인 코드: 발급받은 값으로 주석을 풀어 사용하세요 -->
-  <!-- <meta name="google-site-verification" content="구글서치콘솔_코드" /> -->
+  <meta name="google-site-verification" content="atX3kvp3_U7pqERqpAkMf8QtMQkFy5D5HXk7pBqZ00I" />
   <meta name="naver-site-verification" content="a8e8cd270aae2495f2acadde3de5b7ce966b4a23" />
   <!-- <meta name="msvalidate.01" content="빙웹마스터도구_코드" /> -->
   <meta property="og:title" content="{TITLE}" />
   <meta property="og:description" content="{DESC}" />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="GRIT SERVICE" />
+  <meta property="og:site_name" content="그릿서비스" />
   <link rel="canonical" href="{SITE}" />
   <link rel="alternate" hreflang="ko-KR" href="{SITE}" />
   <link rel="alternate" hreflang="x-default" href="{SITE}" />

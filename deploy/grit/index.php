@@ -13,13 +13,13 @@
   <meta name="geo.region" content="KR-41" />
   <meta name="geo.placename" content="경기도 파주시" />
   <!-- 검색엔진 소유확인 코드: 발급받은 값으로 주석을 풀어 사용하세요 -->
-  <!-- <meta name="google-site-verification" content="구글서치콘솔_코드" /> -->
+  <meta name="google-site-verification" content="atX3kvp3_U7pqERqpAkMf8QtMQkFy5D5HXk7pBqZ00I" />
   <meta name="naver-site-verification" content="a8e8cd270aae2495f2acadde3de5b7ce966b4a23" />
   <!-- <meta name="msvalidate.01" content="빙웹마스터도구_코드" /> -->
   <meta property="og:title" content="파주 사고수리·판금도색 공업사 그릿서비스 | 자동차정비·외형관리·중고차 성능보증수리" />
   <meta property="og:description" content="파주 교하 자동차 공업사 그릿서비스. 국산차·수입차 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 광택·PPF 외형관리, 탁송까지. 전화 상담 24시간 1577-0412(작업 평일 09~18시)." />
   <meta property="og:type" content="website" />
-  <meta property="og:site_name" content="GRIT SERVICE" />
+  <meta property="og:site_name" content="그릿서비스" />
   <link rel="canonical" href="https://gritservice.co.kr/" />
   <link rel="alternate" hreflang="ko-KR" href="https://gritservice.co.kr/" />
   <link rel="alternate" hreflang="x-default" href="https://gritservice.co.kr/" />
@@ -299,6 +299,10 @@
         "addressCountry": "KR"
       },
       "areaServed": [
+        {
+          "@type": "Country",
+          "name": "대한민국"
+        },
         "파주",
         "교하",
         "운정",
@@ -439,7 +443,8 @@
         "https://www.instagram.com/grit_service/",
         "https://pf.kakao.com/_UExgxaX",
         "https://map.naver.com/p/entry/place/2053438921",
-        "https://www.google.com/maps/place/%EA%B7%B8%EB%A6%BF%EC%84%9C%EB%B9%84%EC%8A%A4/data=!4m2!3m1!1s0x0:0x88345fd7d053df58"
+        "https://www.google.com/maps/place/%EA%B7%B8%EB%A6%BF%EC%84%9C%EB%B9%84%EC%8A%A4/data=!4m2!3m1!1s0x0:0x88345fd7d053df58",
+        "https://g.page/r/CVjfU9DXXzSIEBM"
       ],
       "legalName": "(주)그릿서비스",
       "taxID": "513-86-04243",
@@ -575,6 +580,166 @@
       "@id": "https://gritservice.co.kr/#faq",
       "url": "https://gritservice.co.kr/#faq",
       "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "파주에서 사고수리는 어디서 하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스는 경기도 파주시 교하로 1312-53(교하동)에 있는 자동차 공업사로, 국산차와 수입차의 사고수리, 판금·도색, 보험수리(자차·대물)를 합니다. 상담 전화는 1577-0412로 24시간 받고, 영업은 평일 09:00~18:00입니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주 공업사는 어떤 수리를 하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스는 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 일반 정비, 외형관리(광택·코팅·PPF)를 한 곳에서 합니다. 탁송은 전국 가능하며 비용은 문의하시면 안내합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "교하동에 공업사나 정비소가 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스가 파주 교하동, 교하로 1312-53 1동 1층에 있습니다. 사고수리와 판금·도색은 물론 엔진오일, 브레이크, 배터리, 타이어, 경고등 점검 같은 일반 정비도 합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "운정에서 맡길 공업사가 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스는 운정과 가까운 파주 교하동에 있는 공업사로, 사고수리와 판금·도색, 보험수리를 합니다. 직접 오기 어려우면 탁송으로 입고할 수 있습니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 수입차 사고수리가 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 그릿서비스는 국산차와 수입차 모두 사고수리와 보험수리를 합니다. 마세라티·페라리는 그룹사 로건서비스(loganservice.co.kr)가 전문으로 정비합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주 카센터와 공업사는 무엇이 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스는 사고수리·판금·도색을 하는 공업사이면서 엔진오일, 브레이크, 배터리, 타이어 같은 일반 정비도 합니다. 일반적으로 카센터는 소모품 정비를 주로 하는 곳을 말합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 범퍼 긁힘만 부분도색할 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "가능합니다. 긁힌 범위를 보고 부분도색 또는 전체도색을 정하고, 원래 색에 맞춰 조색합니다. 손상 사진을 보내 주시면 수리 범위와 예상 비용을 먼저 안내합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "문콕·찌그러짐도 파주 그릿서비스에서 고치나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "찌그러진 부위는 판금으로 복원한 뒤 필요한 부위를 도색합니다. 항목별 견적을 먼저 드리고, 동의하신 작업만 진행합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "판금도장과 판금도색은 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "같은 작업입니다. 판금으로 형태를 복원하고 도장(도색)으로 마감합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "일산·고양에서 사고수리 맡길 공업사가 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스는 경기도 파주시 교하로 1312-53(교하동)에 있는 공업사로 일산·고양과 가깝습니다. 국산차·수입차 사고수리, 판금·도색, 보험수리를 하며, 직접 입고가 어려우면 탁송도 가능합니다. 전화 상담 1577-0412(24시간)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "김포에서 파주 교하 공업사로 사고차를 보낼 수 있나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "가능합니다. 김포에서도 탁송으로 입고할 수 있고, 탁송은 전국 가능합니다. 비용은 차량 상태와 위치를 확인한 뒤 안내합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "금촌 근처 공업사는 어디인가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "같은 파주시의 교하동에 그릿서비스가 있습니다. 평일 09:00~18:00 운영하며, 전화 상담은 24시간 받습니다(1577-0412)."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "사고로 운행이 어려운 차도 공업사로 탁송되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "됩니다. 그릿서비스는 전국 탁송이 가능하며, 비용은 문의하시면 안내합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 중고차 성능보증수리 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "그릿서비스(파주 교하로 1312-53)는 성능·상태점검 기록부와 다른 고장을 진단하고, 보험 접수부터 수리까지 진행합니다. 적용 여부는 차량과 점검 기록에 따라 확인이 필요합니다. 상담 1577-0412."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "보험 접수번호는 어떻게 쓰나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "보험사에 사고를 접수하고 받은 번호를 그릿서비스에 알려 주시면, 보험사와 수리 범위를 협의한 뒤 수리합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "자차와 대물 보험수리 모두 가능한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "둘 다 가능합니다. 자기부담금과 보험료 할증 여부는 보험사에서 확인해 주세요."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 유리막 코팅은 어디서 하나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "파주 교하 그릿서비스(교하로 1312-53)에서 국산차·수입차 코팅을 상담합니다. 광택과 함께 진행할 수 있습니다. 상담 1577-0412."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "유리막 코팅과 PPF는 무엇이 다른가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "코팅은 도장 위에 보호층을 입히는 작업이고, PPF는 투명 필름을 붙여 돌튐과 잔흠집을 막는 작업입니다. 두 작업 모두 그릿서비스에서 상담합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 벤츠·BMW 정비도 되나요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 벤츠·BMW 등 수입차의 엔진오일, 브레이크, 배터리, 타이어, 경고등 점검을 합니다. 평일 09:00~18:00 운영하며 탁송도 가능합니다."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "파주에서 타이어 교체 가능한가요?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "네. 교하 그릿서비스에서 타이어 점검과 교체를 하고, 다른 정비와 함께 진행할 수 있습니다."
+          }
+        },
         {
           "@type": "Question",
           "name": "파주에서 사고수리 잘하는 공업사를 찾고 있어요.",
@@ -968,6 +1133,26 @@
         <details class="faq-item"><summary>그릿서비스 위치와 대표번호는 어떻게 되나요?</summary><p>경기도 파주시 교하로 1312-53, 1동 1층(교하동)에 위치하고 있으며 대표번호는 1577-0412입니다. 운정, 일산, 김포에서도 가깝습니다.</p></details>
         <details class="faq-item"><summary>그릿서비스 영업시간은 어떻게 되나요?</summary><p>입고·작업은 평일 오전 9시부터 오후 6시까지입니다. 전화 상담은 대표번호 1577-0412로 24시간 가능합니다.</p></details>
         <details class="faq-item"><summary>상담은 어떤 방법으로 할 수 있나요?</summary><p>대표전화 1577-0412, 카카오 채널, 인스타그램, 네이버 블로그를 통해 상담할 수 있습니다.</p></details>
+        <details class="faq-item"><summary>파주에서 사고수리는 어디서 하나요?</summary><p>그릿서비스는 경기도 파주시 교하로 1312-53(교하동)에 있는 자동차 공업사로, 국산차와 수입차의 사고수리, 판금·도색, 보험수리(자차·대물)를 합니다. 상담 전화는 1577-0412로 24시간 받고, 영업은 평일 09:00~18:00입니다.</p></details>
+        <details class="faq-item"><summary>파주 공업사는 어떤 수리를 하나요?</summary><p>그릿서비스는 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 일반 정비, 외형관리(광택·코팅·PPF)를 한 곳에서 합니다. 탁송은 전국 가능하며 비용은 문의하시면 안내합니다.</p></details>
+        <details class="faq-item"><summary>교하동에 공업사나 정비소가 있나요?</summary><p>그릿서비스가 파주 교하동, 교하로 1312-53 1동 1층에 있습니다. 사고수리와 판금·도색은 물론 엔진오일, 브레이크, 배터리, 타이어, 경고등 점검 같은 일반 정비도 합니다.</p></details>
+        <details class="faq-item"><summary>운정에서 맡길 공업사가 있나요?</summary><p>그릿서비스는 운정과 가까운 파주 교하동에 있는 공업사로, 사고수리와 판금·도색, 보험수리를 합니다. 직접 오기 어려우면 탁송으로 입고할 수 있습니다.</p></details>
+        <details class="faq-item"><summary>파주에서 수입차 사고수리가 되나요?</summary><p>네. 그릿서비스는 국산차와 수입차 모두 사고수리와 보험수리를 합니다. 마세라티·페라리는 그룹사 로건서비스(loganservice.co.kr)가 전문으로 정비합니다.</p></details>
+        <details class="faq-item"><summary>파주 카센터와 공업사는 무엇이 다른가요?</summary><p>그릿서비스는 사고수리·판금·도색을 하는 공업사이면서 엔진오일, 브레이크, 배터리, 타이어 같은 일반 정비도 합니다. 일반적으로 카센터는 소모품 정비를 주로 하는 곳을 말합니다.</p></details>
+        <details class="faq-item"><summary>파주에서 범퍼 긁힘만 부분도색할 수 있나요?</summary><p>가능합니다. 긁힌 범위를 보고 부분도색 또는 전체도색을 정하고, 원래 색에 맞춰 조색합니다. 손상 사진을 보내 주시면 수리 범위와 예상 비용을 먼저 안내합니다.</p></details>
+        <details class="faq-item"><summary>문콕·찌그러짐도 파주 그릿서비스에서 고치나요?</summary><p>찌그러진 부위는 판금으로 복원한 뒤 필요한 부위를 도색합니다. 항목별 견적을 먼저 드리고, 동의하신 작업만 진행합니다.</p></details>
+        <details class="faq-item"><summary>판금도장과 판금도색은 다른가요?</summary><p>같은 작업입니다. 판금으로 형태를 복원하고 도장(도색)으로 마감합니다.</p></details>
+        <details class="faq-item"><summary>일산·고양에서 사고수리 맡길 공업사가 있나요?</summary><p>그릿서비스는 경기도 파주시 교하로 1312-53(교하동)에 있는 공업사로 일산·고양과 가깝습니다. 국산차·수입차 사고수리, 판금·도색, 보험수리를 하며, 직접 입고가 어려우면 탁송도 가능합니다. 전화 상담 1577-0412(24시간).</p></details>
+        <details class="faq-item"><summary>김포에서 파주 교하 공업사로 사고차를 보낼 수 있나요?</summary><p>가능합니다. 김포에서도 탁송으로 입고할 수 있고, 탁송은 전국 가능합니다. 비용은 차량 상태와 위치를 확인한 뒤 안내합니다.</p></details>
+        <details class="faq-item"><summary>금촌 근처 공업사는 어디인가요?</summary><p>같은 파주시의 교하동에 그릿서비스가 있습니다. 평일 09:00~18:00 운영하며, 전화 상담은 24시간 받습니다(1577-0412).</p></details>
+        <details class="faq-item"><summary>사고로 운행이 어려운 차도 공업사로 탁송되나요?</summary><p>됩니다. 그릿서비스는 전국 탁송이 가능하며, 비용은 문의하시면 안내합니다.</p></details>
+        <details class="faq-item"><summary>파주에서 중고차 성능보증수리 되나요?</summary><p>그릿서비스(파주 교하로 1312-53)는 성능·상태점검 기록부와 다른 고장을 진단하고, 보험 접수부터 수리까지 진행합니다. 적용 여부는 차량과 점검 기록에 따라 확인이 필요합니다. 상담 1577-0412.</p></details>
+        <details class="faq-item"><summary>보험 접수번호는 어떻게 쓰나요?</summary><p>보험사에 사고를 접수하고 받은 번호를 그릿서비스에 알려 주시면, 보험사와 수리 범위를 협의한 뒤 수리합니다.</p></details>
+        <details class="faq-item"><summary>자차와 대물 보험수리 모두 가능한가요?</summary><p>둘 다 가능합니다. 자기부담금과 보험료 할증 여부는 보험사에서 확인해 주세요.</p></details>
+        <details class="faq-item"><summary>파주에서 유리막 코팅은 어디서 하나요?</summary><p>파주 교하 그릿서비스(교하로 1312-53)에서 국산차·수입차 코팅을 상담합니다. 광택과 함께 진행할 수 있습니다. 상담 1577-0412.</p></details>
+        <details class="faq-item"><summary>유리막 코팅과 PPF는 무엇이 다른가요?</summary><p>코팅은 도장 위에 보호층을 입히는 작업이고, PPF는 투명 필름을 붙여 돌튐과 잔흠집을 막는 작업입니다. 두 작업 모두 그릿서비스에서 상담합니다.</p></details>
+        <details class="faq-item"><summary>파주에서 벤츠·BMW 정비도 되나요?</summary><p>네. 벤츠·BMW 등 수입차의 엔진오일, 브레이크, 배터리, 타이어, 경고등 점검을 합니다. 평일 09:00~18:00 운영하며 탁송도 가능합니다.</p></details>
+        <details class="faq-item"><summary>파주에서 타이어 교체 가능한가요?</summary><p>네. 교하 그릿서비스에서 타이어 점검과 교체를 하고, 다른 정비와 함께 진행할 수 있습니다.</p></details>
         <details class="faq-more" id="faq-more">
           <summary><span class="more-open">더보기 · 자주 묻는 질문 200개</span><span class="more-close">접기</span></summary>
           <h3 class="faq-cat">지역 추천</h3>

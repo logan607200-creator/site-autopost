@@ -13,9 +13,9 @@
   <meta name="geo.region" content="KR-41" />
   <meta name="geo.placename" content="경기도 파주시" />
   <!-- 검색엔진 소유확인 코드: 발급받은 값으로 주석을 풀어 사용하세요 -->
-  <!-- <meta name="google-site-verification" content="구글서치콘솔_코드" /> -->
-  <!-- <meta name="naver-site-verification" content="네이버서치어드바이저_코드" /> -->
-  <!-- <meta name="msvalidate.01" content="빙웹마스터도구_코드" /> -->
+  <meta name="google-site-verification" content="p-8lkNpSeicEC8E1vH6T3h3EUMEdwqIWTZJMJ4WYzyc" />
+  <meta name="naver-site-verification" content="11b865f2f01b57dc6af4558715d13159606eace7" />
+  <meta name="msvalidate.01" content="8EF72B406A859EBCAD0D9DBF31D7DE00" />
   <meta property="og:title" content="마세라티·페라리 전문 정비 로건서비스 | 파주 마세라티 정비·보험수리·성능보증수리·전국 탁송" />
   <meta property="og:description" content="2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주 로건서비스. 진단·일반정비, 보험수리, 중고차 성능보증수리, 사고수리는 그룹사 그릿서비스와 연계. 전국 탁송(일부 금액 지원). 상담 1544-6072." />
   <meta property="og:type" content="website" />
@@ -322,8 +322,8 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "마세라티·페라리 사고수리",
-              "serviceType": "마세라티·페라리 사고수리",
+              "name": "사고수리 (그룹사 그릿서비스 연계)",
+              "serviceType": "사고수리 (그룹사 그릿서비스 연계)",
               "description": "사고 차량은 그룹사 그릿서비스와 연계해 판금·도장·부품 교환·출고 점검까지 진행합니다.",
               "provider": {
                 "@id": "https://loganservice.co.kr/#logan-service"
@@ -334,8 +334,8 @@
             "@type": "Offer",
             "itemOffered": {
               "@type": "Service",
-              "name": "자동차보험 사고수리",
-              "serviceType": "자동차보험 사고수리",
+              "name": "자동차보험 수리",
+              "serviceType": "자동차보험 수리",
               "description": "보험 사고 접수 이후 필요한 정비·부품·수리 과정을 체계적으로 연결합니다.",
               "provider": {
                 "@id": "https://loganservice.co.kr/#logan-service"
@@ -373,8 +373,7 @@
         "https://blog.naver.com/logan_service",
         "https://pf.kakao.com/_PKYxdG",
         "https://maps.google.com/?cid=4654192603577598168",
-        "https://map.naver.com/p/entry/place/20277854"
-      ],
+        "https://map.naver.com/p/entry/place/20277854", "https://g.page/r/CdhAfpSDA5dAEBM"],
       "legalName": "주식회사 로건",
       "slogan": "마세라티 정비, 결국 경험의 차이입니다.",
       "hasMap": "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EC%95%84%EC%B9%A8%EB%85%B8%EC%9D%84%EA%B8%B8%2055",
@@ -500,7 +499,7 @@
       "@type": "FAQPage",
       "@id": "https://loganservice.co.kr/#faq",
       "url": "https://loganservice.co.kr/#faq",
-      "mainEntity": [
+      "mainEntity": [{"@type": "Question", "name": "마세라티 정비 비용은 얼마인가요?", "acceptedAnswer": {"@type": "Answer", "text": "로건서비스의 진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 점검은 무상입니다. 엔진오일 교환은 40~45만원(모델마다 차이)입니다. 그 밖의 수리비는 차량을 점검한 뒤 견적을 드립니다."}}, {"@type": "Question", "name": "마세라티 공식센터 말고 사설 정비소에 맡겨도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "로건서비스는 2016년부터 마세라티와 페라리만 정비해 온 경기도 파주의 사설 전문 정비소입니다. 진단·일반정비, 보험수리, 중고차 성능보증수리를 직접 진행하고, 사고수리(판금·도장)는 그룹사 그릿서비스와 연계합니다. 상담 1544-6072."}}, {"@type": "Question", "name": "마세라티 수리 기간은 얼마나 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "헤드 리빌트와 엔진 전체 누유 작업은 입고일로부터 평일 기준 5일이 걸립니다. 그 밖의 작업은 차량을 점검한 뒤 예상 기간을 안내합니다."}}, {"@type": "Question", "name": "부산·대전 같은 지방에서도 마세라티 정비를 맡길 수 있나요?", "acceptedAnswer": {"@type": "Answer", "text": "로건서비스는 경기도 파주에 있고 지방 지점은 없지만, 전국 탁송으로 입고할 수 있습니다. 충청·경북·전북은 4구역으로 왕복 탁송비 18~22만원이며 정비 130만원 이상이면 편도 탁송비를 지원합니다. 그 밖의 지역은 1544-6072로 문의해 주세요."}}, {"@type": "Question", "name": "마세라티 탁송비는 얼마인가요?", "acceptedAnswer": {"@type": "Answer", "text": "1구역(파주·일산·김포) 왕복 4~6만원(정비 30만원 이상 무료), 2구역(고양 덕양·서울 서북부·인천 서구) 왕복 8~12만원(정비 70만원 이상 무료), 3구역(그 밖 서울·경기) 왕복 10~16만원(정비 100만원 이상 편도 지원), 4구역(충청·경북·전북) 왕복 18~22만원(정비 130만원 이상 편도 지원)입니다."}}, {"@type": "Question", "name": "기블리 엔진오일 교환 비용은 얼마인가요?", "acceptedAnswer": {"@type": "Answer", "text": "로건서비스의 마세라티 엔진오일 교환은 40~45만원이며 모델마다 차이가 있습니다. 기블리·르반떼·콰트로포르테·그란투리스모 모두 차량 모델을 알려 주시면 정확히 안내합니다."}}, {"@type": "Question", "name": "기블리 헤드 리빌트는 며칠 걸리나요?", "acceptedAnswer": {"@type": "Answer", "text": "헤드 리빌트와 엔진 전체 누유 작업은 입고일로부터 평일 기준 5일입니다. 로건서비스는 마세라티 정품·애프터마켓 부품을 자체 재고로 보유하고 있습니다."}}, {"@type": "Question", "name": "르반떼 누유 진단 비용은 얼마인가요?", "acceptedAnswer": {"@type": "Answer", "text": "진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 무상입니다. 누유 위치 사진을 먼저 보내 주시면 상담이 빠릅니다."}}, {"@type": "Question", "name": "콰트로포르테·그란투리스모도 정비하나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 로건서비스는 2016년부터 기블리, 르반떼, 콰트로포르테, 그란투리스모 등 마세라티 전 모델과 페라리를 정비합니다. 경기도 파주시 아침노을길 55, 1544-6072이며 전국 탁송도 가능합니다."}}, {"@type": "Question", "name": "마세라티 엔진 경고등이 켜지면 어떻게 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "엔진 경고등은 센서, 점화, 전장 등 원인이 다양해 진단 장비로 확인해야 정확합니다. 경고등이 깜빡이거나 출력 저하·진동이 함께 나타나면 무리하게 운행하지 말고 상담해 주세요. 진단비는 88,000원(부가세 포함)이며 작업을 진행하면 받지 않습니다."}}, {"@type": "Question", "name": "마세라티 미션 고장이나 변속 충격은 왜 생기나요?", "acceptedAnswer": {"@type": "Answer", "text": "변속 충격은 오일 상태, 마운트, 미션 제어 계통 등 여러 원인에서 생길 수 있습니다. 로건서비스가 차량을 직접 진단한 뒤 수리 범위를 안내합니다."}}, {"@type": "Question", "name": "마세라티 냉각수가 새는데 계속 타도 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "냉각수가 새면 과열로 이어질 수 있어 운행 전에 점검을 받는 것이 좋습니다. 누유 위치 사진을 보내 주시면 상담이 빨라지고, 운행이 어려우면 탁송으로 입고할 수 있습니다."}}, {"@type": "Question", "name": "마세라티가 주행 중 시동이 꺼졌어요. 어떻게 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "배터리, 발전기, 전장, 연료 계통 등 원인이 다양합니다. 안전한 곳에 정차하고 무리하게 재시동하지 마세요. 운행이 어려우면 전국 탁송으로 로건서비스에 입고할 수 있습니다."}}, {"@type": "Question", "name": "르반떼 에어서스펜션 경고등이 뜨거나 차고가 내려가요.", "acceptedAnswer": {"@type": "Answer", "text": "하체·전장 진단으로 원인을 확인합니다. 차고가 비정상이면 운행을 자제하고 1544-6072로 상담해 주세요."}}, {"@type": "Question", "name": "페라리 사설 정비소 추천해 주세요.", "acceptedAnswer": {"@type": "Answer", "text": "로건서비스는 2016년부터 마세라티와 페라리 두 브랜드만 정비하는 사설 정비소입니다(경기도 파주시 아침노을길 55). 페라리 진단·일반정비, 보험수리, 중고차 성능보증수리를 하며 상담은 1544-6072로 받습니다."}}, {"@type": "Question", "name": "페라리 458·캘리포니아·포르토피노도 정비하나요?", "acceptedAnswer": {"@type": "Answer", "text": "네. 로건서비스는 페라리 차량의 진단과 일반정비를 합니다. 진단비는 88,000원(부가세 포함)이고, 작업을 진행하면 받지 않습니다."}}, {"@type": "Question", "name": "페라리 경고등이 떴어요. 어떻게 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "엔진·오일·냉각수 경고등이 켜지면 무리하게 운행하지 말고 점검을 받으세요. 경고등 사진을 보내 상담할 수 있고, 지방이라면 전국 탁송(지역·정비 금액에 따라 탁송비 무료 또는 편도 지원)으로 입고할 수 있습니다."}}, {"@type": "Question", "name": "페라리 사고수리(판금·도장)도 하나요?", "acceptedAnswer": {"@type": "Answer", "text": "판금·도장 같은 사고수리는 그룹사 그릿서비스(gritservice.co.kr, 1577-0412)와 연계해 진행합니다. 로건서비스는 진단·정비와 보험수리를 담당합니다."}}, {"@type": "Question", "name": "마세라티 정비소 영업시간은 어떻게 되나요?", "acceptedAnswer": {"@type": "Answer", "text": "평일 09:00~18:00(점심 12:30~13:30)에 운영하고 토·일요일은 휴무입니다. 위치는 경기도 파주시 아침노을길 55, 대표번호는 1544-6072입니다."}}, 
         {
           "@type": "Question",
           "name": "로건서비스는 어떤 차량을 수리하나요?",
@@ -658,7 +657,7 @@
           "name": "진단비는 얼마인가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "증상과 진단 범위에 따라 달라 상담 때 안내해 드립니다. 1544-6072으로 문의해 주세요."
+            "text": "진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 점검은 무상입니다. 1544-6072으로 문의해 주세요."
           }
         },
         {
@@ -666,7 +665,7 @@
           "name": "마세라티 엔진오일 교환 비용은 얼마인가요?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "모델, 연식, 엔진에 따라 달라 상담 때 안내해 드립니다. 차종과 연식을 알려주세요."
+            "text": "40~45만원이며 모델마다 차이가 있습니다. 차종과 연식을 알려주시면 정확히 안내해 드립니다."
           }
         },
         {
@@ -760,7 +759,7 @@
       <div>
         <div class="eyebrow">SINCE 2016 · MASERATI & FERRARI SPECIALIST</div>
         <h1 class="display">마세라티 정비,<br>결국 경험의 차이입니다.</h1>
-        <p class="lead">로건서비스는 모든 차를 수리하지 않습니다. 2016년부터 마세라티와 페라리에 집중해 정비·진단·사고수리·보험수리·성능보증수리 경험을 축적해왔습니다. 전국 탁송 가능(지역·정비금액별 탁송비 지원).</p>
+        <p class="lead">로건서비스는 모든 차를 수리하지 않습니다. 2016년부터 마세라티와 페라리에 집중해 정비·진단·보험수리·성능보증수리 경험을 축적해왔습니다. 전국 탁송 가능(지역·정비금액별 탁송비 지원).</p>
         <div class="btns">
           <a class="btn primary" href="tel:15446072">1544-6072 상담</a>
           <a class="btn" href="#service">서비스 보기</a>
@@ -768,15 +767,15 @@
         <p class="hero-hours">평일 9–18시 · 점심 12:30–13:30 · 주말 휴무</p>
       </div>
       <div class="hero-card">
-        <div class="eyebrow">Experience in numbers</div>
-        <div class="big">10 YEARS</div>
-        <div class="label">Specialized experience since 2016</div>
+        <div class="eyebrow">숫자로 보는 경력</div>
+        <div class="big">10년</div>
+        <div class="label">2016년부터 마세라티·페라리 전문</div>
         <div class="stats">
-          <div class="stat"><strong>8,876+</strong><span>Maserati service experience*</span></div>
-          <div class="stat"><strong>890+</strong><span>Annual service*</span></div>
-          <div class="stat"><strong>74+</strong><span>Monthly average*</span></div>
+          <div class="stat"><strong>8,876+</strong><span>누적 마세라티 정비*</span></div>
+          <div class="stat"><strong>890+</strong><span>연간 정비*</span></div>
+          <div class="stat"><strong>74+</strong><span>월 평균*</span></div>
         </div>
-        <p style="font-size:11px;color:#827b74;margin-top:18px">* 내부 집계 기준 수치. 공개 전 최신 수치 검수 권장.</p>
+        <p style="font-size:11px;color:#827b74;margin:14px 0 0">* 자체 집계 기준</p>
       </div>
     </div>
   </section>
@@ -799,7 +798,7 @@
         <article class="focus mas" data-word="M">
           <div class="eyebrow">MASERATI</div>
           <h3>누적 경험으로 판단합니다.</h3>
-          <p>기블리, 르반떼, 콰트로포르테, 그란투리스모 등 다양한 세대의 마세라티 정비·사고수리·성능보증 사례를 기반으로 진단합니다.</p>
+          <p>기블리, 르반떼, 콰트로포르테, 그란투리스모 등 다양한 세대의 마세라티 정비·보험수리·성능보증 사례를 기반으로 진단합니다.</p>
         </article>
         <article class="focus fer" data-word="F">
           <div class="eyebrow">FERRARI</div>
@@ -954,7 +953,7 @@
     <div class="wrap">
       <div class="instagram-head">
         <div><div class="eyebrow" style="color:#7e7770">Instagram / @loganservice_official</div><h2 class="section-title">정비 현장을 그대로 보여드립니다.</h2></div>
-        <p>로건서비스의 실제 작업 사진과 차량 입고 사례를 인스타그램에서 확인할 수 있습니다. 홈페이지에는 현장감이 살아있는 사진만 포인트로 사용했습니다.</p>
+        <p>로건서비스의 실제 작업 사진과 차량 입고 사례를 인스타그램에서 확인할 수 있습니다.</p>
       </div>
       <div class="insta-grid">
         <a class="insta-card" href="https://www.instagram.com/loganservice_official/" target="_blank" rel="noopener" aria-label="로건서비스 인스타그램 보기">
@@ -1033,15 +1032,34 @@
         <details class="faq-item"><summary>수리비 견적은 미리 알 수 있나요?</summary><p>차량을 확인한 뒤 수리 범위와 비용을 먼저 안내해 드립니다. 증상이나 파손 사진을 카카오 채널로 보내주시면 점검 범위를 먼저 안내합니다.</p></details>
         <details class="faq-item"><summary>마세라티 부품은 오래 기다려야 하나요?</summary><p>부품 종류에 따라 수급 일정이 다릅니다. 차량을 확인한 뒤 필요한 부품과 예상 일정을 안내해 드립니다.</p></details>
         <details class="faq-item"><summary>수리 기간은 얼마나 걸리나요?</summary><p>작업 범위와 부품 수급에 따라 달라집니다. 차량을 확인한 뒤 예상 일정을 안내해 드립니다.</p></details>
-        <details class="faq-item"><summary>진단비는 얼마인가요?</summary><p>증상과 진단 범위에 따라 달라 상담 때 안내해 드립니다. 1544-6072으로 문의해 주세요.</p></details>
-        <details class="faq-item"><summary>마세라티 엔진오일 교환 비용은 얼마인가요?</summary><p>모델, 연식, 엔진에 따라 달라 상담 때 안내해 드립니다. 차종과 연식을 알려주세요.</p></details>
+        <details class="faq-item"><summary>진단비는 얼마인가요?</summary><p>진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 점검은 무상입니다. 1544-6072으로 문의해 주세요.</p></details>
+        <details class="faq-item"><summary>마세라티 엔진오일 교환 비용은 얼마인가요?</summary><p>40~45만원이며 모델마다 차이가 있습니다. 차종과 연식을 알려주시면 정확히 안내해 드립니다.</p></details>
         <details class="faq-item"><summary>마세라티 헤드 리빌트나 엔진 누유 수리는 얼마나 걸리나요?</summary><p>차량 상태와 부품 수급에 따라 달라 진단 후 예상 일정을 안내해 드립니다.</p></details>
         <details class="faq-item"><summary>보험수리는 어떤 순서로 진행되나요?</summary><p>보험사에 사고 접수를 하신 뒤 접수번호와 함께 상담해 주시면, 차량 상태를 확인하고 수리 범위와 절차를 안내한 뒤 수리와 출고 점검까지 진행합니다. 판금·도장이 필요한 사고수리는 그룹사 그릿서비스와 연계합니다.</p></details>
         <details class="faq-item"><summary>성능보증수리는 어떤 순서로 진행되나요?</summary><p>성능·상태점검 기록부와 차량 증상을 알려주시면 진단, 보험 접수, 수리 순서로 진행합니다. 보증 적용 여부는 차량과 접수 내용에 따라 확인이 필요합니다.</p></details>
         <details class="faq-item"><summary>중고 마세라티를 샀는데 고장이 났어요. 성능보증보험으로 수리할 수 있나요?</summary><p>성능점검 기록부와 실제 상태가 다르다면 성능점검 배상책임보험으로 수리할 수 있는 경우가 있습니다. 로건서비스에서 진단 후 접수 가능 여부를 안내해 드립니다.</p></details>
         <details class="faq-item"><summary>영업시간은 어떻게 되나요? 주말에도 하나요?</summary><p>평일 09:00~18:00이며 점심시간은 12:30~13:30입니다. 토·일요일은 휴무입니다.</p></details>
         <details class="faq-item"><summary>실제 정비 사례를 볼 수 있나요?</summary><p>네이버 블로그(blog.naver.com/logan_service)와 인스타그램 @loganservice_official에서 실제 진단·정비 사례를 보실 수 있습니다.</p></details>
-        <details class="faq-more" id="faq-more">
+        <details class="faq-item"><summary>마세라티 정비 비용은 얼마인가요?</summary><p>로건서비스의 진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 점검은 무상입니다. 엔진오일 교환은 40~45만원(모델마다 차이)입니다. 그 밖의 수리비는 차량을 점검한 뒤 견적을 드립니다.</p></details>
+<details class="faq-item"><summary>마세라티 공식센터 말고 사설 정비소에 맡겨도 되나요?</summary><p>로건서비스는 2016년부터 마세라티와 페라리만 정비해 온 경기도 파주의 사설 전문 정비소입니다. 진단·일반정비, 보험수리, 중고차 성능보증수리를 직접 진행하고, 사고수리(판금·도장)는 그룹사 그릿서비스와 연계합니다. 상담 1544-6072.</p></details>
+<details class="faq-item"><summary>마세라티 수리 기간은 얼마나 걸리나요?</summary><p>헤드 리빌트와 엔진 전체 누유 작업은 입고일로부터 평일 기준 5일이 걸립니다. 그 밖의 작업은 차량을 점검한 뒤 예상 기간을 안내합니다.</p></details>
+<details class="faq-item"><summary>부산·대전 같은 지방에서도 마세라티 정비를 맡길 수 있나요?</summary><p>로건서비스는 경기도 파주에 있고 지방 지점은 없지만, 전국 탁송으로 입고할 수 있습니다. 충청·경북·전북은 4구역으로 왕복 탁송비 18~22만원이며 정비 130만원 이상이면 편도 탁송비를 지원합니다. 그 밖의 지역은 1544-6072로 문의해 주세요.</p></details>
+<details class="faq-item"><summary>마세라티 탁송비는 얼마인가요?</summary><p>1구역(파주·일산·김포) 왕복 4~6만원(정비 30만원 이상 무료), 2구역(고양 덕양·서울 서북부·인천 서구) 왕복 8~12만원(정비 70만원 이상 무료), 3구역(그 밖 서울·경기) 왕복 10~16만원(정비 100만원 이상 편도 지원), 4구역(충청·경북·전북) 왕복 18~22만원(정비 130만원 이상 편도 지원)입니다.</p></details>
+<details class="faq-item"><summary>기블리 엔진오일 교환 비용은 얼마인가요?</summary><p>로건서비스의 마세라티 엔진오일 교환은 40~45만원이며 모델마다 차이가 있습니다. 기블리·르반떼·콰트로포르테·그란투리스모 모두 차량 모델을 알려 주시면 정확히 안내합니다.</p></details>
+<details class="faq-item"><summary>기블리 헤드 리빌트는 며칠 걸리나요?</summary><p>헤드 리빌트와 엔진 전체 누유 작업은 입고일로부터 평일 기준 5일입니다. 로건서비스는 마세라티 정품·애프터마켓 부품을 자체 재고로 보유하고 있습니다.</p></details>
+<details class="faq-item"><summary>르반떼 누유 진단 비용은 얼마인가요?</summary><p>진단비는 88,000원(부가세 포함)이며, 진단 후 작업을 진행하시면 무상입니다. 누유 위치 사진을 먼저 보내 주시면 상담이 빠릅니다.</p></details>
+<details class="faq-item"><summary>콰트로포르테·그란투리스모도 정비하나요?</summary><p>네. 로건서비스는 2016년부터 기블리, 르반떼, 콰트로포르테, 그란투리스모 등 마세라티 전 모델과 페라리를 정비합니다. 경기도 파주시 아침노을길 55, 1544-6072이며 전국 탁송도 가능합니다.</p></details>
+<details class="faq-item"><summary>마세라티 엔진 경고등이 켜지면 어떻게 하나요?</summary><p>엔진 경고등은 센서, 점화, 전장 등 원인이 다양해 진단 장비로 확인해야 정확합니다. 경고등이 깜빡이거나 출력 저하·진동이 함께 나타나면 무리하게 운행하지 말고 상담해 주세요. 진단비는 88,000원(부가세 포함)이며 작업을 진행하면 받지 않습니다.</p></details>
+<details class="faq-item"><summary>마세라티 미션 고장이나 변속 충격은 왜 생기나요?</summary><p>변속 충격은 오일 상태, 마운트, 미션 제어 계통 등 여러 원인에서 생길 수 있습니다. 로건서비스가 차량을 직접 진단한 뒤 수리 범위를 안내합니다.</p></details>
+<details class="faq-item"><summary>마세라티 냉각수가 새는데 계속 타도 되나요?</summary><p>냉각수가 새면 과열로 이어질 수 있어 운행 전에 점검을 받는 것이 좋습니다. 누유 위치 사진을 보내 주시면 상담이 빨라지고, 운행이 어려우면 탁송으로 입고할 수 있습니다.</p></details>
+<details class="faq-item"><summary>마세라티가 주행 중 시동이 꺼졌어요. 어떻게 하나요?</summary><p>배터리, 발전기, 전장, 연료 계통 등 원인이 다양합니다. 안전한 곳에 정차하고 무리하게 재시동하지 마세요. 운행이 어려우면 전국 탁송으로 로건서비스에 입고할 수 있습니다.</p></details>
+<details class="faq-item"><summary>르반떼 에어서스펜션 경고등이 뜨거나 차고가 내려가요.</summary><p>하체·전장 진단으로 원인을 확인합니다. 차고가 비정상이면 운행을 자제하고 1544-6072로 상담해 주세요.</p></details>
+<details class="faq-item"><summary>페라리 사설 정비소 추천해 주세요.</summary><p>로건서비스는 2016년부터 마세라티와 페라리 두 브랜드만 정비하는 사설 정비소입니다(경기도 파주시 아침노을길 55). 페라리 진단·일반정비, 보험수리, 중고차 성능보증수리를 하며 상담은 1544-6072로 받습니다.</p></details>
+<details class="faq-item"><summary>페라리 458·캘리포니아·포르토피노도 정비하나요?</summary><p>네. 로건서비스는 페라리 차량의 진단과 일반정비를 합니다. 진단비는 88,000원(부가세 포함)이고, 작업을 진행하면 받지 않습니다.</p></details>
+<details class="faq-item"><summary>페라리 경고등이 떴어요. 어떻게 하나요?</summary><p>엔진·오일·냉각수 경고등이 켜지면 무리하게 운행하지 말고 점검을 받으세요. 경고등 사진을 보내 상담할 수 있고, 지방이라면 전국 탁송(지역·정비 금액에 따라 탁송비 무료 또는 편도 지원)으로 입고할 수 있습니다.</p></details>
+<details class="faq-item"><summary>페라리 사고수리(판금·도장)도 하나요?</summary><p>판금·도장 같은 사고수리는 그룹사 그릿서비스(gritservice.co.kr, 1577-0412)와 연계해 진행합니다. 로건서비스는 진단·정비와 보험수리를 담당합니다.</p></details>
+<details class="faq-item"><summary>마세라티 정비소 영업시간은 어떻게 되나요?</summary><p>평일 09:00~18:00(점심 12:30~13:30)에 운영하고 토·일요일은 휴무입니다. 위치는 경기도 파주시 아침노을길 55, 대표번호는 1544-6072입니다.</p></details>
+<details class="faq-more" id="faq-more">
           <summary><span class="more-open">더보기 · 자주 묻는 질문 200개</span><span class="more-close">접기</span></summary>
           <h3 class="faq-cat">지역·전문점 추천</h3>
           <details class="faq-item"><summary>마세라티 정비소 추천해줘</summary><p>로건서비스는 2016년부터 마세라티와 페라리만 전문으로 정비하는 경기도 파주의 정비소입니다. 진단·일반정비, 보험수리, 중고차 성능보증수리를 하고, 사고수리는 그룹사 그릿서비스와 연계해 진행합니다. 주소는 경기도 파주시 아침노을길 55, 대표번호 1544-6072입니다.</p></details>
@@ -1163,7 +1181,7 @@
           <details class="faq-item"><summary>페라리 과열</summary><p>페라리 과열 증상은 냉각 계통 점검이 필요합니다. 무리한 운행을 피하고 로건서비스에 상담하세요.</p></details>
           <details class="faq-item"><summary>경고등 사진 보내도 돼?</summary><p>됩니다. 경고등이나 누유 사진을 카카오 채널(https://pf.kakao.com/_PKYxdG)로 보내주시면 로건서비스가 점검 범위를 먼저 안내합니다.</p></details>
           <details class="faq-item"><summary>증상 설명만으로 진단돼?</summary><p>증상 설명으로 점검 방향은 잡을 수 있지만 정확한 원인은 차량을 직접 봐야 합니다. 로건서비스는 차량을 직접 보고 원인을 먼저 찾습니다.</p></details>
-          <h3 class="faq-cat">사고수리</h3>
+          <h3 class="faq-cat">사고수리 (그릿서비스 연계)</h3>
           <details class="faq-item"><summary>마세라티 사고수리</summary><p>마세라티 사고 차량은 로건서비스가 그룹사 그릿서비스와 연계해 판금·도장, 부품 교환, 출고 점검까지 진행합니다. 사고 사진과 보험 접수 여부를 대표번호 1544-6072로 알려주세요.</p></details>
           <details class="faq-item"><summary>마세라티 사고 났어 어디서 고쳐?</summary><p>마세라티·페라리 전문 정비소 로건서비스(1544-6072)에 상담하세요. 사고수리는 그룹사 그릿서비스와 연계해 진행하고, 보험수리 절차는 로건서비스가 안내합니다.</p></details>
           <details class="faq-item"><summary>마세라티 판금도장</summary><p>마세라티 판금·도장은 로건서비스가 그룹사 그릿서비스와 연계해 진행합니다. 파손 부위 사진을 보내주시면 수리 범위를 먼저 안내합니다.</p></details>
@@ -1173,7 +1191,7 @@
           <details class="faq-item"><summary>마세라티 휠 긁힘</summary><p>휠 손상은 상태에 따라 수리 또는 교환을 판단합니다. 사고로 생긴 손상이라면 로건서비스에 상담하세요. 사고수리는 그룹사 그릿서비스와 연계해 진행합니다.</p></details>
           <details class="faq-item"><summary>페라리 판금도장</summary><p>페라리 판금·도장은 로건서비스가 그룹사 그릿서비스와 연계해 진행합니다. 파손 사진을 보내주시면 수리 범위를 먼저 안내합니다.</p></details>
           <details class="faq-item"><summary>페라리 범퍼 파손</summary><p>페라리 범퍼 파손은 로건서비스가 그룹사 그릿서비스와 연계해 복원 또는 교환을 판단해 수리합니다. 대표번호 1544-6072.</p></details>
-          <details class="faq-item"><summary>수입차 사고 나면 뭐부터 해?</summary><p>안전한 곳으로 피하고 다친 사람을 확인한 뒤 현장과 파손 사진을 찍고 보험사에 접수합니다. 마세라티·페라리라면 로건서비스(1544-6072)에 수리를 상담할 수 있습니다.</p></details>
+          <details class="faq-item"><summary>수입차 사고 나면 뭐부터 해?</summary><p>안전한 곳으로 피하고 다친 사람을 확인한 뒤 현장과 파손 사진을 찍고 보험사에 접수합니다. 마세라티·페라리 사고수리는 로건서비스(1544-6072)와 그룹사 그릿서비스가 연계해 진행합니다.</p></details>
           <details class="faq-item"><summary>사고수리 공업사 내가 골라도 돼?</summary><p>일반적으로 수리할 곳은 차주가 정할 수 있습니다. 마세라티·페라리라면 로건서비스(1544-6072)에 접수번호를 알려주세요. 사고수리는 그룹사 그릿서비스와 연계해 진행합니다.</p></details>
           <details class="faq-item"><summary>사고 후 겉은 괜찮은데 점검해야 돼?</summary><p>겉이 멀쩡해도 범퍼 안쪽 보강재, 센서, 하체가 손상됐을 수 있어 점검이 좋습니다. 마세라티·페라리라면 로건서비스에서 사고 차량 진단을 받을 수 있습니다.</p></details>
           <details class="faq-item"><summary>사고 차 운행 안 되면 어떻게 입고해?</summary><p>운행이 어려우면 무리하게 움직이지 말고 보험사 긴급출동이나 견인을 이용하세요. 로건서비스는 전국 탁송 서비스(지역과 정비 금액에 따라 탁송비 일부 지원)도 운영하니 대표번호 1544-6072로 상담하세요.</p></details>
