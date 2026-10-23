@@ -70,6 +70,20 @@ $putErrors = Select-String -Path "$Repo\winscp-last.log" -Pattern "Error transfe
 if ($opened -and ($LASTEXITCODE -eq 0 -or -not $putErrors)) {
   Set-Content $State $new
   Log ("올림 {0}개, 지움 {1}개 ({2})" -f $files.Count, $gone.Count, $new.Substring(0,7))
+  # 검색엔진(네이버·빙)에 바뀐 페이지 알리기(IndexNow). 실패해도 업로드 결과에는 영향 없음
+  $Key = "0d5b85b24fd3f3b1750da89666d9a379"
+  $Hosts = @{ "deploy/grit/" = "gritservice.co.kr"; "deploy/logan/" = "loganservice.co.kr" }
+  foreach ($k in $Hosts.Keys) {
+    $h = $Hosts[$k]
+    $urls = @($files | Where-Object { $_.StartsWith($k) -and $_ -match "\.(html|php)$" -and $_ -notmatch "404\.html$" } |
+      ForEach-Object { "https://$h/" + ($_.Substring($k.Length) -replace "(^|/)index\.(html|php)$", '$1') })
+    if (-not $urls) { continue }
+    $body = @{ host = $h; key = $Key; keyLocation = "https://$h/$Key.txt"; urlList = $urls } | ConvertTo-Json
+    foreach ($ep in @("https://searchadvisor.naver.com/indexnow", "https://api.indexnow.org/indexnow")) {
+      try { Invoke-RestMethod -Uri $ep -Method Post -ContentType "application/json; charset=utf-8" -Body ([Text.Encoding]::UTF8.GetBytes($body)) -TimeoutSec 20 | Out-Null; Log ("IndexNow {0} {1}개 → {2}" -f $h, $urls.Count, $ep) }
+      catch { Log ("IndexNow 실패 {0} ({1})" -f $h, $_.Exception.Message) }
+    }
+  }
 } else {
   Log "실패: winscp-last.log 확인"
   exit 1
