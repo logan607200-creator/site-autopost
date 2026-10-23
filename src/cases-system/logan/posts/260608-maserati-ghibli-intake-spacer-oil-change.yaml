@@ -12,14 +12,14 @@ car: {brand: 마세라티, model: 기블리}
 symptoms: [엔진오일 교환 시기, 인테이크 스페이서 팽창(점검 중 발견)]
 work: [입고 외관 4면 촬영, 전반 점검, 인테이크 스페이서 교체, 엔진오일 교환, 오일필터 교환, 에어필터 교환, 오일 주기 세팅]
 tags: [마세라티 정비, 기블리 인테이크 스페이서, 기블리 엔진오일, 기블리 V6, 마세라티 예방 정비]
-cover: {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-01.webp, alt: "기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 엔진오일·필터 교환과 함께"}
+cover: {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-01.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 엔진오일·필터 교환과 함께"}
 sections:
   - h2: 입고 내용
     text: |
       **엔진오일 교환과 차량 전반 점검을 요청받은 M157 기블리 V6였습니다.** 작업 전 차량 앞·뒤·좌·우 네 면을 촬영해 입고 당시 외관 상태를 기록하고 차주와 공유했습니다.
     photos:
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-02.webp, alt: "마세라티 기블리 입고 내용 사진 1"}
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-03.webp, alt: "마세라티 기블리 입고 내용 사진 2"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-02.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 입고 내용"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-03.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 입고 내용 (2)"}
   - h2: 점검 중 발견한 인테이크 스페이서 팽창
     text: |
       **전반 점검에서 인테이크 스페이서가 정상보다 부풀어 있는 것을 확인했습니다.** 오랜 기간 엔진 열과 유증기에 노출되면서 고무 재질이 팽창해 본래 모양을 잃은 것으로 판단했습니다. 떼어 낸 부품을 새 부품과 나란히 놓으니 눈으로도 차이가 분명했습니다.
@@ -28,23 +28,23 @@ sections:
 
       새 인테이크 스페이서를 장착하고 관련 부위를 점검하며 다시 조립했고, 조립 후 체결 상태를 한 번 더 확인했습니다.
     photos:
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-04.webp, alt: "마세라티 기블리 점검 중 발견한 인테이크 스페이서 팽창 사진 1"}
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-05.webp, alt: "마세라티 기블리 점검 중 발견한 인테이크 스페이서 팽창 사진 2"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-04.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 점검 중 발견한 인테이크 스페이서 팽창"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-05.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 점검 중 발견한 인테이크 스페이서 팽창 (2)"}
   - h2: 엔진오일·필터 교환
     text: |
       **리프트에 올려 기존 엔진오일을 자연 낙하로 충분히 빼낸 뒤 오일필터와 에어필터를 새것으로 바꿨습니다.** 오래 쓴 오일에는 열과 마찰로 성능이 떨어지고 불순물이 쌓이기 때문에, 새 오일만큼 기존 오일을 최대한 빼내는 과정도 중요합니다.
 
       오일필터는 오일 속 슬러지를 걸러 주는 부품이라 오일 교환 때 함께 교체했습니다. 에어필터는 애프터마켓 제품으로 교체했습니다. 로건서비스는 엔진오일 교환 때 오일필터와 에어필터를 함께 교체하고 있습니다.
     photos:
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-06.webp, alt: "마세라티 기블리 엔진오일·필터 교환 사진 1"}
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-07.webp, alt: "마세라티 기블리 엔진오일·필터 교환 사진 2"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-06.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 엔진오일·필터 교환"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-07.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 엔진오일·필터 교환 (2)"}
   - h2: 출고 점검
     text: |
       **규격에 맞는 엔진오일을 정량 넣고 시동을 걸어 오일 순환과 오일 레벨을 확인한 뒤, 오일 주기를 세팅해 마무리했습니다.**
 
       인테이크 스페이서처럼 고무로 된 흡기 부품은 증상이 나타나기 전에 정기 점검에서 먼저 발견되기도 합니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 점검이 필요하다면 차량 정보와 최근 정비 이력을 카톡으로 먼저 보내 주세요.
     photos:
-      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-08.webp, alt: "마세라티 기블리 출고 점검 사진 1"}
+      - {src: assets/cases/260608-maserati-ghibli-intake-spacer-oil-change-08.webp, alt: "마세라티 기블리 V6 부풀어 오른 인테이크 스페이서 교체 — 출고 점검"}
 faq:
   - q: "인테이크 스페이서가 부풀면 어떤 문제가 생기나요?"
     a: "흡기 계통 밀폐가 떨어져 공회전 불안정, 출력 저하, 연비 저하가 생길 수 있고, 심해지면 엔진 경고등으로 이어질 수 있습니다. 이번 기블리는 증상이 나타나기 전 점검에서 발견해 예방 교체했습니다."

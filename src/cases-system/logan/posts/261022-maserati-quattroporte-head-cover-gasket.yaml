@@ -12,7 +12,7 @@ car: {brand: 마세라티, model: 콰트로포르테}
 symptoms: [엔진 상단 헤드커버 주변 오일 비침]
 work: [헤드커버 가스켓 교환, 플러그홀 오링·솔레노이드 오링 교환, 점화플러그 교환, 엔진오일·오일필터 교환]
 tags: [마세라티 정비, 콰트로포르테 누유, 콰트로포르테 헤드커버 가스켓, 마세라티 점화플러그, 마세라티 엔진오일]
-cover: {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-01.webp, alt: "콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓·점화플러그 교환"}
+cover: {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-01.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓·점화플러그 교환"}
 sections:
   - h2: 입고 증상
     text: |
@@ -20,16 +20,16 @@ sections:
 
       헤드커버를 열어야 손이 닿는 점화플러그와 오링류, 그리고 작업 뒤 엔진오일까지 같은 날 함께 교환하기로 했습니다.
     photos:
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-02.webp, alt: "마세라티 콰트로포르테 입고 증상 사진 1"}
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-03.webp, alt: "마세라티 콰트로포르테 입고 증상 사진 2"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-02.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 입고 증상"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-03.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 입고 증상 (2)"}
   - h2: 헤드커버 가스켓이 새는 이유
     text: |
       **헤드커버 가스켓은 엔진 맨 위 덮개와 실린더 헤드 사이를 막아 오일이 밖으로 나오지 않게 하는 고무 패킹입니다.** 엔진 열을 오래 받으면 고무가 굳고 줄어들면서 틈이 생기고, 그 틈으로 오일이 배어 나옵니다.
 
       흘러나온 오일이 뜨거운 배기 부품에 닿으면 보닛 안에서 타는 냄새가 날 수 있습니다. 점화플러그가 꽂히는 구멍(플러그홀)으로 오일이 고이면 실화나 출력 저하로 이어질 수 있어, 비침이 보이는 단계에서 손보는 편이 좋습니다.
     photos:
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-04.webp, alt: "마세라티 콰트로포르테 헤드커버 가스켓이 새는 이유 사진 1"}
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-05.webp, alt: "마세라티 콰트로포르테 헤드커버 가스켓이 새는 이유 사진 2"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-04.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓이 새는 이유"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-05.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓이 새는 이유 (2)"}
   - h2: 작업 과정
     text: |
       **제조사 정비 매뉴얼(Techinfo) 순서에 따라 흡기 쪽 부품과 점화코일을 차례로 떼어 내고 헤드커버를 분리했습니다.** 커버를 연 김에 기존 점화플러그를 빼서 전극 마모 상태를 확인한 뒤, 새 점화플러그를 규정 토크로 장착했습니다.
@@ -38,15 +38,15 @@ sections:
 
       헤드커버를 여는 동안 엔진 내부가 노출되었기 때문에 엔진오일도 교환했습니다. 기존 오일을 빼고 오일필터를 새것으로 바꾼 뒤, 제조사 규격 엔진오일을 정량 넣었습니다.
     photos:
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-06.webp, alt: "마세라티 콰트로포르테 작업 과정 사진 1"}
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-07.webp, alt: "마세라티 콰트로포르테 작업 과정 사진 2"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-06.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 작업 과정"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-07.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 작업 과정 (2)"}
   - h2: 출고 점검
     text: |
       **시동을 걸어 엔진이 충분히 데워질 때까지 헤드커버 둘레에 오일이 다시 비치는지 확인했고, 누유 없이 출고했습니다.** 엔진 전반의 작동 상태도 함께 점검했습니다.
 
       주행 뒤 보닛 안에서 오일 타는 냄새가 나거나 헤드커버 테두리가 젖어 있다면 누유가 시작됐을 수 있습니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 비슷한 증상이 있다면 엔진룸 사진을 카톡으로 먼저 보내 주세요.
     photos:
-      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-08.webp, alt: "마세라티 콰트로포르테 출고 점검 사진 1"}
+      - {src: assets/cases/261022-maserati-quattroporte-head-cover-gasket-08.webp, alt: "마세라티 콰트로포르테 헤드커버 오일 누유 — 출고 점검"}
 faq:
   - q: "헤드커버 가스켓을 바꿀 때 점화플러그도 같이 바꿔야 하나요?"
     a: "콰트로포르테는 헤드커버와 주변 부품을 떼어 내야 점화플러그에 손이 닿습니다. 그래서 이번 차량은 가스켓 교환 때 점화플러그 상태를 확인하고 함께 교환했습니다."

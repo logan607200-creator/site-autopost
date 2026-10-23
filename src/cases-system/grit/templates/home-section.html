@@ -4,7 +4,7 @@
   <style>
     .cases-home{background:#fff;border-top:1px solid #e6eaf0}
     .cases-home-head{display:flex;justify-content:space-between;align-items:end;gap:32px;flex-wrap:wrap}
-    .cases-home-eyebrow{font-size:12px;letter-spacing:.18em;font-weight:700;color:#5b6270;margin:0}
+    .cases-home-eyebrow{font-size:13px;letter-spacing:.18em;font-weight:700;color:#5b6270;margin:0}
     .cases-home-h{font-size:clamp(30px,5vw,56px);line-height:1.08;letter-spacing:-.04em;margin:10px 0 0;word-break:keep-all}
     .cases-home-head p{max-width:460px;color:#4f5662;margin:0;word-break:keep-all;font-size:16px}
     .cases-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px;margin-top:36px}
@@ -18,13 +18,13 @@
     .cases-card-body{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
     .cases-card-title{font-size:19px;line-height:1.4;margin:0;letter-spacing:-.025em;word-break:keep-all}
     .cases-card-meta{margin:auto 0 0;font-size:14px;color:#5b6270;display:flex;flex-wrap:wrap;gap:4px 12px}
-    .cases-card-meta>*{white-space:nowrap}
+    .cases-card-meta>*{min-width:0}
     .cases-home-more{display:flex;justify-content:center;margin-top:34px}
     .cases-home-more a{display:inline-flex;align-items:center;justify-content:center;min-height:52px;padding:0 30px;background:#004a9f;color:#fff;font-weight:700;font-size:15px;text-decoration:none}
     .cases-home-more a:hover{background:#003a7d}
-    @media(max-width:900px){.cases-grid{grid-template-columns:1fr 1fr}}
+    @media(max-width:900px){.cases-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
     @media(max-width:620px){
-      .cases-grid{grid-template-columns:1fr;gap:12px}
+      .cases-grid{grid-template-columns:minmax(0,1fr);gap:12px}
       .cases-card-link{flex-direction:row}
       .cases-card-img{flex:0 0 38%;aspect-ratio:1/1}
       .cases-card-cat{left:6px;top:6px;font-size:12px;padding:2px 7px}
@@ -43,6 +43,7 @@
       <p>실제로 입고된 차의 증상, 진단, 작업 과정을 한 건씩 기록합니다. 내 차와 비슷한 사례를 찾아보세요.</p>
     </div>
     <div class="cases-grid">
+      {%- set card_sizes = '(max-width:620px) 38vw, (max-width:900px) 50vw, 390px' %}
       {%- for p in posts[:6] %}
       {% include "card.html" %}
       {%- endfor %}

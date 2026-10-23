@@ -12,37 +12,37 @@ car: {brand: 마세라티, model: 콰트로포르테}
 symptoms: [주행 중 하부 소음]
 work: [하부 점검, 디퍼런셜 마운트 교환, 앞 브레이크 디스크·패드 교환, 시운전]
 tags: [마세라티 정비, 콰트로포르테 하체 소음, 콰트로포르테 디퍼런셜 마운트, 콰트로포르테 브레이크 패드, 마세라티 브레이크 디스크]
-cover: {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-01.webp, alt: "콰트로포르테 주행 중 하부 소음 — 디퍼런셜 마운트·앞 브레이크 디스크·패드 교환"}
+cover: {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-01.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 디퍼런셜 마운트·앞 브레이크 디스크·패드 교환"}
 sections:
   - h2: 입고 증상
     text: |
       **주행 중 차 아래에서 소음이 느껴진다는 콰트로포르테였습니다.** 하부 소음은 원인이 여러 가지일 수 있어, 리프트에 올려 하부 전체를 점검하는 것부터 시작했습니다.
     photos:
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-02.webp, alt: "마세라티 콰트로포르테 입고 증상 사진 1"}
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-03.webp, alt: "마세라티 콰트로포르테 입고 증상 사진 2"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-02.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 입고 증상"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-03.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 입고 증상 (2)"}
   - h2: 진단 — 찢어진 디퍼런셜 마운트
     text: |
       **디퍼런셜 마운트의 고무 부싱이 갈라지고 찢어져 있는 것을 확인했습니다.** 디퍼런셜은 구동력을 전달하면서 조금씩 움직이는데, 마운트 부싱이 찢어지면 이를 제대로 붙잡지 못해 움직임이 커집니다. 그 충격이 마운트와 주변 부품으로 전해지면서 소음이 생길 수 있습니다.
 
       입고 때 함께 한 기본 점검에서는 앞 브레이크 디스크와 패드의 마모가 꽤 진행된 것도 확인됐습니다. 그대로 타면 제동할 때 진동이나 소음이 생길 수 있는 상태라 차주에게 함께 안내했습니다.
     photos:
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-04.webp, alt: "마세라티 콰트로포르테 진단 — 찢어진 디퍼런셜 마운트 사진 1"}
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-05.webp, alt: "마세라티 콰트로포르테 진단 — 찢어진 디퍼런셜 마운트 사진 2"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-04.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 진단: 찢어진 디퍼런셜 마운트"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-05.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 진단: 찢어진 디퍼런셜 마운트 (2)"}
   - h2: 작업 내용
     text: |
       **손상된 디퍼런셜 마운트를 새 부품으로 바꾸고, 볼트 체결 상태와 주변 브라켓·연결부까지 함께 확인했습니다.** 마운트는 눈에 잘 띄지 않는 부위지만 하부 전체의 진동과 소음에 영향을 주기 때문에 주변부 점검을 같이 했습니다.
 
       앞 브레이크는 캘리퍼를 떼어 낸 뒤 좌우 디스크를 새것으로 바꾸고 새 패드를 장착했습니다. 패드가 바르게 앉았는지와 캘리퍼 작동 상태를 확인하며 조립했고, 각 부품의 체결 토크와 위치도 다시 봤습니다.
     photos:
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-06.webp, alt: "마세라티 콰트로포르테 작업 내용 사진 1"}
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-07.webp, alt: "마세라티 콰트로포르테 작업 내용 사진 2"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-06.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 작업 내용"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-07.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 작업 내용 (2)"}
   - h2: 출고 점검
     text: |
       **휠을 규정 토크로 장착한 뒤 시운전으로 하부 진동이 사라졌는지와 제동 느낌이 정상으로 돌아왔는지 확인하고 출고했습니다.**
 
       디퍼런셜 마운트 손상은 방치하면 시간이 지나며 다른 구동계 부품에도 영향을 줄 수 있어 정기적인 하부 점검이 도움이 됩니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 비슷한 소음이 있다면 언제 소리가 나는지 적어 카톡으로 먼저 보내 주세요.
     photos:
-      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-08.webp, alt: "마세라티 콰트로포르테 출고 점검 사진 1"}
+      - {src: assets/cases/260826-maserati-quattroporte-differential-mount-brake-08.webp, alt: "마세라티 콰트로포르테 주행 중 하부 소음 — 출고 점검"}
 faq:
   - q: "디퍼런셜 마운트가 손상되면 어떤 증상이 있나요?"
     a: "이번 콰트로포르테처럼 주행 중 하부에서 소음이 날 수 있습니다. 찢어진 부싱이 디퍼런셜을 제대로 붙잡지 못해 움직임이 커지고, 그 충격이 주변 부품으로 전해지기 때문입니다."

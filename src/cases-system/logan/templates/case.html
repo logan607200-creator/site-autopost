@@ -9,9 +9,9 @@
 {% block head_extra %}
   {%- if post.cover %}
   <meta property="og:image:alt" content="{{ post.cover.alt }}" />
-  <link rel="preload" as="image" href="{{ root }}{{ post.cover.src }}" fetchpriority="high" />
+  <link rel="preload" as="image" href="{{ root }}{{ post.cover.src }}" fetchpriority="high" media="(min-width:761px)" />
   {%- endif %}
-  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:card" content="{{ 'summary_large_image' if post.photos_all else 'summary' }}" />
   <meta property="article:published_time" content="{{ post.date_iso }}" />
 {% endblock %}
 
@@ -116,7 +116,7 @@
           {%- for f in post.faq %}
           <details class="cases-faq-item"{% if loop.first %} open{% endif %}>
             <summary>{{ f.q }}</summary>
-            <p>{{ f.a }}</p>
+            <p>{{ f.a|autolink }}</p>
           </details>
           {%- endfor %}
         </div>
@@ -148,6 +148,7 @@
           <a class="btn cases-btn-kakao" href="{{ site.kakao }}" target="_blank" rel="noopener">{{ site.kakao_label|default('증상 사진 보내기(카톡)') }}</a>
         </div>
         {%- if site.hours %}<p class="cases-cta-hours">{{ site.hours }}</p>{% endif %}
+        <p class="cases-cta-addr">{{ site.name }} · {{ site.address }}{% if site.map %} · <a href="{{ site.map }}" target="_blank" rel="noopener">네이버 지도</a>{% endif %}</p>
       </div>
     </div>
   </section>
