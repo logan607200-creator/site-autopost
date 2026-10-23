@@ -1,11 +1,18 @@
-{#- 카드 1장. 변수: p(post), root. 홈·목록·관련사례 공통. 클래스는 cases- 접두어 -#}
+{#- 카드 1장. 변수: p(post), root. 홈·목록·관련사례 공통. 클래스는 cases- 접두어. 선택: card_sizes(img sizes)
+    사진은 폭 420 썸네일(thumbs/) + 원본을 srcset 으로. 분류 라벨·사진은 링크 이름에서 빼서(aria-hidden) 같은 말이 되풀이되지 않게 -#}
+{%- set _img = p.card_img if p.card_img is defined else p.cover -%}
+{%- set _sizes = card_sizes|default('(max-width:620px) 38vw, (max-width:900px) 50vw, 390px') -%}
 <article class="cases-card">
   <a class="cases-card-link" href="{{ root }}{{ p.url }}">
     <div class="cases-card-img">
-      {%- if p.cover and p.cover.src %}
-      <img src="{{ root }}{{ p.cover.src }}" alt="{{ p.cover.alt|default(p.title) }}" width="{{ p.cover.w|default(800) }}" height="{{ p.cover.h|default(600) }}" loading="lazy" decoding="async">
+      {%- if _img and _img.src %}
+      {%- if _img.thumb %}
+      <img src="{{ root }}{{ _img.thumb }}" srcset="{{ root }}{{ _img.thumb }} {{ _img.thumb_w }}w, {{ root }}{{ _img.src }} {{ _img.w }}w" sizes="{{ _sizes }}" alt="{{ _img.alt|default(p.title) }}" width="{{ _img.thumb_w }}" height="{{ _img.thumb_h }}" aria-hidden="true" loading="lazy" decoding="async">
+      {%- else %}
+      <img src="{{ root }}{{ _img.src }}" alt="{{ _img.alt|default(p.title) }}" width="{{ _img.w|default(800) }}" height="{{ _img.h|default(600) }}" aria-hidden="true" loading="lazy" decoding="async">
       {%- endif %}
-      <span class="cases-card-cat">{{ p.category_name }}</span>
+      {%- endif %}
+      <span class="cases-card-cat" aria-hidden="true">{{ p.category_name }}</span>
     </div>
     <div class="cases-card-body">
       <h3 class="cases-card-title">{{ p.title }}</h3>

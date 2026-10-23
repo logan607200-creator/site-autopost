@@ -12,7 +12,7 @@ car: {brand: 마세라티, model: 기블리}
 symptoms: [연료 공급 계통 이상 의심]
 work: [뒷좌석 시트 탈거, 저압 연료펌프 점검, 저압 연료펌프 교환, 시운전]
 tags: [마세라티 정비, 기블리 연료펌프, 기블리 시동 지연, 마세라티 저압 연료펌프, 기블리 출력 저하]
-cover: {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-01.webp, alt: "기블리 저압 연료펌프 파손 — 뒷좌석 아래 펌프 교환"}
+cover: {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-01.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 뒷좌석 아래 펌프 교환"}
 sections:
   - h2: 저압 연료펌프가 하는 일
     text: |
@@ -20,25 +20,25 @@ sections:
 
       일반적으로 시동이 평소보다 늦게 걸리거나 간헐적으로 안 걸리는 경우, 가속할 때 힘이 빠지거나 울컥거리는 경우, RPM이 불안정하거나 엔진 경고등이 켜지는 경우에 연료 공급 계통을 함께 확인합니다. 다만 이런 증상만으로 연료펌프 고장이라고 단정할 수는 없어, 관련 계통을 점검해 원인을 확인한 뒤 수리합니다.
     photos:
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-02.webp, alt: "마세라티 기블리 저압 연료펌프가 하는 일 사진 1"}
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-03.webp, alt: "마세라티 기블리 저압 연료펌프가 하는 일 사진 2"}
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-04.webp, alt: "마세라티 기블리 저압 연료펌프가 하는 일 사진 3"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-02.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 저압 연료펌프가 하는 일"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-03.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 저압 연료펌프가 하는 일 (2)"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-04.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 저압 연료펌프가 하는 일 (3)"}
   - h2: 점검 — 뒷좌석 아래에서 확인한 파손
     text: |
       **기블리의 저압 연료펌프는 뒷좌석 시트 아래에 있어, 시트부터 떼어 내고 펌프를 꺼내 확인했고 파손이 보였습니다.** 실내 작업이라 시트와 주변 내장재가 상하지 않도록 보호하면서 진행했습니다.
 
       저압 펌프가 고장 나거나 파손되면 연료 압력이 떨어져 시동 지연이나 시동 불능, 출력 저하, 주행 중 시동 꺼짐으로 이어질 수 있습니다. 고압 계통에 무리가 갈 수도 있어 작은 증상이라도 일찍 점검하는 것이 좋습니다.
     photos:
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-05.webp, alt: "마세라티 기블리 점검 — 뒷좌석 아래에서 확인한 파손 사진 1"}
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-06.webp, alt: "마세라티 기블리 점검 — 뒷좌석 아래에서 확인한 파손 사진 2"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-05.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 점검: 뒷좌석 아래에서 확인한 파손"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-06.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 점검: 뒷좌석 아래에서 확인한 파손 (2)"}
   - h2: 교환과 출고 점검
     text: |
       **파손된 저압 연료펌프를 새 부품으로 교환하고, 시트를 다시 조립한 뒤 시운전으로 증상이 재발하지 않는 것을 확인했습니다.** 교환 부품은 정품과 애프터마켓 부품 모두 가능합니다.
 
       시동이 잘 안 걸리거나 가속이 둔해졌다면 연료 공급 계통도 점검 대상에 넣는 것이 좋습니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 비슷한 증상이 있다면 계기판 사진과 증상을 카톡으로 먼저 보내 주세요.
     photos:
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-07.webp, alt: "마세라티 기블리 교환과 출고 점검 사진 1"}
-      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-08.webp, alt: "마세라티 기블리 교환과 출고 점검 사진 2"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-07.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 교환과 출고 점검"}
+      - {src: assets/cases/261014-maserati-ghibli-low-pressure-fuel-pump-08.webp, alt: "마세라티 기블리 저압 연료펌프 파손 — 교환과 출고 점검 (2)"}
 faq:
   - q: "기블리 저압 연료펌프는 어디에 있나요?"
     a: "뒷좌석 시트 아래에 있습니다. 그래서 점검과 교환 때 뒷좌석 시트를 먼저 떼어 냅니다."

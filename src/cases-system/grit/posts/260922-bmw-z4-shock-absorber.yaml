@@ -18,16 +18,16 @@ sections:
     text: |
       BMW Z4가 "달릴 때 하체에서 이상한 소리가 나고 승차감이 불안하다"는 증상으로 입고됐습니다. 고객님 설명을 바탕으로 서스펜션 계통을 중심으로 점검하기로 했습니다.
     photos:
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-02.webp, alt: "BMW Z4 입고 증상 사진 1"}
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-03.webp, alt: "BMW Z4 입고 증상 사진 2"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-02.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 입고 증상"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-03.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 입고 증상 (2)"}
   - h2: 점검·진단
     text: |
       차를 리프트에 올려 하부를 확인한 결과, 쇽업쇼버 계통에서 파손이 보였습니다. 정상적인 감쇠 기능을 기대하기 어려운 상태로 판단해 쇽업쇼버 어셈블리를 교환하기로 했습니다.
 
       쇽업쇼버는 스프링과 함께 차체가 위아래로 출렁이는 것을 잡아 주고, 타이어가 노면에 안정적으로 붙어 있도록 돕는 부품입니다. 내부 오일이 새거나, 마운트가 상하거나, 스프링이 지치는 등 여러 이유로 성능이 떨어지거나 파손될 수 있습니다.
     photos:
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-04.webp, alt: "BMW Z4 점검·진단 사진 1"}
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-05.webp, alt: "BMW Z4 점검·진단 사진 2"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-04.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 점검·진단"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-05.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 점검·진단 (2)"}
   - h2: 작업 내용
     text: |
       먼저 문제가 있는 쇽업쇼버 어셈블리를 차에서 떼어 냈습니다. 서스펜션 스프링에는 큰 장력이 걸려 있어 그냥 풀면 위험합니다. 스프링 컴프레서로 장력을 안전하게 푼 뒤 쇽업쇼버 본체, 상단 마운트, 스프링 순서로 분리했습니다.
@@ -36,15 +36,15 @@ sections:
 
       교환용으로는 쇽업쇼버 본체, 스프링, 상단 마운트를 모두 새 부품으로 준비했습니다. 컴프레서로 새 스프링을 눌러 둔 상태에서 본체와 상단 마운트를 차례로 조립했고, 부품마다 결합 위치와 방향을 확인한 뒤 체결부를 규정 토크로 조였습니다.
     photos:
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-06.webp, alt: "BMW Z4 작업 내용 사진 1"}
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-07.webp, alt: "BMW Z4 작업 내용 사진 2"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-06.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 작업 내용"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-07.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 작업 내용 (2)"}
   - h2: 출고 점검
     text: |
       완성한 어셈블리를 차에 달고, 주변 부품과 닿는 곳이 없는지와 체결부 토크를 다시 확인했습니다. 서스펜션 부품을 바꾸면 바퀴 각도가 달라질 수 있어 마지막으로 휠 얼라인먼트를 점검한 뒤 작업을 마쳤습니다.
 
       쇽업쇼버는 겉으로만 봐서는 상태를 알기 어렵습니다. 일반적으로 하체 소음, 과속방지턱에서 충격이 커진 느낌, 코너에서 차체 흔들림 증가, 차가 한쪽으로 기울어 보임, 쇽업쇼버 주변 오일 흔적, 타이어 편마모 같은 증상이 있으면 서스펜션 점검을 받아 보시는 것이 좋습니다. 그대로 두면 승차감뿐 아니라 타이어와 다른 하체 부품까지 더 빨리 닳을 수 있습니다.
     photos:
-      - {src: assets/cases/260922-bmw-z4-shock-absorber-08.webp, alt: "BMW Z4 출고 점검 사진 1"}
+      - {src: assets/cases/260922-bmw-z4-shock-absorber-08.webp, alt: "BMW Z4 하체 소음·승차감 불안, 쇽업쇼버 교환 — 출고 점검"}
 faq:
   - q: "쇽업쇼버를 교환한 뒤 휠 얼라인먼트도 봐야 하나요?"
     a: "서스펜션 부품을 떼었다 달면 바퀴가 노면에 닿는 각도가 달라질 수 있어, 교환 후 휠 얼라인먼트를 점검하는 것이 일반적입니다."

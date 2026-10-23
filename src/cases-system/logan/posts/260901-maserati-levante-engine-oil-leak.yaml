@@ -4,30 +4,30 @@ draft: false
 source: https://blog.naver.com/logan_service/224397623327
 photos_pending: false
 category: maserati
-title: "르반떼 엔진오일 누유 — 실린더 헤드 가스켓·크랭크 프론트 오일씰·헤드커버 실링"
-seo_title: "마세라티 르반떼 엔진오일 누유, 헤드 가스켓 교환 | 로건서비스"
+title: "르반떼 실린더 헤드 가스켓 누유 — 크랭크 프론트 오일씰·헤드커버 실링까지"
+seo_title: "마세라티 르반떼 헤드 가스켓 누유 교환 | 로건서비스"
 description: "엔진오일이 새던 마세라티 르반떼(M161)의 엔진을 내려 헤드 가스켓과 크랭크 오일씰을 정비한 파주 로건서비스 사례."
 summary: "르반떼(M161) 엔진오일 누유를 잡기 위해 에어컨 냉매를 회수하고 엔진을 내린 뒤, 실린더 헤드 가스켓 교환, 전방 크랭크 오일씰(리테이너) 작업, 헤드커버 실링을 진행했습니다. 냉매 재충전과 진단기 점검, 시운전으로 누유와 작동 상태를 확인하고 출고했습니다."
 car: {brand: 마세라티, model: 르반떼}
 symptoms: [엔진오일 누유]
 work: [에어컨 냉매 회수, 엔진 탈거, 실린더 헤드 가스켓 교환, 전방 크랭크 오일씰 작업, 헤드커버 실링, 냉매 재주입, 진단기 점검, 시운전]
 tags: [마세라티 정비, 르반떼 엔진오일 누유, 르반떼 헤드 가스켓, 르반떼 크랭크 오일씰, 마세라티 누유 수리]
-cover: {src: assets/cases/260901-maserati-levante-engine-oil-leak-01.webp, alt: "르반떼 엔진오일 누유 — 실린더 헤드 가스켓·크랭크 프론트 오일씰·헤드커버 실링"}
+cover: {src: assets/cases/260901-maserati-levante-engine-oil-leak-01.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 크랭크 프론트 오일씰·헤드커버 실링까지"}
 sections:
   - h2: 입고 증상
     text: |
       **엔진오일 누유로 들어온 르반떼(M161)였고, 엔진 주요 부위를 점검해 실린더 헤드 가스켓, 전방 크랭크 오일씰, 헤드커버 쪽을 정비하기로 했습니다.** 세 곳 모두 엔진 깊숙한 부위라 엔진을 차에서 내려 작업했습니다.
     photos:
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-02.webp, alt: "마세라티 르반떼 입고 증상 사진 1"}
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-03.webp, alt: "마세라티 르반떼 입고 증상 사진 2"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-02.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 입고 증상"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-03.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 입고 증상 (2)"}
   - h2: 엔진 탈거 준비
     text: |
       **엔진을 내리려면 에어컨 배관을 분리해야 해서, 가장 먼저 전용 장비로 에어컨 냉매를 회수했습니다.** 회수 없이 배관을 열면 냉매가 그대로 공기 중으로 빠져나가기 때문에, 회수량과 시간을 장비 수치로 확인하며 진행했습니다.
 
       이어서 엔진 마운트와 프론트 서브프레임, 각종 배관 연결부를 차례로 풀었습니다. 마운트 분리가 끝난 뒤 전용 리프트 잭으로 엔진을 천천히 내렸고, 배선 하네스나 배관이 걸리지 않는지 한 단계씩 확인했습니다. 엔진을 내린 다음 위쪽 배선을 정리하고 흡기·배기 매니폴드를 떼어 내 헤드커버에 접근할 공간을 만들었습니다.
     photos:
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-04.webp, alt: "마세라티 르반떼 엔진 탈거 준비 사진 1"}
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-05.webp, alt: "마세라티 르반떼 엔진 탈거 준비 사진 2"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-04.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 엔진 탈거 준비"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-05.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 엔진 탈거 준비 (2)"}
   - h2: 누유 부위 정비
     text: |
       **실린더 헤드를 완전히 떼어 내 접합면과 엔진 내부를 확인한 뒤, 새 실린더 헤드 가스켓을 장착했습니다.** 헤드 가스켓은 실린더 헤드와 엔진 블록 사이에서 압력과 엔진오일, 냉각수가 새지 않게 막는 부품이라, 부품 교체뿐 아니라 접합면 정리와 헤드 상태 확인, 정확한 조립이 함께 필요합니다.
@@ -36,15 +36,15 @@ sections:
 
       엔진 위쪽 헤드커버(밸브커버)도 떼어 내 접합면을 확인하고 필요한 실링 작업을 했습니다. 가스켓이나 실링이 오래되면 밀봉력이 떨어져 이 부위로도 오일이 샙니다.
     photos:
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-06.webp, alt: "마세라티 르반떼 누유 부위 정비 사진 1"}
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-07.webp, alt: "마세라티 르반떼 누유 부위 정비 사진 2"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-06.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 누유 부위 정비"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-07.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 누유 부위 정비 (2)"}
   - h2: 조립과 출고 점검
     text: |
       **조립을 마친 뒤 회수했던 냉매를 규정량 다시 넣고, 진단기와 시운전으로 누유와 작동 상태를 확인한 뒤 출고했습니다.** 각 연결부 체결 상태, 냉각·에어컨 계통, 고장코드, 엔진오일과 냉각수 누유 여부를 차례로 점검했습니다.
 
       차 아래에 오일 자국이 보이거나, 엔진룸에서 오일 냄새가 나거나, 엔진오일이 계속 줄어든다면 누유를 의심해 볼 만합니다. 로건서비스는 경기도 파주에 있으며 전국 탁송 입고도 가능합니다. 비슷한 증상이 있다면 차 아래 오일 자국 사진을 카톡으로 먼저 보내 주세요.
     photos:
-      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-08.webp, alt: "마세라티 르반떼 조립과 출고 점검 사진 1"}
+      - {src: assets/cases/260901-maserati-levante-engine-oil-leak-08.webp, alt: "마세라티 르반떼 실린더 헤드 가스켓 누유 — 조립과 출고 점검"}
 faq:
   - q: "르반떼 누유 수리에 왜 에어컨 냉매를 빼나요?"
     a: "이번 작업은 엔진을 내려야 했고, 그러려면 에어컨 배관을 분리해야 했습니다. 냉매를 회수하지 않고 배관을 열면 공기 중으로 빠져나가기 때문에 먼저 회수하고, 조립 뒤 규정량을 다시 넣었습니다."

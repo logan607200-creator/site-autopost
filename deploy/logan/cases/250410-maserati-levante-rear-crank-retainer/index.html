@@ -3,12 +3,226 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="only light" />
   <title>마세라티 르반떼 리어 크랭크 리테이너 누유 교환 | 로건서비스</title>
   <meta name="theme-color" content="#c42739" />
   <meta name="author" content="로건서비스 LOGAN SERVICE" />
-  <link rel="icon" type="image/png" href="../../assets/favicon.png" />
+  <link rel="icon" type="image/png" href="../../assets/favicon-64.png" />
   <link rel="apple-touch-icon" href="../../assets/favicon.png" />
-  <link rel="stylesheet" href="../../cases/case.css" />
+  <style>
+:root{
+--wine:#c42739;
+--wine-d:#a51f30;
+--ink:#171717;
+--ink2:#2a2a2a;
+--ivory:#f6f2ec;
+--paper:#fcfbf8;
+--sand:#efeae3;
+--muted:#8b877f;
+--text2:#4f4a45;
+--meta:#6b655e;
+--line:rgba(30,30,30,.10);
+--line2:#e1ddd6;
+--max:1240px;
+--head:112px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:"Pretendard","Noto Sans KR",-apple-system,BlinkMacSystemFont,"Segoe UI",Arial,sans-serif;line-height:1.65;letter-spacing:-.015em;-webkit-font-smoothing:antialiased;text-rendering:optimizeLegibility;word-break:keep-all;overflow-wrap:break-word}
+a{text-decoration:none;color:inherit}
+img{max-width:100%;height:auto;display:block}
+:focus-visible{outline:2px solid var(--wine);outline-offset:3px}
+.wrap{width:min(calc(100% - 40px),var(--max));margin:0 auto}
+.eyebrow{font-size:13px;letter-spacing:.18em;text-transform:uppercase;font-weight:700;color:var(--meta);margin:0}
+.btns{display:flex;gap:10px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;justify-content:center;min-height:50px;padding:0 22px;border:1px solid #cfc9c1;font-weight:700;font-size:14px;letter-spacing:-.01em;transition:.2s;background:transparent;color:var(--ink);text-align:center}
+.btn.primary{background:var(--wine);border-color:var(--wine);color:#fff}
+.btn.primary:hover{background:var(--wine-d);border-color:var(--wine-d)}
+.btn.light{color:#111;border-color:#cfcac1;background:#fff}
+.btn:hover{transform:translateY(-1px)}
+.cases-skip{position:absolute;left:-9999px;top:0;z-index:100;background:var(--ink);color:#fff;padding:12px 16px}
+.cases-skip:focus{left:12px;top:12px}
+header{position:fixed;inset:0 0 auto 0;z-index:50;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border-bottom:1px solid rgba(20,20,20,.08)}
+.nav{height:var(--head);display:flex;align-items:center;justify-content:space-between;color:var(--ink)}
+.brand{display:flex;align-items:center;gap:14px}
+.brand img{display:block;height:38px;width:auto;object-fit:contain}
+.navlinks{display:flex;align-items:center;gap:24px;font-size:13px;color:#555}
+.navlinks .nav-tel{display:inline-flex;align-items:center;min-height:44px;padding:0 14px;border:1px solid #cfc9c1;font-weight:800;font-size:14px;letter-spacing:.02em;color:var(--ink)}
+.navlinks .nav-tel:hover{border-color:var(--wine);color:var(--wine)}
+.navlinks a:hover,.navlinks a.is-active{color:var(--wine)}
+.navlinks a.is-active{font-weight:700}
+.work-m{display:none;align-items:center;min-height:44px;font-size:13px;font-weight:700;letter-spacing:.08em;color:#444;border:1px solid #cfc9c1;padding:0 14px;margin-left:auto;margin-right:6px}
+.cases-menu{display:none}
+.cases-menu>summary{list-style:none;cursor:pointer;width:44px;height:44px;display:flex;align-items:center;justify-content:center}
+.cases-menu>summary::-webkit-details-marker{display:none}
+.cases-menu>summary span,.cases-menu>summary span:before,.cases-menu>summary span:after{display:block;width:20px;height:2px;background:var(--ink);position:relative;transition:.2s}
+.cases-menu>summary span:before,.cases-menu>summary span:after{content:"";position:absolute;left:0}
+.cases-menu>summary span:before{top:-6px}.cases-menu>summary span:after{top:6px}
+.cases-menu[open]>summary span{background:transparent}
+.cases-menu[open]>summary span:before{top:0;transform:rotate(45deg)}
+.cases-menu[open]>summary span:after{top:0;transform:rotate(-45deg)}
+.cases-menu .mobile{position:fixed;left:0;right:0;top:var(--head);background:#fff;border-top:1px solid rgba(20,20,20,.08);box-shadow:0 18px 30px rgba(0,0,0,.08)}
+.cases-menu .mobile a{display:block;padding:14px 20px;font-size:14px;font-weight:600;color:#333;border-bottom:1px solid rgba(20,20,20,.06)}
+footer{background:#fff;color:#5f5a54;padding:26px 0;font-size:13px;border-top:1px solid #eee8e1}
+.footer-row{display:flex;justify-content:space-between;gap:10px 20px;flex-wrap:wrap}
+.footer-links a{display:inline-block;padding:12px 0;color:inherit;text-decoration:underline;text-underline-offset:2px}
+.callbar{display:none}
+.cases-hero{position:relative;overflow:hidden;background:
+radial-gradient(circle at 12% 0%,rgba(196,39,57,.08),transparent 38%),
+var(--ivory);
+padding:calc(var(--head) + 36px) 0 44px;border-bottom:1px solid var(--line2)}
+.cases-hero:after{content:"CASE";position:absolute;right:-18px;bottom:-0.28em;font-weight:900;font-size:clamp(110px,18vw,260px);line-height:1;letter-spacing:-.08em;color:rgba(91,17,26,.045);pointer-events:none}
+.cases-hero .wrap{position:relative;z-index:1}
+.cases-crumb ol{list-style:none;margin:0 0 26px;padding:0;display:flex;flex-wrap:wrap;align-items:center;gap:0;font-size:13px;color:var(--meta)}
+.cases-crumb li+li:before{content:"/";margin:0 10px;color:#b9b2aa}
+.cases-crumb a{display:inline-flex;align-items:center;min-height:44px;color:var(--meta);text-decoration:underline;text-decoration-color:transparent;text-underline-offset:3px}
+.cases-crumb a:hover{color:var(--wine);text-decoration-color:currentColor}
+.cases-crumb [aria-current] span{color:var(--ink);font-weight:600}
+.cases-badges{display:flex;flex-wrap:wrap;gap:8px;margin-bottom:16px}
+.cases-badge{display:inline-flex;align-items:center;min-height:30px;padding:0 12px;font-size:13px;font-weight:700;letter-spacing:.04em;background:var(--wine);color:#fff}
+a.cases-badge:hover{background:var(--wine-d)}
+.cases-badge.is-ghost{background:transparent;color:var(--ink2);border:1px solid #cfc9c1}
+.cases-badge.is-draft{background:#fff4d6;color:#6b4a00;border:1px dashed #c99a2e}
+.cases-h1{font-size:clamp(30px,4.6vw,54px);line-height:1.2;letter-spacing:-.04em;font-weight:800;margin:0 0 22px;max-width:980px;word-break:keep-all}
+.cases-h1.is-list{font-size:clamp(36px,6vw,72px);line-height:1.08;margin:12px 0 18px}
+.cases-meta{list-style:none;margin:0;padding:14px 0 0;display:flex;flex-wrap:wrap;gap:8px 22px;font-size:14px;color:var(--ink2);border-top:1px solid #ddd5cc;max-width:980px}
+.cases-meta li{display:flex;flex-wrap:wrap;align-items:baseline;gap:0 7px;min-width:0}
+.cases-meta span{font-size:13px;letter-spacing:.06em;color:var(--meta);font-weight:700}
+.cases-layout{display:grid;grid-template-columns:minmax(0,1fr);gap:28px;padding:32px 0 24px}
+.cases-glance{background:#fff;border:1px solid var(--line2);border-top:3px solid var(--wine);padding:24px 22px 22px;box-shadow:0 18px 40px rgba(75,44,40,.06)}
+.cases-glance-title{margin:0 0 14px;font-size:20px;letter-spacing:-.02em;font-weight:800}
+.cases-glance-title span{display:block;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--wine);margin-bottom:2px}
+.cases-glance-summary{margin:0 0 14px;font-size:15px;line-height:1.75;color:var(--ink2);font-weight:600}
+.cases-glance dl{margin:0}
+.cases-glance dl>div{display:grid;grid-template-columns:44px minmax(0,1fr);gap:10px;padding:12px 0;border-top:1px solid #eee8e1}
+.cases-glance dt{font-size:13px;font-weight:800;color:var(--wine);padding-top:1px}
+.cases-glance dd{margin:0;font-size:15px;line-height:1.65;color:var(--ink2)}
+.cases-glance dd ul{margin:0;padding:0;list-style:none}
+.cases-glance dd li{position:relative;padding-left:12px}
+.cases-glance dd li:before{content:"";position:absolute;left:0;top:.75em;width:5px;height:1px;background:var(--wine)}
+.cases-glance-cta{display:grid;gap:8px;margin-top:16px}
+.cases-glance-cta .btn{width:100%;min-height:48px}
+.cases-cover{margin:0;background:#e9e4dd}
+.cases-cover img{width:100%;aspect-ratio:3/2;object-fit:cover}
+.cases-sec{margin-top:56px;scroll-margin-top:calc(var(--head) + 16px)}
+.cases-h2{font-size:clamp(23px,2.6vw,30px);line-height:1.3;letter-spacing:-.03em;font-weight:800;margin:0 0 18px;padding-top:18px;border-top:1px solid var(--ink);word-break:keep-all}
+.cases-num{display:block;font-size:13px;letter-spacing:.16em;color:var(--wine);font-weight:800;margin-bottom:6px}
+.cases-text{font-size:17px;line-height:1.9;color:#2f2c29;max-width:72ch}
+.cases-text p{margin:0 0 1.1em}
+.cases-text p:last-child{margin-bottom:0}
+.cases-text strong{font-weight:800;color:var(--ink);background:linear-gradient(transparent 62%,rgba(196,39,57,.14) 0)}
+.cases-photos{display:grid;gap:10px;margin-top:24px;grid-template-columns:1fr 1fr}
+.cases-photos.n1{grid-template-columns:1fr}
+.cases-photos.n3 figure:first-child{grid-column:1/-1}
+.cases-photos figure{margin:0}
+.cases-photos img{width:100%;aspect-ratio:3/2;object-fit:cover;background:#e9e4dd}
+.cases-photos.n1 img,.cases-photos.n3 figure:first-child img{aspect-ratio:16/10}
+.cases-photos figcaption{font-size:13px;line-height:1.55;color:var(--meta);padding:8px 2px 0}
+.cases-faq-list{border-top:1px solid #ddd7cf}
+.cases-faq .cases-h2{border-top:1px solid var(--ink)}
+.cases-faq-item{border-bottom:1px solid #ddd7cf}
+.cases-faq-item summary{list-style:none;cursor:pointer;padding:20px 40px 20px 0;font-size:18px;font-weight:800;letter-spacing:-.02em;line-height:1.5;position:relative}
+.cases-faq-item summary::-webkit-details-marker{display:none}
+.cases-faq-item summary:before{content:"Q.";color:var(--wine);margin-right:8px}
+.cases-faq-item summary:after{content:"+";position:absolute;right:4px;top:14px;font-size:26px;font-weight:400;color:var(--wine)}
+.cases-faq-item[open] summary:after{content:"−"}
+.cases-faq-item p{margin:0;padding:0 8px 22px 0;color:#4f4a45;line-height:1.85;font-size:16px}
+.cases-tags{list-style:none;display:flex;flex-wrap:wrap;gap:8px;margin:40px 0 0;padding:0}
+.cases-tags li{font-size:13px;color:#4f4a45;background:var(--sand);padding:6px 12px}
+.cases-cta{background:#111;color:#fff;padding:64px 0;margin-top:72px;position:relative;overflow:hidden}
+.cases-cta:before{content:"";position:absolute;left:0;top:0;width:100%;height:3px;background:var(--wine)}
+.cases-cta .eyebrow{color:#bcaeb0}
+.cases-cta-grid{display:grid;gap:28px}
+.cases-cta-title{font-size:clamp(26px,3.6vw,44px);line-height:1.2;letter-spacing:-.04em;margin:10px 0 14px;font-weight:800}
+.cases-cta-lead{color:#c8c2bc;font-size:16px;line-height:1.8;margin:0;max-width:560px}
+.cases-cta-phone{display:inline-block;padding:4px 0;font-size:clamp(40px,6vw,72px);font-weight:900;letter-spacing:-.05em;line-height:1;margin-bottom:20px;color:#fff}
+.cases-cta-phone:hover{color:#f3d6da}
+.cases-cta .btn{border-color:#3a3a3a;color:#fff}
+.cases-cta .btn.primary{border-color:var(--wine)}
+.cases-cta .cases-btn-kakao{background:#fee500;border-color:#fee500;color:#191919}
+.cases-cta-hours{margin:16px 0 0;font-size:13px;color:#b5aea7}
+.cases-cta-addr{margin:6px 0 0;font-size:14px;color:#c8c2bc;line-height:1.6}
+.cases-cta-addr a{display:inline-block;padding:10px 0;color:#fff;text-decoration:underline;text-underline-offset:3px}
+.cases-related{background:#f7f4ef;padding:64px 0}
+.cases-related-head{display:flex;justify-content:space-between;align-items:end;gap:20px;flex-wrap:wrap;margin-bottom:26px}
+.cases-section-title{font-size:clamp(28px,4vw,44px);line-height:1.1;letter-spacing:-.04em;margin:8px 0 0;font-weight:800}
+.cases-textlink{display:inline-block;padding:12px 0;font-size:14px;font-weight:700;color:var(--wine);text-decoration:underline;text-underline-offset:4px}
+.cases-back{text-align:center;padding:44px 0 72px}
+.cases-list-hero{padding-bottom:36px}
+.cases-intro{font-size:clamp(16px,1.8vw,19px);line-height:1.85;color:var(--text2);max-width:760px;margin:0}
+.cases-chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:28px}
+.cases-chips a{display:inline-flex;align-items:center;min-height:44px;padding:0 18px;border:1px solid #cfc9c1;background:rgba(255,255,255,.7);font-size:14px;font-weight:700;color:var(--ink2);transition:.2s}
+.cases-chips a:hover{border-color:var(--wine);color:var(--wine)}
+.cases-chips a[aria-current]{background:var(--ink);border-color:var(--ink);color:#fff}
+.cases-listing{padding:36px 0 8px}
+.cases-count{font-size:13px;color:var(--meta);margin:0 0 16px;letter-spacing:.02em}
+.cases-empty{border:1px dashed #cfc9c1;padding:40px 24px;text-align:center;color:var(--text2)}
+.cases-empty p{margin:0 0 18px}
+.cases-listing+.cases-cta{margin-top:64px}
+.cases-grid{display:grid;grid-template-columns:minmax(0,1fr);gap:16px}
+.cases-card{background:#fff;border:1px solid var(--line2);transition:border-color .2s,box-shadow .2s}
+.cases-card:hover{border-color:#cdb7b9;box-shadow:0 16px 36px rgba(75,44,40,.08)}
+.cases-card-link{display:flex;flex-direction:column;height:100%}
+.cases-card-img{position:relative;aspect-ratio:3/2;overflow:hidden;background:#e4dfd8}
+.cases-card-img img{width:100%;height:100%;object-fit:cover;transition:transform .45s ease}
+.cases-card:hover .cases-card-img img{transform:scale(1.03)}
+.cases-card-cat{position:absolute;left:0;top:0;background:rgba(17,17,17,.82);color:#fff;font-size:13px;font-weight:700;letter-spacing:.04em;padding:6px 10px}
+.cases-draft-chip{position:absolute;right:8px;top:8px;background:#fff4d6;color:#6b4a00;font-size:13px;font-weight:800;padding:4px 8px;border:1px dashed #c99a2e}
+.cases-card-body{display:flex;flex-direction:column;flex:1;padding:18px 20px 18px}
+.cases-card-car{margin:0 0 6px;font-size:13px;letter-spacing:.04em;font-weight:700;color:#b02233}
+.cases-card-title{margin:0;font-size:19px;line-height:1.42;letter-spacing:-.03em;font-weight:800;color:var(--ink);word-break:keep-all}
+.cases-card-work{margin:8px 0 0;font-size:14px;line-height:1.6;color:#5d5852}
+.cases-card-foot{margin:auto 0 0;padding-top:16px;display:flex;justify-content:space-between;align-items:center;gap:8px;font-size:13px;color:var(--meta)}
+.cases-card-more{font-weight:700;color:var(--ink2)}
+.cases-card-more:after{content:" →";color:var(--wine)}
+@media(min-width:640px){
+.cases-grid{grid-template-columns:repeat(2,minmax(0,1fr))}
+}
+@media(min-width:1024px){
+.cases-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cases-layout{grid-template-columns:minmax(0,1fr) 340px;gap:56px;padding-top:44px}
+.cases-aside{grid-column:2;grid-row:1}
+.cases-main{grid-column:1;grid-row:1;min-width:0}
+.cases-glance{position:sticky;top:calc(var(--head) + 24px)}
+.cases-cta-grid{grid-template-columns:1.1fr .9fr;align-items:end;gap:48px}
+.cases-photos{gap:14px}
+.cases-hero{padding-bottom:52px}
+}
+@media(max-width:900px){
+.navlinks{display:none}
+.work-m{display:inline-flex}
+.cases-menu{display:block}
+}
+@media(max-width:620px){
+:root{--head:66px}
+.wrap{width:min(calc(100% - 32px),var(--max))}
+.brand img{height:30px}
+.cases-hero{padding-top:calc(var(--head) + 22px);padding-bottom:30px}
+.cases-crumb ol{margin-bottom:12px;font-size:13px}
+.cases-h1{font-size:28px;line-height:1.28;margin-bottom:16px}
+.cases-h1.is-list{font-size:34px}
+.cases-meta{font-size:13px}
+.cases-meta{gap:6px 16px}
+.cases-layout{padding-top:22px;gap:22px}
+.cases-layout>.cases-main .cases-cover{margin:0 -16px}
+.cases-sec{margin-top:44px}
+.cases-text{font-size:16px;line-height:1.85}
+.cases-photos{gap:6px}
+.cases-faq-item summary{font-size:16px}
+.cases-cta{padding:52px 0}
+.cases-related{padding:52px 0}
+.cases-card-title{font-size:18px}
+}
+@media(max-width:760px){
+.callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.15)}
+.callbar a{display:flex;align-items:center;justify-content:center;min-height:54px;font-weight:700;font-size:15px;color:#fff;background:#c42739}
+.callbar a+a{background:#fee500;color:#191919}
+body{padding-bottom:54px}
+.cases-glance-cta{display:none}
+}
+@media(prefers-reduced-motion:reduce){*{transition:none!important;scroll-behavior:auto!important}}
+.cases-source{margin:24px 0 8px;font-size:15px;color:#5b6270}.cases-source a{color:inherit;text-decoration:underline;text-underline-offset:3px}
+  </style>
   <meta name="description" content="마세라티 르반떼(M161)의 리어 크랭크 리테이너 누유를 찾아 리테이너·하우징을 신품으로 교환한 파주 로건서비스 사례.">
 <link rel="canonical" href="https://loganservice.co.kr/cases/250410-maserati-levante-rear-crank-retainer/">
 <meta name="robots" content="index,follow">
@@ -20,8 +234,8 @@
 <meta property="og:url" content="https://loganservice.co.kr/cases/250410-maserati-levante-rear-crank-retainer/">
 <link rel="alternate" type="application/rss+xml" title="로건서비스 정비사례" href="https://loganservice.co.kr/cases/feed.xml">
 <meta property="og:image" content="https://loganservice.co.kr/assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp">
-  <meta property="og:image:alt" content="르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환" />
-  <link rel="preload" as="image" href="../../assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp" fetchpriority="high" />  <meta name="twitter:card" content="summary_large_image" />
+  <meta property="og:image:alt" content="마세라티 르반떼 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환" />
+  <link rel="preload" as="image" href="../../assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp" fetchpriority="high" media="(min-width:761px)" />  <meta name="twitter:card" content="summary_large_image" />
   <meta property="article:published_time" content="2025-04-10" />
   <script type="application/ld+json">{
  "@context": "https://schema.org",
@@ -29,7 +243,7 @@
   {
    "@type": "BlogPosting",
    "@id": "https://loganservice.co.kr/cases/250410-maserati-levante-rear-crank-retainer/#article",
-   "headline": "르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환",
+   "headline": "르반떼(M161) 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환",
    "name": "마세라티 르반떼 리어 크랭크 리테이너 누유 교환 | 로건서비스",
    "description": "마세라티 르반떼(M161)의 리어 크랭크 리테이너 누유를 찾아 리테이너·하우징을 신품으로 교환한 파주 로건서비스 사례.",
    "abstract": "르반떼(M161)의 엔진오일 누유는 리어 크랭크 리테이너에서 나오고 있었습니다. 중간 머플러와 미션을 떼어 낸 뒤 리테이너 어셈블리를 분리해 리테이너와 하우징을 모두 신품으로 교환하고 실링 후 시운전으로 확인했습니다.",
@@ -47,14 +261,7 @@
     "https://loganservice.co.kr/assets/cases/250410-maserati-levante-rear-crank-retainer-08.webp"
    ],
    "author": {
-    "@type": "Organization",
-    "@id": "https://loganservice.co.kr/#logan-service",
-    "name": "로건서비스",
-    "url": "https://loganservice.co.kr/",
-    "logo": {
-     "@type": "ImageObject",
-     "url": "https://loganservice.co.kr/assets/logan-service-logo.png"
-    }
+    "@id": "https://loganservice.co.kr/#logan-service"
    },
    "publisher": {
     "@id": "https://loganservice.co.kr/#logan-service"
@@ -103,7 +310,7 @@
     {
      "@type": "ListItem",
      "position": 4,
-     "name": "르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환",
+     "name": "르반떼(M161) 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환",
      "item": "https://loganservice.co.kr/cases/250410-maserati-levante-rear-crank-retainer/"
     }
    ]
@@ -129,7 +336,7 @@
 </head>
 <body>
 <a class="cases-skip" href="#main">본문 바로가기</a>
-<header>
+<header id="header">
   <div class="wrap nav">
     <a href="../../" class="brand"><img src="../../assets/logan-logo-240.webp" alt="로건서비스 로고" width="240" height="86" decoding="async"></a>
     <nav class="navlinks" aria-label="주요 메뉴">
@@ -138,19 +345,20 @@
       <a href="../../#service">SERVICE</a>
       <a href="../../cases/" aria-current="page" class="is-active">CASES</a>
       <a href="../../#group">GROUP</a>
-      <a href="../../#faq">FAQ</a>
+      <a href="../../faq/">FAQ</a>
       <a href="../../#contact">CONTACT</a>
+      <a class="nav-tel" href="tel:15446072" data-track="call">1544-6072</a>
     </nav>
     <a class="work-m" href="tel:15446072" data-track="call">전화</a>
     <details class="cases-menu">
-      <summary aria-label="메뉴"><span aria-hidden="true"></span></summary>
+      <summary aria-label="메뉴 열기" aria-expanded="false"><span aria-hidden="true"></span></summary>
       <nav class="mobile" aria-label="모바일 메뉴">
         <a href="../../#about">ABOUT</a>
         <a href="../../#brands">MASERATI / FERRARI</a>
         <a href="../../#service">SERVICE</a>
         <a href="../../cases/">정비사례 CASES</a>
         <a href="../../#group">GROUP</a>
-        <a href="../../#faq">FAQ</a>
+        <a href="../../faq/">FAQ</a>
         <a href="../../#contact">CONTACT</a>
       </nav>
     </details>
@@ -170,7 +378,7 @@
 
       <div class="cases-badges">        <a class="cases-badge" href="../../cases/maserati-repair/">마세라티 정비</a><span class="cases-badge is-ghost">마세라티</span>      </div>
 
-      <h1 class="cases-h1">르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환</h1>
+      <h1 class="cases-h1">르반떼(M161) 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환</h1>
 
       <ul class="cases-meta">
         <li><span>작성</span><time datetime="2025-04-10">2025년 4월 10일</time></li>        <li><span>차종</span>마세라티 르반떼</li>      </ul>
@@ -189,21 +397,21 @@
     </div>
 
     <div class="cases-main">      <figure class="cases-cover">
-        <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp" alt="르반떼(M161) 엔진오일 누유 — 리어 크랭크 리테이너·하우징 교환" width="743" height="557" fetchpriority="high" decoding="async">
+        <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-01.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환" width="743" height="557" fetchpriority="high" decoding="async">
       </figure>      <section class="cases-sec" id="sec-1">
         <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">01</span>입고 경위</h2>        <div class="cases-text"><p><strong>다른 정비소에서 엔진오일을 갈다가 누유가 발견된 르반떼(M161)가 문의 후 예약 입고됐습니다.</strong> 입고 점검에서 리어 크랭크 리테이너 누유가 확인됐고, 수리 내용을 안내한 뒤 작업했습니다.</p>
 <p>리어 크랭크 리테이너는 엔진과 변속기 사이에서 크랭크축 뒤쪽을 막는 부품입니다. 기블리, 콰트로포르테, 르반떼처럼 출력이 높은 마세라티에서 누유가 자주 발견되는 위치입니다.</p></div>        <div class="cases-photos n2">          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-02.webp" alt="마세라티 르반떼 입고 경위 사진 1" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-03.webp" alt="마세라티 르반떼 입고 경위 사진 2" width="743" height="557" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-2">
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-02.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 입고 경위" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-03.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 입고 경위 (2)" width="743" height="557" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-2">
         <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">02</span>작업 — 미션 탈거</h2>        <div class="cases-text"><p><strong>리테이너에 닿으려면 변속기를 내려야 해, 차를 리프트에 올리고 중간 머플러를 먼저 떼어 낸 뒤 미션을 탈거했습니다.</strong> 드러난 리테이너 주변 곳곳에 오일이 묻어 있었습니다.</p></div>        <div class="cases-photos n2">          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-04.webp" alt="마세라티 르반떼 작업 — 미션 탈거 사진 1" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-05.webp" alt="마세라티 르반떼 작업 — 미션 탈거 사진 2" width="743" height="991" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-3">
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-04.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 작업: 미션 탈거" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-05.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 작업: 미션 탈거 (2)" width="743" height="991" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-3">
         <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">03</span>리테이너·하우징 교환</h2>        <div class="cases-text"><p><strong>리테이너 어셈블리를 떼어 내고 리테이너와 하우징을 모두 신품으로 교환했습니다.</strong> 부품을 교체한 뒤 실링 작업을 하고 분해의 역순으로 조립했습니다.</p></div>        <div class="cases-photos n2">          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-06.webp" alt="마세라티 르반떼 리테이너·하우징 교환 사진 1" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-07.webp" alt="마세라티 르반떼 리테이너·하우징 교환 사진 2" width="743" height="557" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-4">
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-06.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환" width="743" height="991" loading="lazy" decoding="async">          </figure>          <figure>
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-07.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 리테이너·하우징 교환 (2)" width="743" height="557" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec" id="sec-4">
         <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">04</span>출고 점검</h2>        <div class="cases-text"><p><strong>조립 후 시운전을 충분히 하며 누유가 다시 생기지 않는지 확인하고 출고했습니다.</strong></p>
 <p>엔진오일 교환 때 누유가 있다는 말을 들었거나 주차 자리에 오일 자국이 생긴다면, 해당 부위 사진을 카톡으로 먼저 보내 주세요. 경기도 파주에 있지만 전국 탁송으로도 맡기실 수 있습니다.</p></div>        <div class="cases-photos n1">          <figure>
-            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-08.webp" alt="마세라티 르반떼 출고 점검 사진 1" width="743" height="991" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec cases-faq" id="faq">
+            <img src="../../assets/cases/250410-maserati-levante-rear-crank-retainer-08.webp" alt="마세라티 르반떼 리어 크랭크 리테이너 누유 — 출고 점검" width="743" height="991" loading="lazy" decoding="async">          </figure>        </div>      </section>      <section class="cases-sec cases-faq" id="faq">
         <h2 class="cases-h2"><span class="cases-num" aria-hidden="true">Q&amp;A</span>자주 묻는 질문</h2>
         <div class="cases-faq-list">          <details class="cases-faq-item" open>
             <summary>르반떼 리어 크랭크 리테이너 누유는 왜 미션을 내려야 하나요?</summary>
@@ -224,7 +432,8 @@
         <div class="btns">
           <a class="btn primary" href="tel:15446072">전화 상담</a>
           <a class="btn cases-btn-kakao" href="https://pf.kakao.com/_PKYxdG" target="_blank" rel="noopener">증상 사진 보내기(카톡)</a>
-        </div><p class="cases-cta-hours">평일 09:00~18:00 (점심 12:30~13:30) · 토·일요일 휴무</p>      </div>
+        </div><p class="cases-cta-hours">평일 09:00~18:00 (점심 12:30~13:30) · 토·일요일 휴무</p>        <p class="cases-cta-addr">로건서비스 · 경기도 파주시 아침노을길 55 · <a href="https://map.naver.com/p/entry/place/20277854" target="_blank" rel="noopener">네이버 지도</a></p>
+      </div>
     </div>
   </section>
 </article><section class="cases-related" aria-labelledby="cases-related-title">
@@ -236,26 +445,26 @@
       </div><a class="cases-textlink" href="../../cases/maserati-repair/">마세라티 정비 사례 더 보기</a>    </div>
     <div class="cases-grid"><article class="cases-card">
   <a class="cases-card-link" href="../../cases/250425-maserati-levante-oil-leak-transmission-seal/">
-    <div class="cases-card-img">      <img src="../../assets/cases/250425-maserati-levante-oil-leak-transmission-seal-01.webp" alt="르반떼(M161) 엔진·미션 누유 — 전방 리테이너, 미션 씰·리테이너 교환" width="743" height="740" loading="lazy" decoding="async">      <span class="cases-card-cat">마세라티 정비</span>    </div>
+    <div class="cases-card-img">      <img src="../../assets/cases/thumbs/250425-maserati-levante-oil-leak-transmission-seal-01.webp" srcset="../../assets/cases/thumbs/250425-maserati-levante-oil-leak-transmission-seal-01.webp 420w, ../../assets/cases/250425-maserati-levante-oil-leak-transmission-seal-01.webp 743w" sizes="(max-width:639px) calc(100vw - 32px), (max-width:1023px) calc(50vw - 30px), 400px" alt="마세라티 르반떼 트랜스미션 씰·전방 리테이너 누유 — 미션 씰·리테이너 교환" width="420" height="418" aria-hidden="true" loading="lazy" decoding="async">      <span class="cases-card-cat" aria-hidden="true">마세라티 정비</span>    </div>
     <div class="cases-card-body">
       <p class="cases-card-car">마세라티 르반떼</p>
-      <h3 class="cases-card-title">르반떼(M161) 엔진·미션 누유 — 전방 리테이너, 미션 씰·리테이너 교환</h3>      <p class="cases-card-work">정밀 누유 점검 · 전방 리테이너 교환 · 트랜스미션 씰 교환</p>      <p class="cases-card-foot"><time datetime="2025-04-25">2025년 4월 25일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
+      <h3 class="cases-card-title">르반떼(M161) 트랜스미션 씰·전방 리테이너 누유 — 미션 씰·리테이너 교환</h3>      <p class="cases-card-work" aria-hidden="true">정밀 누유 점검 · 전방 리테이너 교환 · 트랜스미션 씰 교환</p>      <p class="cases-card-foot"><time datetime="2025-04-25">2025년 4월 25일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
     </div>
   </a>
 </article><article class="cases-card">
   <a class="cases-card-link" href="../../cases/250516-maserati-quattroporte-power-steering-pump/">
-    <div class="cases-card-img">      <img src="../../assets/cases/250516-maserati-quattroporte-power-steering-pump-01.webp" alt="콰트로포르테(M156) 파워스티어링 펌프·후방 리테이너 누유 — 펌프 교체와 씰 교환" width="743" height="911" loading="lazy" decoding="async">      <span class="cases-card-cat">마세라티 정비</span>    </div>
+    <div class="cases-card-img">      <img src="../../assets/cases/thumbs/250516-maserati-quattroporte-power-steering-pump-01.webp" srcset="../../assets/cases/thumbs/250516-maserati-quattroporte-power-steering-pump-01.webp 420w, ../../assets/cases/250516-maserati-quattroporte-power-steering-pump-01.webp 743w" sizes="(max-width:639px) calc(100vw - 32px), (max-width:1023px) calc(50vw - 30px), 400px" alt="마세라티 콰트로포르테 파워스티어링 펌프·후방 리테이너 누유 — 펌프 교체와 씰 교환" width="420" height="515" aria-hidden="true" loading="lazy" decoding="async">      <span class="cases-card-cat" aria-hidden="true">마세라티 정비</span>    </div>
     <div class="cases-card-body">
       <p class="cases-card-car">마세라티 콰트로포르테</p>
-      <h3 class="cases-card-title">콰트로포르테(M156) 파워스티어링 펌프·후방 리테이너 누유 — 펌프 교체와 씰 교환</h3>      <p class="cases-card-work">파워스티어링 펌프 교체 · 파워스티어링 오일 교환·에어 제거 · 호스 연결부 점검</p>      <p class="cases-card-foot"><time datetime="2025-05-16">2025년 5월 16일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
+      <h3 class="cases-card-title">콰트로포르테(M156) 파워스티어링 펌프·후방 리테이너 누유 — 펌프 교체와 씰 교환</h3>      <p class="cases-card-work" aria-hidden="true">파워스티어링 펌프 교체 · 파워스티어링 오일 교환·에어 제거 · 호스 연결부 점검</p>      <p class="cases-card-foot"><time datetime="2025-05-16">2025년 5월 16일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
     </div>
   </a>
 </article><article class="cases-card">
-  <a class="cases-card-link" href="../../cases/261022-maserati-quattroporte-head-cover-gasket/">
-    <div class="cases-card-img">      <img src="../../assets/cases/261022-maserati-quattroporte-head-cover-gasket-01.webp" alt="콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓·점화플러그 교환" width="743" height="991" loading="lazy" decoding="async">      <span class="cases-card-cat">마세라티 정비</span>    </div>
+  <a class="cases-card-link" href="../../cases/260901-maserati-levante-engine-oil-leak/">
+    <div class="cases-card-img">      <img src="../../assets/cases/thumbs/260901-maserati-levante-engine-oil-leak-01.webp" srcset="../../assets/cases/thumbs/260901-maserati-levante-engine-oil-leak-01.webp 420w, ../../assets/cases/260901-maserati-levante-engine-oil-leak-01.webp 743w" sizes="(max-width:639px) calc(100vw - 32px), (max-width:1023px) calc(50vw - 30px), 400px" alt="마세라티 르반떼 실린더 헤드 가스켓 누유 — 크랭크 프론트 오일씰·헤드커버 실링까지" width="420" height="561" aria-hidden="true" loading="lazy" decoding="async">      <span class="cases-card-cat" aria-hidden="true">마세라티 정비</span>    </div>
     <div class="cases-card-body">
-      <p class="cases-card-car">마세라티 콰트로포르테</p>
-      <h3 class="cases-card-title">콰트로포르테 헤드커버 오일 누유 — 헤드커버 가스켓·점화플러그 교환</h3>      <p class="cases-card-work">헤드커버 가스켓 교환 · 플러그홀 오링·솔레노이드 오링 교환 · 점화플러그 교환</p>      <p class="cases-card-foot"><time datetime="2026-10-22">2026년 10월 22일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
+      <p class="cases-card-car">마세라티 르반떼</p>
+      <h3 class="cases-card-title">르반떼 실린더 헤드 가스켓 누유 — 크랭크 프론트 오일씰·헤드커버 실링까지</h3>      <p class="cases-card-work" aria-hidden="true">에어컨 냉매 회수 · 엔진 탈거 · 실린더 헤드 가스켓 교환</p>      <p class="cases-card-foot"><time datetime="2026-09-01">2026년 9월 1일</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
     </div>
   </a>
 </article>    </div>
@@ -266,17 +475,31 @@
 </div>
 </main>
 
-<footer>
+<footer id="footer">
   <div class="wrap footer-row">
     <span>© 2025 LOGAN SERVICE. ALL RIGHTS RESERVED.</span>
     <span>주식회사 로건 · 대표 류완희 · 사업자등록번호 406-81-05779 · 경기도 파주시 아침노을길 55 · 1544-6072</span>
     <span class="footer-links"><a href="../../privacy/">개인정보처리방침</a> · <a href="../../cases/">정비사례</a> · <a href="https://gritservice.co.kr/" target="_blank" rel="noopener">그릿서비스</a></span>
   </div>
 </footer>
-<div class="callbar" aria-label="빠른 상담"><a href="tel:15446072" data-track="call">전화 상담 1544-6072</a><a href="https://pf.kakao.com/_PKYxdG" target="_blank" rel="noopener" data-track="kakao">증상 사진 보내기(카톡)</a></div>
+<div class="callbar" id="callbar" aria-label="빠른 상담"><a href="tel:15446072" data-track="call">전화 상담 1544-6072</a><a href="https://pf.kakao.com/_PKYxdG" target="_blank" rel="noopener" data-track="kakao">증상 사진 보내기(카톡)</a></div>
 <script>
-document.addEventListener('click',function(e){var a=e.target.closest('a[href^="tel:"],a[href*="pf.kakao.com"]');if(!a)return;var t=a.href.indexOf('tel:')===0?'call':'kakao';
-if(window.gtag)gtag('event','contact_'+t,{method:t,page_type:'case'});});
-</script>
+// 전화·카톡 클릭 전환 기록(position = 링크가 든 가장 가까운 구역) · 모바일 메뉴 Esc/바깥 탭으로 닫기. 없어도 페이지는 동작.
+(function(){
+var M='details.cases-menu,details.g-menu';
+function shut(d){d.open=false;var s=d.querySelector('summary');if(s){s.setAttribute('aria-expanded','false');s.setAttribute('aria-label','메뉴 열기');}}
+document.addEventListener('click',function(e){
+  var a=e.target.closest&&e.target.closest('a[href^="tel:"],a[href*="pf.kakao.com"]');
+  if(a){var t=a.href.indexOf('tel:')===0?'call':'kakao';var c=a.closest('.callbar,header,footer,section,.cta,nav');
+    var P=c?(c.id||c.classList[0]||c.tagName.toLowerCase()):'page';
+    if(window.gtag)gtag('event','contact_'+t,{method:t,position:P,page_type:'case'});}
+  document.querySelectorAll(M).forEach(function(d){if(d.open&&!d.contains(e.target))shut(d);});
+  var sm=e.target.closest&&e.target.closest('summary');if(sm&&sm.parentNode.matches(M))sm.setAttribute('aria-expanded',sm.parentNode.open?'false':'true');
+});
+document.addEventListener('keydown',function(e){if(e.key!=='Escape')return;
+  document.querySelectorAll(M).forEach(function(d){if(d.open){shut(d);var s=d.querySelector('summary');if(s)s.focus();}});});
+document.querySelectorAll(M).forEach(function(d){var s=d.querySelector('summary');
+  d.addEventListener('toggle',function(){if(s){s.setAttribute('aria-expanded',d.open?'true':'false');s.setAttribute('aria-label',d.open?'메뉴 닫기':'메뉴 열기');}});});
+})();</script>
 </body>
 </html>

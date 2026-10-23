@@ -1,0 +1,62 @@
+# 로건서비스 .htaccess (2026-10-24) — /public_html/ 에 올립니다.
+# 서버에 .htaccess 가 이미 있으면 덮어쓰지 말고, 내려받아 보관한 뒤 이 내용을 그 파일 맨 위에 붙입니다. 문제가 생기면 보관한 파일로 되돌리면 원래대로.
+# 올린 직후 확인: https://loganservice.co.kr/ , http://loganservice.co.kr/ , https://www.loganservice.co.kr/ , https://loganservice.co.kr/index.php
+#   → 모두 https://loganservice.co.kr/ 로 열려야 합니다. 그리고 https://gritservice.co.kr/ 도 정상으로 열리는지 꼭 확인.
+RewriteEngine On
+# (아래 규칙은 loganservice.co.kr 로 들어온 요청에만 적용 — 같은 서버의 그릿 주소에는 영향 없음)
+# 로건 주소 아래 그릿 폴더 → 그릿 주소로(중복 노출 해결. 그릿 폴더의 .htaccess 가 없을 때를 위한 안전장치)
+RewriteCond %{HTTP_HOST} ^(www\.)?loganservice\.co\.kr$ [NC]
+RewriteRule ^gritservice/(.*)$ https://gritservice.co.kr/$1 [R=301,L]
+# www·http → https://loganservice.co.kr
+RewriteCond %{HTTP_HOST} ^www\.loganservice\.co\.kr$ [NC]
+RewriteRule ^(.*)$ https://loganservice.co.kr/$1 [R=301,L]
+RewriteCond %{HTTP_HOST} ^loganservice\.co\.kr$ [NC]
+RewriteCond %{HTTPS} !=on
+RewriteCond %{HTTP:X-Forwarded-Proto} !=https
+RewriteRule ^(.*)$ https://loganservice.co.kr/$1 [R=301,L]
+# index.php 로 들어와도 폴더 주소로
+RewriteCond %{HTTP_HOST} ^loganservice\.co\.kr$ [NC]
+RewriteCond %{THE_REQUEST} \s/+((?:[^?\s]*/)?)index\.(php|html)[\s?] [NC]
+RewriteRule ^ https://loganservice.co.kr/%1 [R=301,L]
+
+# ---- 없는 주소·숨김 파일 ----
+ErrorDocument 404 /404.html
+# .git·.env 같은 숨김 파일과 백업 파일은 열지 않음(.well-known 은 인증서 발급용이라 허용)
+RewriteRule (^|/)\.(?!well-known/) - [F,L]
+RewriteRule \.(bak|old|orig|swp|log|sql|zip)$ - [F,L,NC]
+
+# ---- 보안 헤더 ----
+<IfModule mod_headers.c>
+  Header always set X-Content-Type-Options "nosniff"
+  Header always set Referrer-Policy "strict-origin-when-cross-origin"
+  Header always set X-Frame-Options "SAMEORIGIN"
+  # HSTS(브라우저가 항상 https 로만 접속): https 가 1~2주 문제없이 돌면 아래 줄 앞의 # 를 지우세요.
+  # Header always set Strict-Transport-Security "max-age=31536000"
+</IfModule>
+
+# ---- 속도: 압축 + 브라우저 캐시 ----
+<IfModule mod_deflate.c>
+  AddOutputFilterByType DEFLATE text/html text/plain text/css text/xml application/xml application/rss+xml application/javascript application/json application/ld+json image/svg+xml
+</IfModule>
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/svg+xml "access plus 30 days"
+  ExpiresByType image/x-icon "access plus 30 days"
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType text/html "access plus 0 seconds"
+  ExpiresByType application/xml "access plus 1 hour"
+  ExpiresByType text/xml "access plus 1 hour"
+</IfModule>
+<IfModule mod_headers.c>
+  <FilesMatch "\.(webp|jpe?g|png|svg|ico)$">
+    Header set Cache-Control "public, max-age=2592000"
+  </FilesMatch>
+  <FilesMatch "\.(html|php)$">
+    Header set Cache-Control "no-cache"
+  </FilesMatch>
+</IfModule>
+FileETag MTime Size

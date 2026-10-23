@@ -1,13 +1,19 @@
-{#- 카드 1장. 변수: p(post), root. 선택: card_h(제목 태그, 기본 h3), card_eager(true면 lazy 안 씀) -#}
+{#- 카드 1장. 변수: p(post), root. 선택: card_h(제목 태그, 기본 h3), card_eager(true면 lazy 안 씀), card_sizes(img sizes)
+    사진은 폭 420 썸네일(thumbs/) + 원본을 srcset 으로. 분류 라벨·사진은 링크 이름에서 빼서(aria-hidden) 화면낭독기가 같은 말을 되풀이하지 않게 -#}
 {%- set _h = card_h|default('h3') -%}
-{%- set _img = p.cover if p.cover else ((p.sections[0].photos[0]) if p.sections and p.sections[0].photos else none) -%}
+{%- set _img = p.card_img if p.card_img is defined else (p.cover if p.cover else ((p.sections[0].photos[0]) if p.sections and p.sections[0].photos else none)) -%}
+{%- set _sizes = card_sizes|default('(max-width:639px) calc(100vw - 32px), (max-width:1023px) calc(50vw - 30px), 400px') -%}
 <article class="cases-card">
   <a class="cases-card-link" href="{{ root }}{{ p.url|default('cases/' ~ p.slug ~ '/') }}">
     <div class="cases-card-img">
       {%- if _img %}
-      <img src="{{ root }}{{ _img.src }}" alt="{{ _img.alt }}" width="{{ _img.w|default(_img.width)|default(1200) }}" height="{{ _img.h|default(_img.height)|default(800) }}"{% if not card_eager %} loading="lazy"{% endif %} decoding="async">
+      {%- if _img.thumb %}
+      <img src="{{ root }}{{ _img.thumb }}" srcset="{{ root }}{{ _img.thumb }} {{ _img.thumb_w }}w, {{ root }}{{ _img.src }} {{ _img.w }}w" sizes="{{ _sizes }}" alt="{{ _img.alt }}" width="{{ _img.thumb_w }}" height="{{ _img.thumb_h }}" aria-hidden="true"{% if not card_eager %} loading="lazy"{% endif %} decoding="async">
+      {%- else %}
+      <img src="{{ root }}{{ _img.src }}" alt="{{ _img.alt }}" width="{{ _img.w|default(_img.width)|default(1200) }}" height="{{ _img.h|default(_img.height)|default(800) }}" aria-hidden="true"{% if not card_eager %} loading="lazy"{% endif %} decoding="async">
       {%- endif %}
-      <span class="cases-card-cat">{{ p.category_name }}</span>
+      {%- endif %}
+      <span class="cases-card-cat" aria-hidden="true">{{ p.category_name }}</span>
       {%- if p.draft %}<span class="cases-draft-chip">예시</span>{% endif %}
     </div>
     <div class="cases-card-body">
@@ -16,7 +22,7 @@
       </p>
       <{{ _h }} class="cases-card-title">{{ p.title }}</{{ _h }}>
       {%- if p.work %}
-      <p class="cases-card-work">{{ p.work[:3]|join(' · ') }}</p>
+      <p class="cases-card-work" aria-hidden="true">{{ p.work[:3]|join(' · ') }}</p>
       {%- endif %}
       <p class="cases-card-foot"><time datetime="{{ p.date_iso|default(p.date) }}">{{ p.date_kr|default(p.date) }}</time><span class="cases-card-more" aria-hidden="true">사례 보기</span></p>
     </div>

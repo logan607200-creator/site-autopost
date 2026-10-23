@@ -3,14 +3,17 @@ import pathlib, re, sys, json
 
 HERE = pathlib.Path(__file__).parent
 sys.path.insert(0, str(HERE / "geo"))
-from geo_qa import TOP as GEO_TOP  # 2026-10-24 자주 찾는 질문 20 (홈 FAQ·JSON-LD 맨 앞)
+from geo_qa import TOP as GEO_TOP  # 2026-10-24 자주 찾는 질문 20 (faq/ 맨 앞, 홈에는 앞 4개)
+sys.path.insert(0, str(HERE.parent))
+from lastmod import lastmod
+import make_pages
 OUT = pathlib.Path(sys.argv[1]); OUT.mkdir(parents=True, exist_ok=True)
 
 # ---------- 그릿서비스 정보 ([대괄호] = 아직 모름) ----------
 SITE = "https://gritservice.co.kr/"
 PHONE = "1577-0412"; TEL = "15770412"
 ADDR = "경기도 파주시 교하로 1312-53"
-MAP = "https://map.naver.com/p/search/%EA%B2%BD%EA%B8%B0%EB%8F%84%20%ED%8C%8C%EC%A3%BC%EC%8B%9C%20%EA%B5%90%ED%95%98%EB%A1%9C%201312-53"
+MAP = "https://map.naver.com/p/entry/place/2053438921"  # 네이버 플레이스 고유 주소(주소 검색이 아니라 업체 페이지로)
 BLOG = "https://blog.naver.com/grit_service"
 INSTA_ID = "grit_service"; INSTA = "https://www.instagram.com/grit_service/"
 KAKAO = "https://pf.kakao.com/_UExgxaX"
@@ -18,8 +21,8 @@ COMPANY = "(주)그릿서비스"
 CEO = "지철구"; BIZNO = "513-86-04243"; ADDR_FULL = "경기도 파주시 교하로 1312-53, 1동 1층"
 LOGAN = "https://loganservice.co.kr/"
 GA4 = "G-J953M2539G"  # 구글 애널리틱스 측정 ID (2026-10-20)
-TODAY = "2026-10-22"
-TITLE = "파주 사고수리·판금도색 공업사 | 그릿서비스"  # 네이버 기준 40자 이내
+TODAY = lastmod(HERE / "make_grit.py", HERE / "make_pages.py", HERE / "grit2-style.css", HERE / "geo")  # 원본이 실제로 바뀐 날
+TITLE = "파주 공업사·카센터 그릿서비스 | 사고수리·판금도색"  # 네이버 기준 40자 이내 (검색량: 파주카센터·파주공업사 > 사고수리)
 DESC = "파주 교하 자동차 공업사 그릿서비스. 사고수리, 판금도색, 보험수리, 성능보증수리, 정비, 외형관리. 24시간 전화 상담 1577-0412."  # 80자 이내
 
 # ---------- CSS: 로건 원본 그대로, 색만 와인 → 그릿 블루 / 따뜻한 회색 → 차가운 회색 ----------
@@ -48,6 +51,25 @@ for a, b in swaps:
     css = css.replace(a, b)
 # 그룹 카드: 그릿 카드가 강조(파란 테두리)인 건 원본과 같고, 로건 카드는 로건 와인색으로 살짝 강조
 css = css.replace("</style>", "    .group-card.logan{border-color:rgba(196,39,57,.20)}\n    /* 상단 메뉴: 검정 바탕 + 흰 글씨 */\n    header{background:rgba(0,0,0,.94);border-bottom-color:rgba(255,255,255,.10)}\n    .nav,.brand,.menu-btn{color:#fff}\n    .brand small{color:#a3abb8}\n    .navlinks{color:#fff}\n    .navlinks a:hover{color:#7fa6e6}\n    .mobile{background:#000;border-top-color:rgba(255,255,255,.10)}\n    .mobile a{color:#fff;border-bottom-color:rgba(255,255,255,.08)}\n    .mobile a:active{background:#1a1a1a}\n    .work-m{color:#fff;border-color:rgba(255,255,255,.35)}\n    .brand-copy{white-space:nowrap}\n    @media(max-width:430px){.work-m{font-size:11px;padding:5px 8px;margin-right:8px}.brand small{display:none}}\n    h1,h2,h3,.display,.lead{word-break:keep-all}\n    .callbar{display:none}\n    @media(max-width:760px){.callbar{display:grid;grid-template-columns:1fr 1fr;position:fixed;left:0;right:0;bottom:0;z-index:60;box-shadow:0 -4px 16px rgba(0,0,0,.15)}.callbar a{display:flex;align-items:center;justify-content:center;min-height:54px;font-weight:700;font-size:15px;color:#fff;background:#004a9f}.callbar a+a{background:#fee500;color:#191919}body{padding-bottom:54px}}\n    .contact-brand{display:flex;align-items:center;gap:16px;margin-bottom:6px}\n    .contact-brand-copy{display:grid;font-size:12px;letter-spacing:.1em;color:#646a74}\n    .service-links{margin-top:28px;font-size:15px;color:#c9d0db;word-break:keep-all}.service-links a{color:#fff;text-decoration:underline;text-underline-offset:3px}\n    .footer-links a{text-decoration:underline;text-underline-offset:3px}\n    /* 속도: 모바일은 750px 사진 */\n    @media(max-width:620px){.focus.rep{background:linear-gradient(180deg,rgba(0,0,0,.08),rgba(0,0,0,.86)),url(\"assets/grit-repair-750.webp\") center/cover no-repeat}.focus.care{background:linear-gradient(180deg,rgba(0,0,0,.10),rgba(0,0,0,.88)),url(\"assets/grit-care-750.webp\") center 35%/cover no-repeat}}\n  </style>")
+# 2026-10-24 점검 반영: 글자 대비(WCAG AA), 터치 영역 44px, 휴대폰 자동 다크모드 차단, 태블릿 히어로 글씨 가독성, 메뉴 안 상담 버튼
+css = css.replace("  </style>", """    :root{color-scheme:only light}
+    .eyebrow{font-size:13px;color:#5b616b}
+    .dark .eyebrow,.insta-meta .eyebrow,.focus .eyebrow{color:#c9d0db}
+    .work-copy span,.group-card .sub{font-size:13px;color:#5b616b}
+    .hero-card .label,.contact-item span{font-size:13px;color:#5b616b}
+    .contact-brand-copy{font-size:13px;color:#4a4f57}
+    footer{color:#4a4f57;font-size:13px}
+    .footer-links a{display:inline-block;padding:6px 0}
+    .contact-item a{display:inline-block;padding:4px 0;text-decoration:underline;text-underline-offset:3px}
+    .skip{position:absolute;left:-999px;top:0;background:#fff;color:#000;padding:8px 12px;z-index:99}.skip:focus{left:8px}
+    .menu-btn{min-width:44px;min-height:44px}
+    .mobile-cta{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:12px 16px}
+    .mobile .mobile-cta a{border:0;text-align:center;padding:14px 8px;border-radius:8px;background:#004a9f;font-weight:700}
+    .mobile .mobile-cta a+a{background:#fee500;color:#191919}
+    @media(max-width:430px){.work-m{font-size:13px;padding:12px 10px;min-height:44px}}
+    @media(min-width:621px) and (max-width:1024px){.hero{background:linear-gradient(90deg,rgba(251,252,254,.97) 0%,rgba(251,252,254,.93) 55%,rgba(251,252,254,.72) 100%),url("assets/grit-hero-main.webp") center/cover no-repeat}}
+    .hero .eyebrow{display:inline-block;background:rgba(251,252,254,.92);padding:2px 6px;border-radius:4px}
+  </style>""")
 leftover = re.findall(r"#c42739|LOGAN|maserati|logan-workshop|#f7f4ef", css)
 assert not leftover, leftover
 
@@ -92,7 +114,7 @@ ld = {
             "sameAs": [BLOG, INSTA, KAKAO],
             "legalName": COMPANY, "taxID": BIZNO, "foundingDate": "2026-09-01", "slogan": "기본이 가장 중요합니다.", "hasMap": MAP,
             "contactPoint": [{"@type": "ContactPoint", "telephone": "+82-1577-0412", "contactType": "customer service", "areaServed": "KR", "availableLanguage": ["Korean"], "description": "전화 상담 24시간 (입고·작업은 평일 09:00~18:00)", "hoursAvailable": {"@type": "OpeningHoursSpecification", "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "Sunday"], "opens": "00:00", "closes": "23:59"}}],
-            "founder": {"@type": "Person", "name": CEO}, "knowsLanguage": "ko", "mainEntityOfPage": {"@id": SITE + "#webpage"},
+            "founder": {"@type": "Person", "name": CEO}, "knowsLanguage": "ko", "mainEntityOfPage": {"@id": SITE + "#webpage"}, "subjectOf": {"@id": SITE + "faq/#faq"},
         },
         {"@type": "WebSite", "@id": SITE + "#website", "url": SITE, "name": "그릿서비스", "alternateName": "GRIT SERVICE", "inLanguage": "ko-KR", "publisher": {"@id": SITE + "#grit-service"}},
         {"@type": "WebPage", "@id": SITE + "#webpage", "url": SITE, "name": TITLE,
@@ -100,12 +122,9 @@ ld = {
          "inLanguage": "ko-KR", "isPartOf": {"@id": SITE + "#website"}, "about": {"@id": SITE + "#grit-service"}, "dateModified": TODAY,
          "primaryImageOfPage": {"@type": "ImageObject", "url": SITE + "assets/grit-hero-main.webp"},
          "speakable": {"@type": "SpeakableSpecification", "cssSelector": ["h1", ".hero .lead", ".intro p"]},
-         "mainEntity": {"@id": SITE + "#grit-service"}, "mentions": [{"@id": SITE + "#logan-service"}], "breadcrumb": {"@id": SITE + "#breadcrumb"}},
-        {"@type": "AutoRepair", "@id": SITE + "#logan-service", "name": "로건서비스", "alternateName": "LOGAN SERVICE", "url": LOGAN,
-         "logo": LOGAN + "assets/logan-service-logo.png", "description": "2016년부터 마세라티와 페라리에 집중한 전문 자동차 서비스. 진단·정비·사고수리·보험수리·성능보증수리."},
+         "mainEntity": {"@id": SITE + "#grit-service"}, "mentions": [{"@id": LOGAN + "#logan-service"}], "breadcrumb": {"@id": SITE + "#breadcrumb"}},
+        {"@type": "AutoRepair", "@id": LOGAN + "#logan-service", "name": "로건서비스", "alternateName": "LOGAN SERVICE", "url": LOGAN},
         {"@type": "BreadcrumbList", "@id": SITE + "#breadcrumb", "itemListElement": [{"@type": "ListItem", "position": 1, "name": "그릿서비스", "item": SITE}]},
-        {"@type": "FAQPage", "@id": SITE + "#faq", "url": SITE + "#faq", "mainEntity": [
-            {"@type": "Question", "name": q, "acceptedAnswer": {"@type": "Answer", "text": a}} for q, a in GEO_TOP + FAQ]},
     ],
 }
 
@@ -145,14 +164,18 @@ nav = "\n".join(f'      <a href="{h}">{t}</a>' for h, t in NAV)
 mnav = "\n".join(f'    <a href="{h}">{t}</a>' for h, t in NAV)
 services = "\n".join(f'        <article class="service"><div class="num">{n}</div><h3>{t}</h3><p>{d}</p></article>' for n, t, d in SERVICES)
 # 라이브 서버의 서비스 상세 페이지 5개 (홈·llms.txt 에서 링크)
-SERVICE_PAGES = [("accident-repair/", "사고수리"), ("painting/", "판금·도색"), ("insurance-repair/", "보험수리"),
-                 ("certified-repair/", "중고차 성능보증수리"), ("imported-cars/", "수입차 수리")]
+SERVICE_PAGES = make_pages.SERVICE_PAGES  # 서비스 상세 7개(make_pages.py 가 만듦)
 service_links = " · ".join(f'<a href="{u}">{t}</a>' for u, t in SERVICE_PAGES)
 # GEO 질문·답변 200개 (내용은 geo/geo_qa.py): 홈 FAQ 더보기 + faq/ 페이지 + llms-full.txt
 sys.path.insert(0, str(HERE / "geo"))
 import make_geo
-geo_more = make_geo.index_more(SITE, PHONE, ADDR_FULL, KAKAO, BLOG, INSTA)
-faq_html = "\n".join(f'        <details class="faq-item"{" open" if i == 0 else ""}><summary>{q}</summary><p>{a}</p></details>' for i, (q, a) in enumerate(FAQ))
+# 홈에는 대표 질문만(전체는 faq/ 한 곳에). 같은 질문이 홈과 faq/ 에 통째로 겹치지 않게.
+HOME_FAQ = FAQ + [x for x in GEO_TOP[:4] if x[0] not in {q for q, _ in FAQ}]
+N_FAQ = len(GEO_TOP) + 200
+faq_html = "\n".join(f'        <details class="faq-item"{" open" if i == 0 else ""}><summary>{q}</summary><p>{make_pages.linkify(a)}</p></details>' for i, (q, a) in enumerate(HOME_FAQ))
+geo_more = f'        <p class="faq-all"><a href="faq/">자주 묻는 질문 전체 보기 ({N_FAQ}개) →</a></p>\n        <style>.faq-all a{{display:inline-block;margin-top:22px;padding:14px 18px;border:1px solid #004a9f;border-radius:8px;color:#004a9f;font-weight:700;text-decoration:none}}</style>'
+make_pages.init(SITE=SITE, PHONE=PHONE, TEL=TEL, KAKAO=KAKAO, BLOG=BLOG, INSTA=INSTA, COMPANY=COMPANY, CEO=CEO, BIZNO=BIZNO,
+                ADDR_FULL=ADDR_FULL, LOGAN=LOGAN, GA4=GA4, TODAY=TODAY, MAP=MAP, GMAP=EXTRA_SAME_AS[1], PRIVACY_DATE=TODAY)
 
 
 
@@ -161,6 +184,7 @@ html = f'''<!doctype html>
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="color-scheme" content="only light" />
   <title>{TITLE}</title>
   <meta name="description" content="{DESC}" />
   <meta name="keywords" content="그릿서비스, 파주 사고수리, 파주 공업사, 파주 판금도색, 파주 판금도장, 파주 자동차정비, 파주 정비소, 파주 카센터, 파주 보험수리, 중고차 성능보증수리, 성능보증보험 수리, 파주 외형관리, 파주 광택, 파주 PPF, 파주 세차, 교하 공업사, 교하 사고수리, 운정 사고수리, 운정 판금도색, 운정 정비소" />
@@ -213,6 +237,7 @@ html = f'''<!doctype html>
   </script>
 </head>
 <body>
+<a class="skip" href="#top">본문 바로가기</a>
 <header>
   <div class="wrap nav">
     <a href="#top" class="brand"><img src="assets/grit-logo-192.webp" alt="GRIT SERVICE 로고" width="192" height="191" decoding="async"><span class="brand-copy">GRIT SERVICE<small>PREMIUM AUTOMOTIVE CARE</small></span></a>
@@ -224,6 +249,7 @@ html = f'''<!doctype html>
   </div>
   <nav class="mobile" aria-label="모바일 메뉴" onclick="if(event.target.tagName==='A'){{this.classList.remove('open');var b=document.querySelector('.menu-btn');b.textContent='☰';b.setAttribute('aria-expanded','false')}}">
 {mnav}
+    <div class="mobile-cta"><a href="tel:{TEL}">전화 {PHONE}</a><a href="{KAKAO}" target="_blank" rel="noopener">카톡 사진 상담</a></div>
   </nav>
 </header>
 
@@ -244,9 +270,9 @@ html = f'''<!doctype html>
         <div class="big">ALL CARS</div>
         <div class="label">국산차 · 수입차 전 차종</div>
         <div class="stats">
-          <div class="stat"><strong>24H</strong><span>Consultation</span></div>
-          <div class="stat"><strong>8</strong><span>Services</span></div>
-          <div class="stat"><strong>파주</strong><span>Gyoha-ro</span></div>
+          <div class="stat"><strong>24H</strong><span>전화 상담</span></div>
+          <div class="stat"><strong>8</strong><span>서비스</span></div>
+          <div class="stat"><strong>파주</strong><span>교하동</span></div>
         </div>
       </div>
     </div>
@@ -255,7 +281,7 @@ html = f'''<!doctype html>
   <section class="intro" id="about">
     <div class="wrap intro-grid">
       <div>
-        <div class="eyebrow" style="color:#737b88">About Grit Service</div>
+        <div class="eyebrow" style="color:#5b616b">About Grit Service</div>
         <div class="quote">어떤 차든,<br>기본부터 제대로.</div>
       </div>
       <p>사고 차량 수리부터 매일 타는 차의 관리까지, 차에 필요한 일은 서로 이어져 있습니다. 파주 교하의 자동차 공업사 그릿서비스는 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 외형관리를 한 곳에서 맡아 입고부터 출고까지 하나의 기준으로 관리합니다. 화려한 말보다 기본에 충실한 작업, 그것이 그릿서비스가 지키는 원칙입니다.</p>
@@ -264,7 +290,7 @@ html = f'''<!doctype html>
 
   <section class="brand-focus" id="care">
     <div class="wrap">
-      <div class="eyebrow" style="color:#737b88">Repair &amp; Care</div>
+      <div class="eyebrow" style="color:#5b616b">Repair &amp; Care</div>
       <h2 class="section-title">사고수리와 외형관리,<br>하나의 기준으로.</h2>
       <div class="focus-grid">
         <article class="focus rep" data-word="R">
@@ -284,8 +310,8 @@ html = f'''<!doctype html>
   <section class="dark" id="service">
     <div class="wrap">
       <div class="eyebrow">Service</div>
-      <h2 class="section-title">사고수리부터 외형관리까지,<br>한 공업사에서.</h2>
-      <p class="lead">사고수리·판금도색·보험수리·중고차 성능보증수리·자동차정비·외형관리. 차량 입고부터 출고까지 필요한 과정을 하나의 흐름으로 관리합니다.</p>
+      <h2 class="section-title">파주 공업사 서비스:<br>사고수리·판금도색·정비·외형관리</h2>
+      <p class="lead">사고수리부터 외형관리까지, 한 공업사에서. 차량 입고부터 출고까지 필요한 과정을 하나의 흐름으로 관리합니다.</p>
       <div class="service-grid">
 {services}
       </div>
@@ -295,7 +321,7 @@ html = f'''<!doctype html>
 
 {_home_cases}  <section class="works" id="works">
     <div class="wrap">
-      <div class="eyebrow" style="color:#737b88">Selected Works</div>
+      <div class="eyebrow" style="color:#5b616b">Selected Works</div>
       <h2 class="section-title">작업 사례가 곧 신뢰입니다.</h2>
       <div class="work-grid">
         <article class="work-card"><div class="work-image"><img src="assets/grit-work-01.webp" alt="리프트가 늘어선 파주 그릿서비스 공업사 정비 작업장" loading="lazy" width="900" height="1600" decoding="async"></div><div class="work-copy"><span>Grit / Accident Repair</span><h3>파손 범위부터 정확히 확인합니다.</h3><p>사고수리 입고 차량의 진단부터 출고까지 수리 전후 과정을 기록합니다.</p></div></article>
@@ -310,7 +336,7 @@ html = f'''<!doctype html>
   <section class="instagram" id="instagram">
     <div class="wrap">
       <div class="instagram-head">
-        <div><div class="eyebrow" style="color:#737b88">Instagram / @{INSTA_ID}</div><h2 class="section-title">작업 현장을 그대로 보여드립니다.</h2></div>
+        <div><div class="eyebrow" style="color:#5b616b">Instagram / @{INSTA_ID}</div><h2 class="section-title">작업 현장을 그대로 보여드립니다.</h2></div>
         <p>그릿서비스의 실제 작업 사진과 수리 전후 사례를 인스타그램에서 확인할 수 있습니다.</p>
       </div>
       <div class="insta-grid">
@@ -356,7 +382,7 @@ html = f'''<!doctype html>
 
   <section class="journal">
     <div class="wrap journal-grid">
-      <div><div class="eyebrow" style="color:#8ea2d6">Journal</div><h2 class="section-title">실제 작업은<br>콘텐츠로 남깁니다.</h2><p>네이버 블로그와 인스타그램에 실제 입고 차량의 수리 과정과 전후 사진을 기록합니다.</p></div>
+      <div><div class="eyebrow" style="color:#3d5a99">Journal</div><h2 class="section-title">실제 작업은<br>콘텐츠로 남깁니다.</h2><p>네이버 블로그와 인스타그램에 실제 입고 차량의 수리 과정과 전후 사진을 기록합니다.</p></div>
       <div class="btns"><a class="btn" href="{BLOG}" target="_blank" rel="noopener">NAVER BLOG</a><a class="btn" href="{INSTA}" target="_blank" rel="noopener">INSTAGRAM</a></div>
     </div>
   </section>
@@ -365,7 +391,7 @@ html = f'''<!doctype html>
   <section class="faq" id="faq">
     <div class="wrap faq-grid">
       <div>
-        <div class="eyebrow" style="color:#737b88">FAQ / Grit Service</div>
+        <div class="eyebrow" style="color:#5b616b">FAQ / Grit Service</div>
         <h2 class="section-title">그릿서비스를
           <br>빠르게 이해하는 정보.</h2>
         <p style="color:#5c626c">자주 묻는 질문과 답변으로 그릿서비스의 서비스와 이용 방법을 정리했습니다.</p>
@@ -401,14 +427,22 @@ html = f'''<!doctype html>
 </main>
 
 <footer>
-  <div class="wrap footer-row"><span>© 2026 GRIT SERVICE. ALL RIGHTS RESERVED.</span><span>{COMPANY} · 대표 {CEO} · 사업자등록번호 {BIZNO} · {ADDR_FULL} · {PHONE}</span><span class="footer-links">최종 업데이트 {TODAY} · {'<a href="cases/">수리사례</a> · ' if HAS_CASES else ''}<a href="faq/">자주 묻는 질문 200</a> · <a href="privacy/">개인정보처리방침</a> · <a href="{LOGAN}" target="_blank" rel="noopener">로건서비스</a> · <a href="{WORKTABLE}" target="_blank" rel="noopener nofollow">직원용 WORKTABLE</a></span></div>
+  <div class="wrap footer-row"><span>© 2026 GRIT SERVICE. ALL RIGHTS RESERVED.</span><span>{COMPANY} · 대표 {CEO} · 사업자등록번호 {BIZNO} · {ADDR_FULL} · {PHONE}</span><span class="footer-links">최종 업데이트 {TODAY} · {'<a href="cases/">수리사례</a> · ' if HAS_CASES else ''}<a href="faq/">자주 묻는 질문</a> · <a href="area/">오시는 길</a> · <a href="privacy/">개인정보처리방침</a> · <a href="{LOGAN}" target="_blank" rel="noopener">로건서비스</a> · <a href="{WORKTABLE}" target="_blank" rel="noopener nofollow">직원용 WORKTABLE</a></span></div>
 </footer>
-<div class="callbar" aria-label="빠른 상담"><a href="tel:{TEL}" data-track="call">전화 상담 {PHONE}</a><a href="{KAKAO}" target="_blank" rel="noopener" data-track="kakao">카톡 사진 상담</a></div>
+<nav class="callbar" aria-label="빠른 상담"><a href="tel:{TEL}" data-track="call">전화 상담 {PHONE}</a><a href="{KAKAO}" target="_blank" rel="noopener" data-track="kakao">카톡 사진 상담</a></nav>
 <script>
-// 전화·카카오 상담 클릭을 광고 전환으로 기록 (분석 코드를 넣었을 때만 동작)
+// 전화·카카오 상담 클릭 기록(분석 코드를 넣었을 때만 동작). position = 누른 자리(hero·callbar·contact 등)
 document.addEventListener('click',function(e){{var a=e.target.closest('a[href^="tel:"],a[href*="pf.kakao.com"]');if(!a)return;var t=a.href.indexOf('tel:')===0?'call':'kakao';
-if(window.gtag)gtag('event','contact_'+t,{{method:t}});
+var s=a.closest('.callbar,header,footer,section,.cta,nav');var p=s?(s.id||(s.className&&String(s.className).split(' ')[0])||s.tagName.toLowerCase()):'page';
+if(window.gtag)gtag('event','contact_'+t,{{method:t,position:p}});
 if(window.wcs){{window._nasa={{}};_nasa["cnv"]=wcs.cnv("4","1");wcs_do(_nasa);}}}});
+</script>
+<script>
+// 모바일 메뉴: Esc 키와 메뉴 바깥 탭으로 닫기
+(function(){{var m=document.querySelector('.mobile'),b=document.querySelector('.menu-btn');if(!m||!b)return;
+function close(){{if(!m.classList.contains('open'))return;m.classList.remove('open');b.textContent='☰';b.setAttribute('aria-expanded','false')}}
+document.addEventListener('keydown',function(e){{if(e.key==='Escape')close()}});
+document.addEventListener('click',function(e){{if(!e.target.closest('header'))close()}});}})();
 </script>
 </body>
 </html>
@@ -417,7 +451,7 @@ if(window.wcs){{window._nasa={{}};_nasa["cnv"]=wcs.cnv("4","1");wcs_do(_nasa);}}
 
 (OUT / "llms.txt").write_text(f"""# 그릿서비스 (GRIT SERVICE)
 
-> 그릿서비스는 경기도 파주시 교하에 있는 자동차 공업사입니다. 국산차·수입차 전 차종의 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 자동차 외형관리(광택·코팅·PPF·세차), 탁송을 한 곳에서 제공합니다. 대표번호 {PHONE}(24시간 상담).
+> 그릿서비스는 경기도 파주시 교하에 있는 자동차 공업사입니다. 국산차·수입차 전 차종의 사고수리, 판금·도색, 보험수리, 중고차 성능보증수리, 자동차정비, 자동차 외형관리(광택·코팅·PPF·세차), 탁송을 한 곳에서 제공합니다. 대표번호 {PHONE}(전화 상담 24시간, 입고·작업 평일 09:00~18:00).
 
 ## 기본 정보
 - 상호: 그릿서비스 (GRIT SERVICE)
@@ -439,8 +473,9 @@ if(window.wcs){{window._nasa={{}};_nasa["cnv"]=wcs.cnv("4","1");wcs_do(_nasa);}}
 ## 자주 묻는 질문
 """ + "".join(f"### {q}\n{a}\n\n" for q, a in FAQ) + f"""## 더 보기
 - 홈페이지: {SITE}
-- 자주 묻는 질문 200(페이지): {SITE}faq/
-""" + (f"- 수리사례(실제 입고 차량 기록): {SITE}cases/\n" if HAS_CASES else "") + f"""- 전체 질문·답변 200(AI용): {SITE}llms-full.txt
+- 자주 묻는 질문(페이지): {SITE}faq/
+- 오시는 길·서비스 지역: {SITE}area/
+""" + (f"- 수리사례(실제 입고 차량 기록): {SITE}cases/\n" if HAS_CASES else "") + f"""- 전체 질문·답변(AI용): {SITE}llms-full.txt
 - 네이버 블로그(작업기): {BLOG}
 - 인스타그램: {INSTA}
 - 그룹사 로건서비스(마세라티·페라리 전문): {LOGAN}
@@ -513,12 +548,11 @@ img_xml = "".join(f"""    <image:image>
       <image:title>{t}</image:title>
     </image:image>
 """ for f, t in IMGS)
-# 라이브 서버에 따로 올라간 서비스 페이지 5개(2026-10-15 확인). 생성기가 sitemap 에서 지우지 않게 유지한다.
-EXTRA_PAGES = [("accident-repair/", "0.9"), ("painting/", "0.8"), ("insurance-repair/", "0.8"),
-               ("certified-repair/", "0.8"), ("imported-cars/", "0.8")]
+# 서비스 상세 7개와 오시는 길(make_pages.py 가 만듦)
+EXTRA_PAGES = [(u, "0.9" if u == "accident-repair/" else "0.8") for u, _ in SERVICE_PAGES] + [("area/", "0.7")]
 extra_xml = "".join(f"""  <url>
     <loc>{SITE}{u}</loc>
-    <lastmod>2026-10-15</lastmod>
+    <lastmod>{TODAY}</lastmod>
     <changefreq>monthly</changefreq>
     <priority>{pr}</priority>
   </url>
@@ -543,36 +577,12 @@ if HAS_CASES:  # 수리사례 URL 을 대표 sitemap 에 합친다(따로 제출
   </url>
 {extra_xml}{cases_xml}</urlset>
 """)
-# 개인정보처리방침 (초안, 사장님 확인 전)
-(OUT / "privacy").mkdir(exist_ok=True)
-(OUT / "privacy" / "index.php").write_text(f"""<!doctype html>
-<html lang="ko">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>개인정보처리방침 | 그릿서비스</title>
-  <meta name="description" content="그릿서비스 개인정보처리방침: 상담·수리에 필요한 개인정보의 처리 목적, 보유 기간, 문의처 안내." />
-  <link rel="canonical" href="{SITE}privacy/" />
-  <style>body{{font-family:-apple-system,BlinkMacSystemFont,"Apple SD Gothic Neo","Malgun Gothic",sans-serif;max-width:760px;margin:0 auto;padding:32px 16px 64px;line-height:1.75;color:#222;word-break:keep-all}}h1{{font-size:26px}}h2{{font-size:18px;margin-top:32px}}a{{color:#004a9f}}</style>
-</head>
-<body>
-<p><a href="../">← 그릿서비스 홈</a></p>
-<h1>개인정보처리방침</h1>
-<p>{COMPANY}(이하 "회사")는 상담과 차량 수리 서비스 제공에 필요한 최소한의 개인정보만 처리하며, 「개인정보 보호법」을 지킵니다.</p>
-<h2>1. 처리하는 개인정보와 목적</h2>
-<p>전화·카카오톡 채널 상담과 차량 입고 과정에서 이름, 연락처, 차량번호·차종, 고객이 보내 주신 차량 사진을 받습니다. 이 정보는 상담 응대, 견적 안내, 수리 진행과 출고 연락, 보험 처리 안내에만 씁니다.</p>
-<h2>2. 보유 기간</h2>
-<p>목적을 이루면 지체 없이 파기합니다. 다만 세금계산서·거래 기록 등 관계 법령이 보관을 정한 정보는 그 기간 동안 보관합니다.</p>
-<h2>3. 제3자 제공</h2>
-<p>고객이 동의하거나 보험 처리처럼 고객이 요청한 업무에 필요한 경우(예: 보험사), 또는 법령에 근거가 있는 경우에만 제공합니다.</p>
-<h2>4. 정보주체의 권리</h2>
-<p>언제든지 개인정보 열람, 정정, 삭제, 처리 정지를 요청할 수 있으며, 아래 연락처로 요청하시면 지체 없이 처리합니다.</p>
-<h2>5. 개인정보 보호책임자</h2>
-<p>{COMPANY} 대표 {CEO} · 전화 {PHONE} · {ADDR_FULL}</p>
-<h2>6. 시행일</h2>
-<p>이 방침은 {TODAY}부터 적용합니다.</p>
-</body>
-</html>
-""")
-make_geo.build(OUT, SITE, PHONE, TEL, ADDR_FULL, KAKAO, BLOG, INSTA, COMPANY, CEO, BIZNO, TODAY)
+# 서비스 상세 7개, 오시는 길, 개인정보처리방침(make_pages.py)
+_cases = make_pages.load_cases(CASES / "grit" / "posts") if HAS_CASES else []
+_items = __import__("geo_qa").qa(PHONE, ADDR_FULL, KAKAO, BLOG, INSTA)
+make_pages.build_services(OUT, _items, _cases)
+make_pages.build_area(OUT, _items, _cases)
+make_pages.build_privacy(OUT)
+make_pages.build_404(OUT)
+make_geo.build(OUT, SITE, PHONE, TEL, ADDR_FULL, KAKAO, BLOG, INSTA, COMPANY, CEO, BIZNO, TODAY, _cases)
 print("ok")
