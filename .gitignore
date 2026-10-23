@@ -3,3 +3,4 @@ upload-log.txt
 winscp-last.log
 .last-uploaded
 src/cases-system/build/
+.site-name
