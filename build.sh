@@ -22,6 +22,7 @@ cp -r "$TMP/logan-cases/cases" "$TMP/logan/cases"
 cp -r "$SRC/loganservice-site/upload/privacy" "$TMP/logan/privacy"
 mkdir -p "$TMP/logan/assets"
 cp "$SRC/gritservice-site/upload/assets/logan-logo-240.webp" "$TMP/logan/assets/"
+cp "$SRC/loganservice-site/upload/assets/favicon.png" "$SRC/loganservice-site/upload/assets/favicon-64.png" "$TMP/logan/assets/"
 [ -d "$SRC/cases-system/logan/assets/cases" ] && cp -r "$SRC/cases-system/logan/assets/cases" "$TMP/logan/assets/cases" || true
 python3 "$SRC/loganservice-site/add_cases.py" "$TMP/logan" > /dev/null
 cp "$TMP/logan/index.php" "$TMP/logan/llms.txt" "$TMP/logan/robots.txt" "$SRC/loganservice-site/upload/"
