@@ -35,8 +35,8 @@ cp "$SRC/loganservice-site/upload/0d5b85b24fd3f3b1750da89666d9a379.txt" "$TMP/lo
 cp "$TMP/logan/index.php" "$TMP/logan/llms.txt" "$TMP/logan/robots.txt" "$SRC/loganservice-site/upload/"
 
 # 3) 검사
-python3 check_cases.py "$TMP/grit" ../grit/site.yaml --mode upload --no-browser --site-dir "$TMP/grit" > "$TMP/chk-grit.txt" || { cat "$TMP/chk-grit.txt"; echo "그릿 검사 실패"; exit 1; }
-python3 check_cases.py "$TMP/logan" ../logan/site.yaml --mode upload --no-browser --site-dir "$TMP/logan" > "$TMP/chk-logan.txt" || { cat "$TMP/chk-logan.txt"; echo "로건 검사 실패"; exit 1; }
+python3 check_cases.py "$TMP/grit" ../grit/site.yaml --mode upload --no-browser --strict-links --site-dir "$TMP/grit" > "$TMP/chk-grit.txt" || { cat "$TMP/chk-grit.txt"; echo "그릿 검사 실패"; exit 1; }
+python3 check_cases.py "$TMP/logan" ../logan/site.yaml --mode upload --no-browser --strict-links --site-dir "$TMP/logan" > "$TMP/chk-logan.txt" || { cat "$TMP/chk-logan.txt"; echo "로건 검사 실패"; exit 1; }
 # 사이트 전체(홈·FAQ·서비스·개인정보·sitemap·robots) 검사: 제목·설명 길이, canonical, 깨진 링크, 미래 lastmod 등
 python3 "$SRC/check_site.py" "$TMP/grit" https://gritservice.co.kr/ || { echo "그릿 사이트 검사 실패"; exit 1; }
 python3 "$SRC/check_site.py" "$TMP/logan" https://loganservice.co.kr/ || { echo "로건 사이트 검사 실패"; exit 1; }

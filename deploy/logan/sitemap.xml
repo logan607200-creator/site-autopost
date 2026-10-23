@@ -33,16 +33,16 @@
     <priority>0.8</priority>
   </url>
   <!-- hubs -->
-    <url><loc>https://loganservice.co.kr/maserati/ghibli/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/maserati/levante/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/maserati/quattroporte/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/maserati/granturismo/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/maserati/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/symptoms/warning-light/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/symptoms/oil-leak/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/symptoms/suspension-noise/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/symptoms/cooling/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/symptoms/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
-    <url><loc>https://loganservice.co.kr/delivery/</loc><lastmod>2026-10-24</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/maserati/ghibli/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/maserati/levante/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/maserati/quattroporte/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/maserati/granturismo/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/maserati/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/symptoms/warning-light/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/symptoms/oil-leak/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/symptoms/suspension-noise/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/symptoms/cooling/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/symptoms/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
+    <url><loc>https://loganservice.co.kr/delivery/</loc><lastmod>2026-10-23</lastmod><changefreq>monthly</changefreq><priority>0.7</priority></url>
   <!-- /hubs -->
 </urlset>

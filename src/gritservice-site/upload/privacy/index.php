@@ -103,7 +103,7 @@
   <p>개인정보 침해에 대한 상담이나 분쟁 해결이 필요하면 아래 기관에 문의할 수 있습니다.</p>
   <ul><li>개인정보분쟁조정위원회: 1833-6972 (www.kopico.go.kr)</li><li>개인정보침해신고센터: 118 (privacy.kisa.or.kr)</li><li>대검찰청: 1301 (www.spo.go.kr)</li><li>경찰청: 182 (ecrm.police.go.kr)</li></ul>
   <h2>12. 시행일과 변경 이력</h2>
-  <p>이 방침은 2026-10-24부터 적용합니다. 이전 방침: 2026-10-22 시행(항목·목적, 보유기간, 제3자 제공, 권리, 책임자).</p>
+  <p>이 방침은 2026-10-23부터 적용합니다. 이전 방침: 2026-10-22 시행(항목·목적, 보유기간, 제3자 제공, 권리, 책임자).</p>
   <div class="cta" id="cta"><a href="tel:15770412">전화 상담 1577-0412</a><a href="https://pf.kakao.com/_UExgxaX" target="_blank" rel="noopener">카톡으로 사진 보내 상담</a></div>
 </main>
 <footer class="bot"><div class="w">
