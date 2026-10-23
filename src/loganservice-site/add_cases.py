@@ -10,9 +10,9 @@ idx = root / "index.php"
 s = idx.read_text()
 sec = (root / "cases" / "home-section.html").read_text().strip()
 
-if 'href="cases/">CASES</a>' not in s:
-    s = s.replace('      <a href="#service">SERVICE</a>\n', '      <a href="#service">SERVICE</a>\n      <a href="cases/">CASES</a>\n', 1)
-    s = s.replace('    <a href="#service">SERVICE</a>\n', '    <a href="#service">SERVICE</a>\n    <a href="cases/">CASES</a>\n', 1)
+# 메뉴(PC·모바일)마다 SERVICE 다음 줄에 CASES 를 한 번만 넣는다. 줄 맨 앞부터 맞춰서 들여쓰기가 다른 메뉴끼리 섞이지 않게 함
+s = re.sub(r'(?m)^( *)<a href="cases/">CASES</a>\n', "", s)
+s = re.sub(r'(?m)^( *)(<a href="#service">SERVICE</a>\n)', r'\1\2\1<a href="cases/">CASES</a>\n', s)
 s = re.sub(r"\n?<!-- cases-home -->.*?<!-- /cases-home -->\n?", "\n", s, flags=re.S)
 anchor = '  <section class="instagram" id="instagram">'
 assert s.count(anchor) == 1, "instagram 섹션 위치를 못 찾음"

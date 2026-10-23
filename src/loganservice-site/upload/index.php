@@ -723,7 +723,6 @@
       <a href="#about">ABOUT</a>
       <a href="#brands">MASERATI / FERRARI</a>
       <a href="#service">SERVICE</a>
-    <a href="cases/">CASES</a>
       <a href="cases/">CASES</a>
       <a href="#works">WORK</a>
       <a href="#instagram">INSTAGRAM</a>
@@ -738,6 +737,7 @@
     <a href="#about">ABOUT</a>
     <a href="#brands">MASERATI / FERRARI</a>
     <a href="#service">SERVICE</a>
+    <a href="cases/">CASES</a>
     <a href="#works">WORK</a>
     <a href="#instagram">INSTAGRAM</a>
     <a href="#group">GROUP</a>
