@@ -279,7 +279,13 @@
         "streetAddress": "아침노을길 55",
         "addressLocality": "파주시",
         "addressRegion": "경기도",
+        "postalCode": "10879",
         "addressCountry": "KR"
+      },
+      "geo": {
+        "@type": "GeoCoordinates",
+        "latitude": 37.728438,
+        "longitude": 126.707203
       },
       "knowsAbout": [
         "Maserati",
@@ -365,7 +371,8 @@
       "sameAs": [
         "https://www.instagram.com/loganservice_official/",
         "https://blog.naver.com/logan_service",
-        "https://pf.kakao.com/_PKYxdG"
+        "https://pf.kakao.com/_PKYxdG",
+        "https://maps.google.com/?cid=4654192603577598168"
       ],
       "legalName": "주식회사 로건",
       "slogan": "마세라티 정비, 결국 경험의 차이입니다.",
