@@ -372,7 +372,8 @@
         "https://www.instagram.com/loganservice_official/",
         "https://blog.naver.com/logan_service",
         "https://pf.kakao.com/_PKYxdG",
-        "https://maps.google.com/?cid=4654192603577598168"
+        "https://maps.google.com/?cid=4654192603577598168",
+        "https://map.naver.com/p/entry/place/20277854"
       ],
       "legalName": "주식회사 로건",
       "slogan": "마세라티 정비, 결국 경험의 차이입니다.",
